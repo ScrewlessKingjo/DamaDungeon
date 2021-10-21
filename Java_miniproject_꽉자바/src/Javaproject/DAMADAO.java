@@ -27,8 +27,6 @@ public class DAMADAO {
 	// update update()
 
 	// delete delete()
-	
-	
 
 	public void getConn() {
 		try {
@@ -58,52 +56,37 @@ public class DAMADAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void table1() {
 		getConn();
-		
-		sql = "create table user_info "
-				+ "(ID varchar2(10),"
-				+ "PASSWORD NUMBER(10) NOT NULL,"
-				+ "CONSTRAINT INFO_PK PRIMARY KEY (ID)"
-				+ ")";
+
+		sql = "create table user_info " + "(ID varchar2(10)," + "PASSWORD NUMBER(10) NOT NULL,"
+				+ "CONSTRAINT INFO_PK PRIMARY KEY (ID)" + ")";
 		try {
 			conn.createStatement();
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			endClose();
 		}
 	}
+
 	public void table2() {
-		getConn();				
-		sql = "create table DAMA_INFO ("
-				+"NICK VARCHAR2(10),"
-				+"ID VARCHAR2(10),"
-				+"EXP NUMBER(4),"
-				+"LV NUMBER(3),"
-				+"HP NUMBER(5),"
-				+"ATK NUMBER(5),"
-				+"DEP NUMBER(5),"
-				+"SPD NUMBER(3),"
-				+"ENERGY NUMBER(2),"
-				+"FOOD NUMBER(3),"
-				+"HERBS NUMBER(3),"
-				+"STARTDAY NUMBER(3),"
-				+"DEADDAY NUMBER(3),"
-				+"SICKDAY NUMBER(3),"
-				+"CONSTRAINT DAMA_PK PRIMARY KEY (NICK),"
-				+"CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)"
-				+")";
+		getConn();
+		sql = "create table DAMA_INFO (" + "NICK VARCHAR2(10)," + "ID VARCHAR2(10)," + "EXP NUMBER(4),"
+				+ "LV NUMBER(3)," + "HP NUMBER(5)," + "ATK NUMBER(5)," + "DEP NUMBER(5)," + "SPD NUMBER(3),"
+				+ "ENERGY NUMBER(2)," + "FOOD NUMBER(3)," + "HERBS NUMBER(3)," + "STARTDAY NUMBER(3),"
+				+ "DEADDAY NUMBER(3)," + "SICKDAY NUMBER(3)," + "CONSTRAINT DAMA_PK PRIMARY KEY (NICK),"
+				+ "CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)" + ")";
 		try {
 			conn.createStatement();
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			endClose();
 		}
 	}
@@ -112,7 +95,7 @@ public class DAMADAO {
 
 		getConn();
 		try {
-			String sql = "insert into member values(?,?,?)";
+			String sql = "insert into user_info values(?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
@@ -125,59 +108,103 @@ public class DAMADAO {
 		}
 		return result;
 	}
+	public int join(String id, String pw) {
+		int i=0;
+		getConn();
+		try {
+			String sql = "insert into user_info values(?,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+			int up=psmt.executeUpdate();// 업데이트 줄수
+			if (up>0) {
+				i=5;
+				System.out.println("회원가입 성공");
+			}else {
+				System.out.println("회원가입 실패");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		return i;
+	}
 
 	public void select() {
 		getConn();
-		String sql = "select * from member";
+		String sql = "select * from user_info";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				String getID = rs.getString(1);
 				String getPW = rs.getString(2);
-				String getNICK = rs.getString(3);
-				System.out.println(getID + " / " + getPW + " / " + getNICK);
+				System.out.println("아이디 : "+getID + " 비밀번호 : "+getPW);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			endClose();
 		}
 	}
 
+	public int login(String ID, String PW) {
+		getConn();
+		int i = 0;
+		String sql = "select * from user_info where id = ? and password = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, ID);
+			psmt.setString(2, PW);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				i = 5;
+			} else {
+				i = 0;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		return i;
+	}
+	
+
 	public int update(String set, String where) {
 		getConn();
-	try {
-		String sql = "update member set pw = ? where id =? ";
-		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, set);
-		psmt.setString(2, where);
-		result =psmt.executeUpdate();}
-	catch (SQLException e) {
-		e.printStackTrace();
-	}finally {
-		endClose();
+		try {
+			String sql = "update user_info set pw = ? where id =? ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, set);
+			psmt.setString(2, where);
+			result = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		return result;
+
 	}
-	return result;
-		
-	}
+
 	public int delete(String id, String pw) {
 		getConn();
-	try {
-		String sql = "delete from member where id=? and pw =?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, id);
-		psmt.setString(2, pw);
-		result =psmt.executeUpdate();}
-	catch (SQLException e) {
-		e.printStackTrace();
-	}finally {
-		endClose();
+		try {
+			String sql = "delete from user_info where id=? and pw =?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+			result = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		return result;
 	}
-	return result;
-	}
-	
-	
+
 	
 }
-
