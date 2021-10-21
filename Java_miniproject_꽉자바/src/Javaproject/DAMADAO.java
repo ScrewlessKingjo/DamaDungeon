@@ -75,10 +75,10 @@ public class DAMADAO {
 
 	public void table2() {
 		getConn();
-		sql = "create table DAMA_INFO (" + "NICK VARCHAR2(10)," + "ID VARCHAR2(10)," + "EXP NUMBER(4),"
-				+ "LV NUMBER(3)," + "HP NUMBER(5)," + "ATK NUMBER(5)," + "DEP NUMBER(5)," + "SPD NUMBER(3),"
-				+ "ENERGY NUMBER(2)," + "FOOD NUMBER(3)," + "HERBS NUMBER(3)," + "STARTDAY NUMBER(3),"
-				+ "DEADDAY NUMBER(3)," + "SICKDAY NUMBER(3)," + "CONSTRAINT DAMA_PK PRIMARY KEY (NICK),"
+		sql = "create table DAMA_INFO (" + "ID VARCHAR2(10)," + "EXP NUMBER(4),"
+				+ "LV NUMBER(3)," + "HP NUMBER(5)," + "ATK NUMBER(5)," + "DEF NUMBER(5)," + "SPD NUMBER(3),"
+				+ "ENERGY NUMBER(5)," + "FOOD NUMBER(3)," + "HERBS NUMBER(3)," + "STARTDAY NUMBER(3),"
+				+ "DEADDAY NUMBER(3)," + "SICKDAY NUMBER(3),"
 				+ "CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)" + ")";
 		try {
 			conn.createStatement();
@@ -131,6 +131,19 @@ public class DAMADAO {
 		}
 		return i;
 	}
+	public void joinStators(String id) {
+		getConn();
+		try {
+			String sql = "insert into DAMA_INFO values(?,1,1,100,30,10,30,100,5,1,1,1,1)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.executeUpdate();// 업데이트 줄수
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+	}
 
 	public void select() {
 		getConn();
@@ -148,6 +161,37 @@ public class DAMADAO {
 		} finally {
 			endClose();
 		}
+	}
+	public DAMAVO dama_loding(String id) {
+		DAMAVO dm = new DAMAVO();
+		getConn();
+		String sql = "select * from DAMA_INFO where id = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				String getID = rs.getString(1);
+				int getEXP = rs.getInt(2);
+				int getLEVEL = rs.getInt(3);
+				int getHP = rs.getInt(4);
+				int getATK = rs.getInt(5);
+				int getDEF = rs.getInt(6);
+				int getSPD = rs.getInt(7);
+				int getENERGY = rs.getInt(8);
+				int getFOOD = rs.getInt(9);
+				int getHERBS = rs.getInt(10);
+				int getSTART = rs.getInt(11);
+				int getDEAD = rs.getInt(12);
+				int getSICK = rs.getInt(13);
+				dm = new DAMAVO(getID,getEXP,getLEVEL,getHP,getATK,getDEF,getSPD,getENERGY,getFOOD,getHERBS,getSTART,getDEAD,getSICK);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		return dm;
 	}
 
 	public int login(String ID, String PW) {

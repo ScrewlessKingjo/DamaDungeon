@@ -1,8 +1,34 @@
 package Javaproject;
 
-
-// ¸ŞÀÎ È­¸éÀ» Ãâ·ÂÇÏ´Â Å¬·¹½ºÀÔ´Ï´Ù.
+// ë©”ì¸ í™”ë©´ì„ ì¶œë ¥í•˜ëŠ” í´ë ˆìŠ¤ì…ë‹ˆë‹¤.
 
 public class Face {
+	String ID;
+	int exp;
+	int lv;
+	int hp;
+	int atk;
+	int def;
+	int spd;
+	int ene;
+	int hurb;
+	int food;
+	int startday;
+	int deadday;
+	int sickday;
+	DAMADAO dama = new DAMADAO();
+	DAMAVO st = new DAMAVO();
+	
+	public void Face_Normal(String id) {
+		st=dama.dama_loding(id);
+		System.out.println("              âˆ§ _ âˆ§  ");
+		System.out.println("           ã€€ (O Ï‰ O)");
+		System.out.println("           .c(__ï½•ï½•_)");
+		System.out.println("    HP  : "+st.hp+"\t  MP : "+st.ene);
+		System.out.println("    ATK : "+st.atk+" DEF : "+st.def+" SPD : "+st.spd);
+		System.out.println("    Lv  : "+st.lv+"\t EXP : "+st.exp);
+		
+
+	}
 
 }
