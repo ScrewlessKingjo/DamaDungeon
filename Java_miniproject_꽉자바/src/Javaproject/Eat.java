@@ -3,55 +3,41 @@ package Javaproject;
 import java.util.Scanner;
 
 public class Eat {
-	//음식을 먹는 클레스입니다.
+	// 음식을 먹는 클레스입니다.
 	Scanner sc = new Scanner(System.in);
 
-	
-       
-		DAMADAO dama = new DAMADAO();
-		Face fa = new Face();
-		DAMAVO st;
-		
-		public void Eat_menu(String id) {
+	DAMADAO dama = new DAMADAO();
+	Face fa = new Face();
+	DAMAVO st;
+
+	public void Eat_menu(String id) {
+		int her = st.getHurbs();
+		int bob = st.getFood();
 		st = dama.dama_loding(id);
-		System.out.println("1. 밥 "+st.getFood() + " 2. 약초"+st.getHurbs() );
+		System.out.println("1. 밥 " + st.getFood() + " 2. 약초" + st.getHurbs());
 		int eat_choice = sc.nextInt();
-		
-		if(eat_choice == 1) {
+
+		if (eat_choice == 1) {
 			System.out.println("밥을 먹는다.");
 			System.out.println();
-			Eat_Bob(id);
-			System.out.println();
-			
-		}else if(eat_choice == 2) {
-			System.out.println("약초를 먹는다.");
-			System.out.println();
-			Eat_Medic(id);
-			System.out.println();
-			
-		}
-		}
-		
-		
-		public void Eat_Bob(String id) {
-			st = dama.dama_loding(id);
-			int bob = st.getFood();
-			if (bob>0) {
+			if (bob > 0) {
 				bob--;
 				System.out.println(bob);
 				st.setFood(bob);
 				fa.Face_Eat_Fish(id);
 			}
-		}
-		public void Eat_Medic(String id) {
-			st = dama.dama_loding(id);
-			int her = st.getHurbs();
-			if (her>0) {
+			System.out.println();
+
+		} else if (eat_choice == 2) {
+			System.out.println("약초를 먹는다.");
+			System.out.println();
+			if (her > 0) {
 				her--;
 				st.setFood(--her);
 				fa.Face_Eat_Medi(id);
 			}
+			System.out.println();
 		}
 		
+	}
 }
-
