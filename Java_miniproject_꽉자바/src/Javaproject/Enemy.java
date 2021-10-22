@@ -7,13 +7,53 @@ public class Enemy {
 
 	// 적 변수 설정
 	private String En_name;
-	int En_hp;
-	int En_atk;
-	int En_def;
-	int En_spd;
+	private int En_hp;
+	private int En_atk;
+	private int En_def;
+	private int En_spd;
 	Random rd = new Random();
 
 	public Enemy() {
+	}
+
+	public String getEn_name() {
+		return En_name;
+	}
+
+	public int getEn_hp() {
+		return En_hp;
+	}
+
+	public int getEn_atk() {
+		return En_atk;
+	}
+
+	public int getEn_def() {
+		return En_def;
+	}
+
+	public int getEn_spd() {
+		return En_spd;
+	}
+
+	public void setEn_name(String en_name) {
+		En_name = en_name;
+	}
+
+	public void setEn_hp(int en_hp) {
+		En_hp = en_hp;
+	}
+
+	public void setEn_atk(int en_atk) {
+		En_atk = en_atk;
+	}
+
+	public void setEn_def(int en_def) {
+		En_def = en_def;
+	}
+
+	public void setEn_spd(int en_spd) {
+		En_spd = en_spd;
 	}
 
 	public Enemy getEnemy() {

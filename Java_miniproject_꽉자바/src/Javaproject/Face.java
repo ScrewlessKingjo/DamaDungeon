@@ -13,13 +13,13 @@ public class Face {
 	
 	public void Face_Normal(String id) {
 		st=dama.dama_loding(id);	
-		System.out.println("    내 이름은 " + st.nick);
+		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (O ω O)");
 		System.out.println("           .c(__ｕｕ_)");
-		System.out.println("    HP  : "+st.hp+"\t ENE : "+st.ene);
-		System.out.println("    ATK : "+st.atk+"\t DEF : "+st.def+"\t SPD : "+st.spd);
-		System.out.println("    Lv  : "+st.lv+"\t EXP : "+st.exp);
+		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExp());
 	}
 
 }
