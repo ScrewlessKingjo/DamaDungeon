@@ -7,14 +7,15 @@ public class testMain {
 		Enemy en = new Enemy();
 		DAMADAO dama = new DAMADAO();
 		Face fc = new Face();
-	
+	    Eat eat = new Eat();
 		Scanner sc = new Scanner(System.in);
 		Battle bt = new Battle();
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
 		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
-		
+		int eat_menu = 0;
+		int eat_choice = 0;
 		String main_id = null;
 		while (true) {
 			if (title_menu == 0) {
@@ -102,7 +103,22 @@ public class testMain {
 			} else if (game_menu == 3) {
 				System.out.println("먹어보자!!");
 				game_menu = 0;
+				System.out.println("1. 밥 2. 약초");
+				eat_choice = sc.nextInt();
+				
+				if(eat_choice == 1) {
+					System.out.println("밥을 먹는다.");
+					System.out.println();
+					eat.Face_Bob(main_id);
+					System.out.println();
 					
+				}else if(eat_choice == 2) {
+					System.out.println("약초를 먹는다.");
+					System.out.println();
+					eat.Face_Herb(main_id);
+					System.out.println();
+					
+				}
 				
 				
 			} else if (game_menu == 4) {
