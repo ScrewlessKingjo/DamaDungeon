@@ -92,7 +92,7 @@ public class Battle {
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + "공격력 : " + atk + "방어력 : " + def + "속도 : " + spd);
 			System.out.println("");
 			System.out.println("[1] 강력한 펀치를 날린다 [2] 스킬 [3] 도망친다");
-			System.out.println("");
+			System.out.println(" ");
 			int choice = sc.nextInt();
 			if (choice == 1) {
 				if (rd.nextInt(5) == 0) {
