@@ -6,9 +6,9 @@ public class Battle {
 
 	DAMADAO dama = new DAMADAO();
 	DAMAVO st ;
+	Enemy t;
 
-	Enemy ge = new Enemy();
-	Enemy t = ge.getEnemy();
+
 	Scanner sc = new Scanner(System.in);
 	private int lv;
 	private int exp;
@@ -40,6 +40,8 @@ public class Battle {
 	}
 
 	public void Phase(String id) {
+		Enemy ge = new Enemy();
+		t = ge.getEnemy();
 		st=dama.dama_loding(id);
 		Anything ();
 		int user_dmg = atk - En_def;
