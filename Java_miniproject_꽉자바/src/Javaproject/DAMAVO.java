@@ -160,5 +160,9 @@ public class DAMAVO {
 		this.startday = startday;
 		this.sickday = sickday;
 	}
+	public void VOdate(){
+		DAMADAO dama = new DAMADAO();
+		dama.update(id, nick, lv, expe, hp, ene, max_hp, max_ene, atk, def, spd, food, hurbs, startday, sickday);
+	}
 
 }

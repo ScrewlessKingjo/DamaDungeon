@@ -226,5 +226,38 @@ public class DAMADAO {
 		}
 		return i;
 	}
+	
+	public int update(String id,String nick, int lv, int expe, int hp, int ene,int max_hp, int max_ene,int atk,int def, int spd, int food,int herbs, int start, int sick) {        
+        getConn();           
+        String sql = "update DAMA_INFO set id=?,nick=?,lv=?,expe=?,hp=?,ene=?,max_hp=?,max_ene=?,atk=?,def=?,spd=?,food=?,herbs=?,startday=?,sickday=? where id=?";
+        try {
+           psmt = conn.prepareStatement(sql);
+           psmt.setString(1, id);
+           psmt.setString(2, nick);
+           psmt.setInt(3, lv);
+           psmt.setInt(4, expe);
+           psmt.setInt(5, hp);
+           psmt.setInt(6, ene);
+           psmt.setInt(7, max_hp);
+           psmt.setInt(8, max_ene);
+           psmt.setInt(9, atk);
+           psmt.setInt(10, def);
+           psmt.setInt(11, spd);
+           psmt.setInt(12, food);
+           psmt.setInt(13, herbs);
+           psmt.setInt(14, start);
+           psmt.setInt(15, sick);
+           psmt.setString(16, id);
+           result = psmt.executeUpdate();
+        } catch (SQLException e) {
+           e.printStackTrace();
+        } finally {
+           endClose();
+        }    
+        return result;
+     }
+	
+	
+	
 		
 }
