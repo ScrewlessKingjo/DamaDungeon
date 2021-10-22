@@ -147,6 +147,28 @@ public class DAMADAO {
 			endClose();
 		}
 	}
+	public void ranksys() {
+		getConn();
+		int i=0;
+		String sql = "select * from dama_info order by Lv,exp,STARTDAY";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				i++;
+				String getID = rs.getString(1);
+				String getnick = rs.getString(2);
+				int getLv = rs.getInt(3);
+				int getExp = rs.getInt(4);
+				int getturn = rs.getInt(14);
+				System.out.println(i+"위  아이디 : "+getID + "\t닉네임 : "+getnick+"\t레벨 : "+getLv+"\t경험치 : "+getExp+"\t턴수 : "+getturn);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+	}
 	public DAMAVO dama_loding(String id) {
 		DAMAVO dm = new DAMAVO();
 		getConn();

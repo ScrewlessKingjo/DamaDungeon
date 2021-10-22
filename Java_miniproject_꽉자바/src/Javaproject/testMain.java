@@ -14,7 +14,7 @@ public class testMain {
 		String main_id = null;
 		while (true) {
 			if (title_menu == 0) {
-				System.out.print("1. 로그인 2. 회원가입 3. 환경설정 4. 종료 >> ");
+				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
 				title_menu = sc.nextInt();
 			} else if (title_menu == 1) {
 				System.out.print("아이디를 입력하세요 >> ");
@@ -46,7 +46,7 @@ public class testMain {
 					System.out.println("회원가입 실패.. 다시 시도해주세요");
 				}
 			} else if (title_menu == 3) {
-				System.out.println("현재 데모 버전으로 환경설정 기능이 구현되지 않았습니다.");
+				dama.ranksys();
 				title_menu = 0;
 			} else if (title_menu == 4) {
 				System.out.println("프로그램을 종료합니다. 다마고치이이이이이이이잇!!!!!!");
