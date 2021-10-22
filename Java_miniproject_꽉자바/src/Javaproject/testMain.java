@@ -7,10 +7,10 @@ public class testMain {
 		DAMADAO dama = new DAMADAO();
 		Face fc = new Face();
 		Scanner sc = new Scanner(System.in);
-		int coin = 0;
-		int title_menu = 0;
-		int game_menu = 0;
-		int select_menu = 0;
+		int coin = 0;				// 게임 시작 여부 확인 변수
+		int title_menu = 0;			// 메인페이지 메뉴 변수
+		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
+		int select_menu = 0;		// 선택 메뉴 변수
 		String main_id = null;
 		while (true) {
 			if (title_menu == 0) {
@@ -26,18 +26,24 @@ public class testMain {
 				if (coin == 5) {
 					main_id = ID;
 					break;
+				}else {
+					System.out.println("아이디와 비밀번호를 확인해주세요.");
 				}
 			} else if (title_menu == 2) {
 				System.out.print("회원가입 아이디를 입력하세요 >> ");
 				String ID = sc.next();
 				System.out.print("회원가입 비밀번호 입력하세요 >> ");
 				String PW = sc.next();
+				System.out.print("설정하실 닉네임을 입력하세요 >> ");
+				String NICK = sc.next();
 				coin = dama.join(ID, PW);
-				dama.joinStators(ID);
+				dama.joinStators(ID, NICK);
 				title_menu = 0;
 				if (coin == 5) {
 					main_id = ID;
 					break;
+				}else {
+					System.out.println("회원가입 실패.. 다시 시도해주세요");
 				}
 			} else if (title_menu == 3) {
 				System.out.println("현재 데모 버전으로 환경설정 기능이 구현되지 않았습니다.");

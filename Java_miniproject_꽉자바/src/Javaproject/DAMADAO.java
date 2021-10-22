@@ -60,7 +60,7 @@ public class DAMADAO {
 	public void table1() {
 		getConn();
 
-		sql = "create table user_info " + "(ID varchar2(10)," + "PASSWORD NUMBER(10) NOT NULL,"
+		sql = "create table user_info " + "(ID varchar2(10)," + "PASSWORD NUMBER(10) NOT NULL," 
 				+ "CONSTRAINT INFO_PK PRIMARY KEY (ID)" + ")";
 		try {
 			conn.createStatement();
@@ -78,7 +78,7 @@ public class DAMADAO {
 		sql = "create table DAMA_INFO (" + "ID VARCHAR2(10)," + "EXP NUMBER(4),"
 				+ "LV NUMBER(3)," + "HP NUMBER(5)," + "ATK NUMBER(5)," + "DEF NUMBER(5)," + "SPD NUMBER(3),"
 				+ "ENERGY NUMBER(5)," + "FOOD NUMBER(3)," + "HERBS NUMBER(3)," + "STARTDAY NUMBER(3),"
-				+ "DEADDAY NUMBER(3)," + "SICKDAY NUMBER(3),"
+				+ "DEADDAY NUMBER(3)," + "SICKDAY NUMBER(3)," + "NICK varchar2(10),"
 				+ "CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)" + ")";
 		try {
 			conn.createStatement();
@@ -131,12 +131,13 @@ public class DAMADAO {
 		}
 		return i;
 	}
-	public void joinStators(String id) {
+	public void joinStators(String id, String nick) {
 		getConn();
 		try {
-			String sql = "insert into DAMA_INFO values(?,1,1,100,30,10,30,100,5,1,1,1,1)";
+			String sql = "insert into DAMA_INFO values(?,1,1,100,30,10,30,100,5,1,1,1,1,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
+			psmt.setString(2, nick);
 			psmt.executeUpdate();// 업데이트 줄수
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -184,7 +185,8 @@ public class DAMADAO {
 				int getSTART = rs.getInt(11);
 				int getDEAD = rs.getInt(12);
 				int getSICK = rs.getInt(13);
-				dm = new DAMAVO(getID,getEXP,getLEVEL,getHP,getATK,getDEF,getSPD,getENERGY,getFOOD,getHERBS,getSTART,getDEAD,getSICK);
+				String getNICK = rs.getString(14);
+				dm = new DAMAVO(getID,getEXP,getLEVEL,getHP,getATK,getDEF,getSPD,getENERGY,getFOOD,getHERBS,getSTART,getDEAD,getSICK,getNICK);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
