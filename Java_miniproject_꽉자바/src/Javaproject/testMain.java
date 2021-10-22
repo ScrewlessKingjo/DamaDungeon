@@ -106,7 +106,8 @@ public class testMain {
 				
 			} else if (game_menu == 2) {
 				System.out.println("훈련을 떠난다.");
-				vo.exeplus(150);
+				vo.setLv(100);
+				vo.VOdate(main_id);
 				game_menu = 0;
 				
 				

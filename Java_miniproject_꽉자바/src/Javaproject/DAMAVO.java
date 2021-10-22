@@ -25,14 +25,7 @@ public class DAMAVO {
 	private int luk;
 	private int dummi;
 	private int jobid;
-	ArrayList<Integer> LVtable= new ArrayList<>();
 	
-	public void exeplus(int exe) {
-		this.expe+=exe;
-		VOdate();
-		
-	}
-
 
 	public String getId() {
 		return id;
@@ -265,11 +258,10 @@ public class DAMAVO {
 	}
 
 
-	public void VOdate(){
+	public void VOdate(String main_id){
 		DAMADAO dama = new DAMADAO();
-		dama.battle_update(id, hp, maxhp, atk, shd, spd, str, dex, wis, luk, dummi);
-		dama.dama_update(id, nick, expe, lv, ene, maxene, food, hurbs, startday, sickday, jobid);
-		
+		dama.battle_update(main_id, hp, maxhp, atk, shd, spd, str, dex, wis, luk, dummi);
+		dama.dama_update(main_id, nick, expe, lv, ene, maxene, food, hurbs, startday, sickday, jobid);
 	}
 
 }
