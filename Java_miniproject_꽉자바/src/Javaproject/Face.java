@@ -31,7 +31,7 @@ public class Face {
 	
 	public void Face_Eat_Fish(String id) {
 		st=dama.dama_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+ " 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
 		System.out.println("           ∧__∧    ");
 		System.out.println("         　(☆o☆ )_ ! ");
 		System.out.println(" ><)))˚>  ( __ _  )   ");
@@ -42,7 +42,7 @@ public class Face {
 	}
 	public void Face_Eat_Medi(String id) {
 		st=dama.dama_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+ " 약초를 먹지 우웩 쓰다 써 인생");
 		System.out.println("            ∧__∧    ");
 		System.out.println("   _____  　(＊＾＊ )_ & ");
 		System.out.println("  (_약초_)   ( __ _  )   ");

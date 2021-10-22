@@ -7,6 +7,7 @@ public class testMain {
 		Enemy en = new Enemy();
 		DAMADAO dama = new DAMADAO();
 		Face fc = new Face();
+	    Eat eat = new Eat();
 		Scanner sc = new Scanner(System.in);
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
@@ -78,7 +79,7 @@ public class testMain {
 		while (coin == 5) {
 			if (game_menu == 0) {
 				fc.Face_Normal(main_id);
-				System.out.println("1.모험 2.훈련 3.음식 4.취침 5.종료 ");
+				System.out.println("1.모험 2.훈련 3.먹기 4.취침 5.종료 ");
 				select_menu = sc.nextInt();
 				if (select_menu == 1) {
 					game_menu = 1;
@@ -106,8 +107,10 @@ public class testMain {
 				
 				
 			} else if (game_menu == 3) {
-				System.out.println("음식을 먹는다.");
+				System.out.println("먹어보자!!");
 				game_menu = 0;
+				eat.Eat_menu(main_id);
+				
 				
 				
 			} else if (game_menu == 4) {
