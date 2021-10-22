@@ -14,7 +14,7 @@ public class Eat {
 		int her = st.getHurbs();
 		int bob = st.getFood();
 		st = dama.dama_loding(id);
-		System.out.println("1. π‰ " + st.getFood() + " 2. æ‡√ " + st.getHurbs());
+		System.out.println("1. π‰ " + st.getFood() + " 2. æ‡√  " + st.getHurbs());
 		int eat_choice = sc.nextInt();
 
 		if (eat_choice == 1) {
