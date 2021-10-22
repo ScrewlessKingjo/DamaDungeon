@@ -114,24 +114,18 @@ public class Face {
 	}
 	public void Face_Fight(String id) {
 		st=dama.dama_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("        ∧__∧    X    ∩__∩     ");
 		System.out.println("       ( ≫⌒≪) /  ＼ (≫⌒≪ )    ");
 		System.out.println("     ∽(  ___ )      (_____ )∽  ");
-		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+
 	}
 	public void Face_Escape(String id) {
 		st=dama.dama_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("        ∩__∩         ∧___∧      ");
 		System.out.println("    ＼ (＠⌒＠ )       (◐∇ ◐;)    ");
 		System.out.println("      (_____ )∽   ∽(⊂     )⊃    ");
 		System.out.println("                   @@@@@        ");
-		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+
 	}
 	
 	public void Face_Sick(String id) {
