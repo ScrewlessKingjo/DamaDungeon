@@ -6,7 +6,7 @@ public class DAMAVO {
 	private String id;
 	private String nick;
 	private int lv;
-	private int exp;
+	private int expe;
 	private int hp;
 	private int ene;
 	private int max_hp;
@@ -31,8 +31,8 @@ public class DAMAVO {
 		return lv;
 	}
 
-	public int getExp() {
-		return exp;
+	public int getExpe() {
+		return expe;
 	}
 
 	public int getHp() {
@@ -91,8 +91,8 @@ public class DAMAVO {
 		this.lv = lv;
 	}
 
-	public void setExp(int exp) {
-		this.exp = exp;
+	public void setExpe(int expe) {
+		this.expe = expe;
 	}
 
 	public void setHp(int hp) {
@@ -141,13 +141,13 @@ public class DAMAVO {
 
 	public DAMAVO() {}
 
-	public DAMAVO(String id, String nick, int lv, int exp, int hp, int ene, int max_hp, int max_ene, int atk, int def,
+	public DAMAVO(String id, String nick, int lv, int expe, int hp, int ene, int max_hp, int max_ene, int atk, int def,
 			int spd, int food, int hurbs, int startday, int sickday) {
 		super();
 		this.id = id;
 		this.nick = nick;
 		this.lv = lv;
-		this.exp = exp;
+		this.expe = expe;
 		this.hp = hp;
 		this.ene = ene;
 		this.max_hp = max_hp;

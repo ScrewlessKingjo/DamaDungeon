@@ -25,9 +25,9 @@ public class Face {
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (O ω O)");
 		System.out.println("           .c(__ｕｕ_)");
-		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
-		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 
 	public void Face_Sleep(String id) {
@@ -38,7 +38,7 @@ public class Face {
 		System.out.println("           ∽c(____⊃⊂ ) ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	} 
 	
 	public void Face_Eat_Fish(String id) {
@@ -50,7 +50,7 @@ public class Face {
 		System.out.println("           ˘  ˘ ˘˘   ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 	public void Face_Eat_Medi(String id) {
 		st=dama.dama_loding(id);
@@ -61,7 +61,7 @@ public class Face {
 		System.out.println("  |     |    ˘  ˘ ˘˘   ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 	
 	public void Face_Health(String id) {
@@ -75,7 +75,7 @@ public class Face {
 		System.out.println("            (  ─┴─   )∽    ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 	
 	public void Face_맷집(String id) {
@@ -86,7 +86,7 @@ public class Face {
 		System.out.println("           .c(__uu__)  "); 
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 	public void Face_run(String id) {
 		st=dama.dama_loding(id);
@@ -97,6 +97,6 @@ public class Face {
 		System.out.println("         @@@@@@     ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
-		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExp());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 }
