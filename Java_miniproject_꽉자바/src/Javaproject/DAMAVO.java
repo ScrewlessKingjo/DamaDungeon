@@ -1,5 +1,7 @@
 package Javaproject;
 
+import java.util.ArrayList;
+
 public class DAMAVO {
 	
 	
@@ -18,6 +20,15 @@ public class DAMAVO {
 	private int hurbs;
 	private int startday;
 	private int sickday;
+	private ArrayList<Integer> lvtable = new ArrayList<>();
+	
+	public void lvtableset() {
+		}
+	
+	public void experience(int exe) {
+		this.expe+=exe;
+		VOdate();
+	}
 	  
 	public String getId() {
 		return id;

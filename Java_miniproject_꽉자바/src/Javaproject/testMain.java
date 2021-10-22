@@ -12,12 +12,14 @@ public class testMain {
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
 		DAMAVO vo = new DAMAVO();
+		vo.lvtableset(); //LEVEL 테이블 최초설정
 		
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
 		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
 		String main_id = null;
+		
 		
 		while (true) {
 			if (title_menu == 0) {
@@ -103,6 +105,7 @@ public class testMain {
 				
 			} else if (game_menu == 2) {
 				System.out.println("훈련을 떠난다.");
+				vo.experience(150);
 				game_menu = 0;
 				
 				

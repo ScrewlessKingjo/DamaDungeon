@@ -236,6 +236,7 @@ public class DAMADAO {
            psmt.setString(2, nick);
            psmt.setInt(3, lv);
            psmt.setInt(4, expe);
+           System.out.println("=============="+expe+"================");
            psmt.setInt(5, hp);
            psmt.setInt(6, ene);
            psmt.setInt(7, max_hp);
