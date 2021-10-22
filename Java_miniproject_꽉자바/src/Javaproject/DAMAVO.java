@@ -18,7 +18,7 @@ public class DAMAVO {
 	int hurbs;
 	int startday;
 	int sickday;
-	 
+	  
 	public DAMAVO() {}
 
 	public DAMAVO(String id, String nick, int lv, int exp, int hp, int ene, int max_hp, int max_ene, int atk, int def,
