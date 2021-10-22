@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class testMain {
 	public static void main(String[] args) {
+		Enemy en = new Enemy();
 		DAMADAO dama = new DAMADAO();
 		Face fc = new Face();
 		Scanner sc = new Scanner(System.in);
+		Battle bt = new Battle();
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
 		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
@@ -14,6 +16,7 @@ public class testMain {
 		String main_id = null;
 		while (true) {
 			if (title_menu == 0) {
+				bt.Phase();
 				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
 				title_menu = sc.nextInt();
 			} else if (title_menu == 1) {

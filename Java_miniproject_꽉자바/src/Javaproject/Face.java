@@ -3,24 +3,16 @@ package Javaproject;
 // 메인 화면을 출력하는 클레스입니다.
 
 public class Face {
-	String ID;
-	int exp;
-	int lv;
-	int hp;
-	int atk;
-	int def;
-	int spd;
-	int ene;
-	int hurb;
-	int food;
-	int startday;
-	int deadday;
-	int sickday;
-	DAMADAO dama = new DAMADAO();
-	DAMAVO st = new DAMAVO();
+
+	DAMAVO st;
+	DAMADAO dama;
 	 
+	public Face() {
+		dama = new DAMADAO();
+	}
+	
 	public void Face_Normal(String id) {
-		st=dama.dama_loding(id);
+		st=dama.dama_loding(id);	
 		System.out.println("    내 이름은 " + st.nick);
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (O ω O)");
