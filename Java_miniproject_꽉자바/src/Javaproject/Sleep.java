@@ -15,7 +15,7 @@ public class Sleep {
 			ddao.getConn();
 			try {
 				// 수정할 컬럼이 한개 이상일 경우 set 컬럼1 = ?, 컬럼2 = ?, ...
-				String sql = "update dama_info set hp = 100, ene = 100 where id = ?";
+				String sql = "update dama_info set hp = 100, ene = 100, startday = startday + 1 where id = ?";
 				
 				ddao.psmt = ddao.conn.prepareStatement(sql);
 				ddao.psmt.setString(1, id);

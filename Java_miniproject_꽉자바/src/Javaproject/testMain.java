@@ -10,13 +10,14 @@ public class testMain {
 		Scanner sc = new Scanner(System.in);
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
-		
-		int coin = 0;				// 게임 시작 여부 확인 변수
-		int title_menu = 0;			// 메인페이지 메뉴 변수
-		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
-		int select_menu = 0;		// 선택 메뉴 변수
+		Training tr = new Training();
+
+		int coin = 0; // 게임 시작 여부 확인 변수
+		int title_menu = 0; // 메인페이지 메뉴 변수
+		int game_menu = 0; // 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
+		int select_menu = 0; // 선택 메뉴 변수
 		String main_id = null;
-		
+
 		while (true) {
 			if (title_menu == 0) {
 				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
@@ -26,14 +27,14 @@ public class testMain {
 				String ID = sc.next();
 				System.out.print("비밀번호 입력하세요 >> ");
 				String PW = sc.next();
-				
+
 				coin = dama.login(ID, PW);
 				title_menu = 0;
-				
+
 				if (coin == 5) {
 					main_id = ID;
 					break;
-				}else {
+				} else {
 					System.out.println("아이디와 비밀번호를 확인해주세요.");
 				}
 			} else if (title_menu == 2) {
@@ -49,7 +50,7 @@ public class testMain {
 				if (coin == 5) {
 					main_id = ID;
 					break;
-				}else {
+				} else {
 					System.out.println("회원가입 실패.. 다시 시도해주세요");
 				}
 			} else if (title_menu == 3) {
@@ -71,8 +72,7 @@ public class testMain {
 				title_menu = 0;
 			}
 		}
-		
-		 
+
 		while (coin == 5) {
 			if (game_menu == 0) {
 				fc.Face_Normal(main_id);
@@ -96,31 +96,56 @@ public class testMain {
 				System.out.println("모험을 떠난다.");
 				bt.Phase(main_id);
 				game_menu = 0;
-				
-				
+
 			} else if (game_menu == 2) {
-				System.out.println("훈련을 떠난다.");
+				System.out.println("1. 3대운동 2. 맷집 3. 달리기");
+				select_menu = sc.nextInt();
+
+				if (select_menu == 1) {
+					int cnt = tr.threeT(main_id);
+
+					if (cnt > 0) {
+						System.out.println("3대운동 훈련 성공");
+					} else {
+						System.out.println("3대운동 실패..");
+					}
+				} else if (select_menu == 2) {
+					int cnt = tr.shield(main_id);
+
+					if (cnt > 0) {
+						System.out.println("맷집 강화 성공");
+					} else {
+						System.out.println("맷집 강화 실패..");
+					}
+				} else if (select_menu == 3) {
+					int cnt = tr.run(main_id);
+
+					if (cnt > 0) {
+						System.out.println("달리기 훈련 성공");
+					} else {
+						System.out.println("달리기 훈련 실패..");
+					}
+				}
+
 				game_menu = 0;
-				
-				
+
 			} else if (game_menu == 3) {
 				System.out.println("음식을 먹는다.");
 				game_menu = 0;
-				
-				
+
 			} else if (game_menu == 4) {
 				System.out.println("취침을 한다.");
-				
+
 				int cnt = sp.sleep(main_id);
-				
-				if(cnt > 0) {
-					System.out.println("회복 성공");
-				}else {
+
+				if (cnt > 0) {
+					System.out.println("일어나따!!!!");
+				} else {
 					System.out.println("회복 실패..");
 				}
-				
+
 				game_menu = 0;
-				
+
 			} else if (game_menu == 5) {
 				System.out.println(" 게임 종료 ");
 				break;

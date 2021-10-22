@@ -11,7 +11,7 @@ int result = 0;
 	public int threeT (String id) {
 			ddao.getConn();
 			try {
-				String sql = "update dama_info set expe = expe + 1, ene = 100 where id = ?";
+				String sql = "update dama_info set expe = expe + 1, atk= atk + 1, ene = ene - 10, startday = startday + 1 where id = ?";
 				
 				ddao.psmt = ddao.conn.prepareStatement(sql);
 				ddao.psmt.setString(1, id);
@@ -29,7 +29,7 @@ int result = 0;
 	public int shield (String id) {
 		ddao.getConn();
 		try {
-			String sql = "update dama_info set hp = 100, ene = 100 where id = ?";
+			String sql = "update dama_info set expe = expe + 1, def = def + 1, ene = ene - 10, startday = startday + 1 where id = ?";
 			
 			ddao.psmt = ddao.conn.prepareStatement(sql);
 			ddao.psmt.setString(1, id);
@@ -47,7 +47,7 @@ int result = 0;
 	public int run (String id) {
 		ddao.getConn();
 		try {
-			String sql = "update dama_info set hp = 100, ene = 100 where id = ?";
+			String sql = "update dama_info set expe = expe + 1, spd = spd + 1, ene = ene - 10, startday = startday + 1 where id = ?";
 			
 			ddao.psmt = ddao.conn.prepareStatement(sql);
 			ddao.psmt.setString(1, id);
