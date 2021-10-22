@@ -4,20 +4,7 @@ import java.util.Scanner;
 
 public class Battle {
 
-	private String ID;
-	private int exp;
-	private int lv;
-	private int hp;
-	private int atk;
-	private int def;
-	private int spd;
-	private int ene;
-	private int hurb;
-	private int food;
-	private int startday;
-	private int deadday;
-	private int sickday;
-
+	
 	DAMADAO dama = new DAMADAO();
 	DAMAVO st = new DAMAVO();
 

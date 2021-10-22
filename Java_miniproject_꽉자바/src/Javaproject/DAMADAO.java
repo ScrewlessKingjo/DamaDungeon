@@ -76,7 +76,7 @@ public class DAMADAO {
 	public void table2() {
 		getConn();
 		sql = "create table DAMA_INFO (" + "ID VARCHAR2(10)," + "NICK varchar2(10)," + "LV NUMBER(5)," 
-				+ "EXP NUMBER(5)," + "HP NUMBER(5)," + "ENE NUMBER(5)," + "MAX_HP NUMBER(5),"
+				+ "EXPE NUMBER(5)," + "HP NUMBER(5)," + "ENE NUMBER(5)," + "MAX_HP NUMBER(5),"
 				+ "MAX_ENE NUMBER(5)," + "ATK NUMBER(5)," + "DEF NUMBER(5)," + "SPD NUMBER(5),"
 				+ "FOOD NUMBER(5)," + "HERBS NUMBER(5)," + "STARTDAY NUMBER(5)," + "SICKDAY NUMBER(5)," 
 				+ "CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)" + ")";
@@ -150,7 +150,7 @@ public class DAMADAO {
 	public void ranksys() {
 		getConn();
 		int i=0;
-		String sql = "select * from dama_info order by Lv,exp,STARTDAY";
+		String sql = "select * from dama_info order by Lv,Expe,STARTDAY";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -159,9 +159,9 @@ public class DAMADAO {
 				String getID = rs.getString(1);
 				String getnick = rs.getString(2);
 				int getLv = rs.getInt(3);
-				int getExp = rs.getInt(4);
+				int getExpe = rs.getInt(4);
 				int getturn = rs.getInt(14);
-				System.out.println(i+"위  아이디 : "+getID + "\t닉네임 : "+getnick+"\t레벨 : "+getLv+"\t경험치 : "+getExp+"\t턴수 : "+getturn);
+				System.out.println(i+"위  아이디 : "+getID + "\t닉네임 : "+getnick+"\t레벨 : "+getLv+"\t경험치 : "+ getExpe +"\t턴수 : "+getturn);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -181,7 +181,7 @@ public class DAMADAO {
 				String getId = rs.getString(1);
 				String getNick = rs.getString(2);
 				int getLv = rs.getInt(3);
-				int getExp = rs.getInt(4);
+				int getExpe = rs.getInt(4);
 				int getHp = rs.getInt(5);
 				int getEne = rs.getInt(6);
 				int getMax_hp = rs.getInt(7);
@@ -194,7 +194,7 @@ public class DAMADAO {
 				int getStartday = rs.getInt(14);
 				int getSickday = rs.getInt(15);
 				
-				dm = new DAMAVO(getId, getNick, getLv, getExp, getHp, getEne, getMax_hp, getMax_ene, getAtk, getDef, 
+				dm = new DAMAVO(getId, getNick, getLv, getExpe, getHp, getEne, getMax_hp, getMax_ene, getAtk, getDef, 
 								getSpd, getFood, getHerbs, getStartday, getSickday);
 			}
 		} catch (SQLException e) {

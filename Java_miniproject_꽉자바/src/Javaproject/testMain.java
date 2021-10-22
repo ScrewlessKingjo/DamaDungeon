@@ -9,6 +9,8 @@ public class testMain {
 		Face fc = new Face();
 		Scanner sc = new Scanner(System.in);
 		Battle bt = new Battle();
+		Sleep sp = new Sleep();
+		
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
 		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
@@ -107,6 +109,14 @@ public class testMain {
 				
 			} else if (game_menu == 4) {
 				System.out.println("취침을 한다.");
+				
+				int cnt = sp.sleep(main_id);
+				
+				if(cnt > 0) {
+					System.out.println("회복 성공");
+				}else {
+					System.out.println("회복 실패..");
+				}
 				
 				game_menu = 0;
 				

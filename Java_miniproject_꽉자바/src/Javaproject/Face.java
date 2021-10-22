@@ -19,7 +19,7 @@ public class Face {
 		System.out.println("           .c(__ｕｕ_)");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExp());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 
 }
