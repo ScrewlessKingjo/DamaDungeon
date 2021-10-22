@@ -3,19 +3,7 @@ package Javaproject;
 // 메인 화면을 출력하는 클레스입니다.
 
 public class Face {
-	String ID;
-	int exp;
-	int Lv;
-	int Hp;
-	int atk;
-	int def;
-	int spd;
-	int ene;
-	int hurb;
-	int food;
-	int startday;
-	int deadday;
-	int sickday;
+
 	DAMADAO dama = new DAMADAO();
 	DAMAVO st = new DAMAVO();
 	
@@ -69,7 +57,7 @@ public class Face {
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("                    ");
 		System.out.println("          O---∧ _ ∧ ---O      ");
-		System.out.println("           　∩(ㅜωㅜ ;)∩     ");
+		System.out.println("           　∩(ㅜωㅜ;)∩     ");
 		System.out.println("            (  ─┬─   )     ");
 		System.out.println("            (  ─┼─   )     ");
 		System.out.println("            (  ─┴─   )∽    ");
@@ -82,8 +70,8 @@ public class Face {
 		st=dama.dama_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("              ∧ _ ∧  ");
-		System.out.println("           　 (x ＾ x)  ");
-		System.out.println("           .c(__uu__)  "); 
+		System.out.println("           　 (> ㅠ<)  ");
+		System.out.println("           .c(__uu_)  "); 
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
 		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
@@ -92,11 +80,73 @@ public class Face {
 		st=dama.dama_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("           ∧ _ ∧   ");
-		System.out.println("       　  (⊙ ω ⊙)  ");
-		System.out.println("        ┌(     _)┘   ");
+		System.out.println("       　  (● ω●)  ");
+		System.out.println("        ┌(     )┘   ");
 		System.out.println("         @@@@@@     ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
 		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
 		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
+	public void Face_Fishing(String id) {
+		st=dama.dama_loding(id);
+		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("              ∧__∧    ");
+		System.out.println("            　(ºωº )   ");
+		System.out.println("          〃⌒∠(__u__)┐ ");
+		System.out.println("          /           ");
+		System.out.println("    ><)))˚>           ");
+		System.out.println();
+		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
+		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Expe() : "+st.getExpe());
+	}
+	public void Face_Get_Medi(String id) {
+		st=dama.dama_loding(id);
+		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("              ∧__∧     ");
+		System.out.println("             (ºωº )    ");
+		System.out.println("            ∠(__u__)┐  ");
+		System.out.println("    ＠>--- 〃  ＠>---      ");
+		System.out.println("         ＠>---         ");
+		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
+		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Expe() : "+st.getExpe());
+	}
+	public void Face_Fight(String id) {
+		st=dama.dama_loding(id);
+		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("        ∧__∧    X    ∩__∩     ");
+		System.out.println("       ( ≫⌒≪) /  ＼ (≫⌒≪ )    ");
+		System.out.println("     ∽(  ___ )      (_____ )∽  ");
+		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
+		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Expe() : "+st.getExpe());
+	}
+	public void Face_Escape(String id) {
+		st=dama.dama_loding(id);
+		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("        ∩__∩         ∧___∧      ");
+		System.out.println("    ＼ (＠⌒＠ )       (◐∇ ◐;)    ");
+		System.out.println("      (_____ )∽   ∽(⊂     )⊃    ");
+		System.out.println("                   @@@@@        ");
+		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
+		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Expe() : "+st.getExpe());
+	}
+	
+	public void Face_Sick(String id) {
+		st=dama.dama_loding(id);
+		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("       ∧ _ ∧        ");
+		System.out.println("      (＠ △＠)       ");
+		System.out.println("     ┌───────┐      "); 
+		System.out.println("     │┌─────┐│      "); 
+		System.out.println("     ││     ││      "); 
+		System.out.println("     │└─────┘│      "); 
+		System.out.println("     └───────┘      "); 
+		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
+		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
+		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
+	}
+	
 }
