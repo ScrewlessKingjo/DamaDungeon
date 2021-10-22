@@ -8,7 +8,8 @@ public class Face {
 	DAMAVO st = new DAMAVO();
 	
 	public void Face_Normal(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
+		
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (O ω O)");

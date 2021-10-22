@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class DAMAVO {
 	
-	
 	private String id;
 	private String nick;
 	private int lv;
@@ -26,6 +25,13 @@ public class DAMAVO {
 	private int luk;
 	private int dummi;
 	private int jobid;
+	ArrayList<Integer> LVtable= new ArrayList<>();
+	
+	public void exeplus(int exe) {
+		this.expe+=exe;
+		VOdate();
+		
+	}
 
 
 	public String getId() {
@@ -195,10 +201,11 @@ public class DAMAVO {
 	public void setJobid(int jobid) {
 		this.jobid = jobid;
 	}
-
 	public DAMAVO() {
-		// TODO Auto-generated constructor stub
+		
 	}
+
+
 	 
 	public DAMAVO(String getId, String getNick, int getExper, int getLv, int getEne, int getMaxene, int getFood, int getHerbs, int getStart, int getSick,int job) {
 		this.id = getId;
@@ -213,7 +220,6 @@ public class DAMAVO {
 		this.sickday = getSick;
 		this.jobid = job;
 	}
-
 
 	public DAMAVO(String getId, int gethp, int getmaxhp, int getatk, int getshd, int getspd, int getstr, int getdex,
 			int getwis, int getluk, int getdummi) {
@@ -231,8 +237,38 @@ public class DAMAVO {
 		// TODO Auto-generated constructor stub
 	}
 
+	public DAMAVO(String id, String nick, int lv, int expe, int hp, int ene, int maxhp, int maxene, int atk, int spd,
+			int food, int hurbs, int startday, int sickday, int shd, int str, int dex, int wis, int luk, int dummi,
+			int jobid) {
+		super();
+		this.id = id;
+		this.nick = nick;
+		this.lv = lv;
+		this.expe = expe;
+		this.hp = hp;
+		this.ene = ene;
+		this.maxhp = maxhp;
+		this.maxene = maxene;
+		this.atk = atk;
+		this.spd = spd;
+		this.food = food;
+		this.hurbs = hurbs;
+		this.startday = startday;
+		this.sickday = sickday;
+		this.shd = shd;
+		this.str = str;
+		this.dex = dex;
+		this.wis = wis;
+		this.luk = luk;
+		this.dummi = dummi;
+		this.jobid = jobid;
+	}
+
+
 	public void VOdate(){
 		DAMADAO dama = new DAMADAO();
+		dama.battle_update(id, hp, maxhp, atk, shd, spd, str, dex, wis, luk, dummi);
+		dama.dama_update(id, nick, expe, lv, ene, maxene, food, hurbs, startday, sickday, jobid);
 		
 	}
 

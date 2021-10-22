@@ -74,7 +74,7 @@ public class DAMADAO {
 
 	public void table2() {
 		getConn();
-		sql = "CREATE TABLE DAMA_INFO (USER_ID VARCHAR2(10), NICK VARCHAR2(10), EXPER NUMBER(5), LV NUMBER(5), ENERGY NUMBER(5),MAXENERGY NUMBER(5),FOOD NUMBER(5), HERBS NUMBER(5), STARTDAY NUMBER(5), SICKDAY NUMBER(5),CONSTRAINT DAMA_FK FOREIGN KEY(USER_ID) REFERENCES USER_INFO(USER_ID))";
+		sql = "CREATE TABLE DAMA_INFO (USER_ID VARCHAR2(10), NICK VARCHAR2(10), ES NUMBER(5), LV NUMBER(5), ENERGY NUMBER(5),MAXENERGY NUMBER(5),FOOD NUMBER(5), HERBS NUMBER(5), STARTDAY NUMBER(5), SICKDAY NUMBER(5),JOBID NUMBER(5),CONSTRAINT DAMA_FK FOREIGN KEY(USER_ID) REFERENCES USER_INFO(USER_ID))";
 		try {
 			conn.createStatement();
 			psmt = conn.prepareStatement(sql);
@@ -226,7 +226,7 @@ public class DAMADAO {
 	public DAMAVO battle_loding(String id) {
 		DAMAVO dm = new DAMAVO();
 		getConn();
-		String sql = "select * from BATTLE_INFO where id = ?";
+		String sql = "select * from BATTLE_INFO where USER_id = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
@@ -251,6 +251,82 @@ public class DAMADAO {
 		} finally {
 			endClose();
 		}
+		return dm;
+	}
+	public DAMAVO vo_loding(String id) {
+		String getId = null ;
+		String getNick = null ;
+		int getExper =0;
+		int getLv =0;
+		int getEne = 0 ;
+		int getMaxene=0;
+		int getFood=0 ;
+		int getHerbs =0;
+		int getStart =0;
+		int getSick =0;
+		int getjobid =0;
+		int gethp =0;
+		int getmaxhp =0;
+		int getatk =0;
+		int getshd =0;
+		int getspd =0;
+		int getstr =0;
+		int getdex =0;
+		int getwis =0;
+		int getluk =0;
+		int getdummi=0 ;
+		DAMAVO dm = new DAMAVO();
+		getConn();
+		String sql = "select * from BATTLE_INFO where USER_id = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				getId = rs.getString(1);
+				gethp = rs.getInt(2);
+				getmaxhp = rs.getInt(3);
+				getatk = rs.getInt(4);
+				getshd = rs.getInt(5);
+				getspd = rs.getInt(6);
+				getstr = rs.getInt(7);
+				getdex = rs.getInt(8);
+				getwis = rs.getInt(9);
+				getluk = rs.getInt(10);
+				getdummi = rs.getInt(11);
+				
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		getConn();
+		sql = "select * from DAMA_INFO where user_id = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				getId = rs.getString(1);
+				getNick = rs.getString(2);
+				getExper = rs.getInt(3);
+				getLv = rs.getInt(4);
+				getEne = rs.getInt(5);
+				getMaxene = rs.getInt(6);
+				getFood = rs.getInt(7);
+				getHerbs = rs.getInt(8);
+				getStart = rs.getInt(9);
+				getSick = rs.getInt(10);
+				getjobid = rs.getInt(11);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		dm = new DAMAVO(getId, getNick, getLv, getExper, gethp, getEne, getmaxhp, getMaxene, getatk, getspd, getFood,getHerbs,getStart,getSick,getshd,getstr,getdex,getwis,getluk,getdummi,getjobid);
 		return dm;
 	}
 
@@ -278,7 +354,7 @@ public class DAMADAO {
 	
 	public int battle_update(String id,int hp, int maxhp, int atk, int shd, int spd,int str,int dex,int wis,int luk,int dummi) {        
         getConn();           
-        String sql = "update BATTLE_INFO set (USER_ID=?,HP=?,MAXHP=?,ATK=?,SHD=?,SPD=?,STR=?,DEX=?,WIS=?,LUK=?,DUMMI=?) where ID=?";;
+        String sql = "update BATTLE_INFO set USER_ID=?,HP=?,MAXHP=?,ATK=?,SHD=?,SPD=?,STR=?,DEX=?,WIS=?,LUK=?,DUMMI=? where USER_ID=?";;
         try {
            psmt = conn.prepareStatement(sql);
            psmt.setString(1, id);
@@ -303,12 +379,13 @@ public class DAMADAO {
      }
 	public int dama_update(String id,String nick, int exper,int lv, int energy, int maxenergy,int food, int herbs,int startday,int sick,int jobid) {        
         getConn();           
-        String sql = "UPDATE DAMA_INFO SET USER_ID=?,NICK=?,EXPER=?,LV=?,ENERGY=?,MAXENERGY=?,FOOD=?,HERBS=?,STARTDAY=?,SICK=?,JOBid=? where ID=?";
+        String sql = "UPDATE DAMA_INFO SET USER_ID=?,NICK=?,ES=?,LV=?,ENERGY=?,MAXENERGY=?,FOOD=?,HERBS=?,STARTDAY=?,SICKDAY=?,JOBid=? where USER_ID=?";
         try {
            psmt = conn.prepareStatement(sql);
            psmt.setString(1, id);
            psmt.setString(2, nick);
            psmt.setInt(3, exper);
+           System.out.println(exper);
            psmt.setInt(4, lv);
            psmt.setInt(5, energy);
            psmt.setInt(6, maxenergy);
