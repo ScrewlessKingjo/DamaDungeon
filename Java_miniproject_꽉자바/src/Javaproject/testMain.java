@@ -94,6 +94,7 @@ public class testMain {
 
 			} else if (game_menu == 1) {
 				System.out.println("모험을 떠난다.");
+				bt.Phase(main_id);
 				game_menu = 0;
 				
 				
