@@ -8,7 +8,7 @@ public class Eat {
 
 	DAMADAO dama = new DAMADAO();
 	Face fa = new Face();
-	DAMAVO st;
+	DAMAVO st = new DAMAVO();
 
 	public void Eat_menu(String id) {
 		int her = st.getHurbs();
@@ -33,7 +33,7 @@ public class Eat {
 			System.out.println();
 			if (her > 0) {
 				her--;
-				st.setFood(--her);
+				st.setHurbs(--her);
 				fa.Face_Eat_Medi(id);
 			}
 			System.out.println();
