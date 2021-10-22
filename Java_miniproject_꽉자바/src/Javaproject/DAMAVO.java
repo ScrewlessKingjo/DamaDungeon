@@ -25,6 +25,8 @@ public class DAMAVO {
 	private int wis;
 	private int luk;
 	private int dummi;
+	private int jobid;
+
 
 	public String getId() {
 		return id;
@@ -186,11 +188,19 @@ public class DAMAVO {
 		this.dummi = dummi;
 	}
 
+	public int getJobid() {
+		return jobid;
+	}
+
+	public void setJobid(int jobid) {
+		this.jobid = jobid;
+	}
+
 	public DAMAVO() {
 		// TODO Auto-generated constructor stub
 	}
 	 
-	public DAMAVO(String getId, String getNick, int getExper, int getLv, int getEne, int getMaxene, int getFood, int getHerbs, int getStart, int getSick) {
+	public DAMAVO(String getId, String getNick, int getExper, int getLv, int getEne, int getMaxene, int getFood, int getHerbs, int getStart, int getSick,int job) {
 		this.id = getId;
 		this.nick = getNick;
 		this.lv = getLv;
@@ -201,6 +211,7 @@ public class DAMAVO {
 		this.hurbs = getHerbs;
 		this.startday = getStart;
 		this.sickday = getSick;
+		this.jobid = job;
 	}
 
 
@@ -222,7 +233,7 @@ public class DAMAVO {
 
 	public void VOdate(){
 		DAMADAO dama = new DAMADAO();
-		dama.update(id, nick, lv, expe, hp, ene, maxhp, maxene, atk, shd, spd, food, hurbs, startday, sickday);
+		
 	}
 
 }

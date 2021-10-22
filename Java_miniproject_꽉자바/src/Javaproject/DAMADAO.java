@@ -123,14 +123,27 @@ public class DAMADAO {
 		}
 		return i;
 	}
-	
-	public void joinStators(String Id, String Nick) {
+	public void joinStators1(String Id, String Nick) {
 		getConn();
 		try {
-			String sql = "insert into DAMA_INFO values(?,?,1,1,100,100,100,100,30,10,30,5,1,1,1)";
+			String sql = "insert into DAMA_INFO values(?,?,1,1,100,100,5,1,1,1,1)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, Id);
 			psmt.setString(2, Nick);
+			psmt.executeUpdate();// 업데이트 줄수
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+	}
+	
+	public void joinStators2(String Id) {
+		getConn();
+		try {
+			String sql = "insert into BATTLE_INFO values(?,100,100,10,10,10,10,10,10,30,0)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, Id);
 			psmt.executeUpdate();// 업데이트 줄수
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -183,7 +196,7 @@ public class DAMADAO {
 	public DAMAVO dama_loding(String id) {
 		DAMAVO dm = new DAMAVO();
 		getConn();
-		String sql = "select * from DAMA_INFO where id = ?";
+		String sql = "select * from DAMA_INFO where user_id = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
@@ -199,8 +212,9 @@ public class DAMADAO {
 				int getHerbs = rs.getInt(8);
 				int getStart = rs.getInt(9);
 				int getSick = rs.getInt(10);
+				int getjobid = rs.getInt(11);
 				
-				dm = new DAMAVO(getId, getNick, getExper, getLv, getEne, getMaxene, getFood, getHerbs, getStart, getSick);
+				dm = new DAMAVO(getId, getNick, getExper, getLv, getEne, getMaxene, getFood, getHerbs, getStart, getSick, getjobid);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -243,7 +257,7 @@ public class DAMADAO {
 	public int login(String Id, String Pw) {
 		getConn();
 		int i = 0;
-		String sql = "select * from user_info where id = ? and password = ?";
+		String sql = "select * from user_info where USER_ID = ? and password = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, Id);
@@ -262,28 +276,48 @@ public class DAMADAO {
 		return i;
 	}
 	
-	public int update(String id,String nick, int lv, int exps, int hp, int ene,int max_hp, int max_ene,int atk,int def, int spd, int food,int herbs, int start, int sick) {        
+	public int battle_update(String id,int hp, int maxhp, int atk, int shd, int spd,int str,int dex,int wis,int luk,int dummi) {        
         getConn();           
-        String sql = "update DAMA_INFO set ID=?,NICK=?,LV=?,EXPE=?,HP=?,ENE=?,MAX_HP=?,MAX_ENE=?,ATK=?,DEF=?,SPD=?,FOOD=?,HERBS=?,STARTDAY=?,SICKDAY=? where ID=?";
+        String sql = "update BATTLE_INFO set (USER_ID=?,HP=?,MAXHP=?,ATK=?,SHD=?,SPD=?,STR=?,DEX=?,WIS=?,LUK=?,DUMMI=?) where ID=?";;
+        try {
+           psmt = conn.prepareStatement(sql);
+           psmt.setString(1, id);
+           psmt.setInt(2, hp);
+           psmt.setInt(3, maxhp);
+           psmt.setInt(4, atk);
+           psmt.setInt(5, shd);
+           psmt.setInt(6, spd);
+           psmt.setInt(7, str);
+           psmt.setInt(8, dex);
+           psmt.setInt(9, wis);
+           psmt.setInt(10, luk);
+           psmt.setInt(11, dummi);
+           psmt.setString(12, id);
+           result = psmt.executeUpdate();
+        } catch (SQLException e) {
+           e.printStackTrace();
+        } finally {
+           endClose();
+        }    
+        return result;
+     }
+	public int dama_update(String id,String nick, int exper,int lv, int energy, int maxenergy,int food, int herbs,int startday,int sick,int jobid) {        
+        getConn();           
+        String sql = "UPDATE DAMA_INFO SET USER_ID=?,NICK=?,EXPER=?,LV=?,ENERGY=?,MAXENERGY=?,FOOD=?,HERBS=?,STARTDAY=?,SICK=?,JOBid=? where ID=?";
         try {
            psmt = conn.prepareStatement(sql);
            psmt.setString(1, id);
            psmt.setString(2, nick);
-           psmt.setInt(3, lv);
-           psmt.setInt(4, exps);
-           System.out.println("=============="+exps+"================");
-           psmt.setInt(5, hp);
-           psmt.setInt(6, ene);
-           psmt.setInt(7, max_hp);
-           psmt.setInt(8, max_ene);
-           psmt.setInt(9, atk);
-           psmt.setInt(10, def);
-           psmt.setInt(11, spd);
-           psmt.setInt(12, food);
-           psmt.setInt(13, herbs);
-           psmt.setInt(14, start);
-           psmt.setInt(15, sick);
-           psmt.setString(16, id);
+           psmt.setInt(3, exper);
+           psmt.setInt(4, lv);
+           psmt.setInt(5, energy);
+           psmt.setInt(6, maxenergy);
+           psmt.setInt(7, food);
+           psmt.setInt(8, herbs);
+           psmt.setInt(9, startday);
+           psmt.setInt(10,sick);
+           psmt.setInt(11,jobid);
+           psmt.setString(12, id);
            result = psmt.executeUpdate();
         } catch (SQLException e) {
            e.printStackTrace();
