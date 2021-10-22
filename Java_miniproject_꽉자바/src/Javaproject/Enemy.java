@@ -11,6 +11,11 @@ public class Enemy {
 	private int En_atk;
 	private int En_def;
 	private int En_spd;
+	private int En_str;
+	private int En_dex;
+	private int En_wis;
+	private int En_luk;
+	
 	Random rd = new Random();
 
 	public Enemy() {
@@ -55,38 +60,77 @@ public class Enemy {
 	public void setEn_spd(int en_spd) {
 		En_spd = en_spd;
 	}
+	
 
+	public int getEn_str() {
+		return En_str;
+	}
+
+	public void setEn_str(int en_str) {
+		En_str = en_str;
+	}
+
+	public int getEn_dex() {
+		return En_dex;
+	}
+
+	public void setEn_dex(int en_dex) {
+		En_dex = en_dex;
+	}
+
+	public int getEn_wis() {
+		return En_wis;
+	}
+
+	public void setEn_wis(int en_wis) {
+		En_wis = en_wis;
+	}
+
+	public int getEn_luk() {
+		return En_luk;
+	}
+
+	public void setEn_luk(int en_luk) {
+		En_luk = en_luk;
+	}
+
+	
 	public Enemy getEnemy() {
 		int i = rd.nextInt(17);
 		ArrayList<Enemy> eList = new ArrayList<>();
 
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10));
-		eList.add(new Enemy("¶óÀÌÃò", 140, 20, 30, 10));
-		eList.add(new Enemy("ÆÄÀÌ¸®", 120, 35, 13, 30));
-		eList.add(new Enemy("²¿ºÎ±â", 200, 55, 20, 10));
-		eList.add(new Enemy("¹öÅÍÇÃ", 220, 60, 15, 10));
-		eList.add(new Enemy("¾ßµµ¶õ", 240, 75, 25, 10));
-		eList.add(new Enemy("ÇÇÁÔÅõ", 300, 80, 30, 10));
-		eList.add(new Enemy("¶Ç°¡½º", 120, 20, 19, 10));
-		eList.add(new Enemy("Àá¸¸º¸", 150, 120, 60, 10));
-		eList.add(new Enemy("¾ßµ·", 180, 50, 50, 60));
-		eList.add(new Enemy("Çª¸°", 120, 40, 80, 50));
-		eList.add(new Enemy("¾ËÅë¸ó", 150, 30, 90, 40));
-		eList.add(new Enemy("½º¶ó¼Ò´Ï", 130, 70, 100, 30));
-		eList.add(new Enemy("¶Çµµ°¡½º", 120, 80, 110, 20));
-		eList.add(new Enemy("¾ß¿ËÀÌ", 200, 500, 100, 60));
-		eList.add(new Enemy("¸¶ÀÚ¿ë", 310, 50, 110, 70));
-		eList.add(new Enemy("±×·¡¿ë", 320, 30, 110, 80));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+
 
 		return eList.get(i);
 	}
 
-	public Enemy(String en_name, int en_hp, int en_atk, int en_def, int en_spd) {
+	public Enemy(String en_name, int en_hp, int en_atk, int en_def, int en_spd, int en_str, int en_dex, int en_wis, int en_luk) {
 		En_name = en_name;
 		En_hp = en_hp;
 		En_atk = en_atk;
 		En_def = en_def;
 		En_spd = en_spd;
+		 En_str = en_str;
+		 En_dex = en_dex;
+		 En_wis = en_wis;
+		 En_luk = en_luk;
 	}
 
 }
