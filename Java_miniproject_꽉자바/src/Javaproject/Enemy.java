@@ -60,23 +60,23 @@ public class Enemy {
 		int i = rd.nextInt(17);
 		ArrayList<Enemy> eList = new ArrayList<>();
 
-		eList.add(new Enemy("피카츄", 100, 10, 10, 100));
-		eList.add(new Enemy("라이츄", 100, 10, 10, 100));
-		eList.add(new Enemy("파이리", 100, 10, 10, 100));
-		eList.add(new Enemy("꼬부기", 100, 10, 10, 100));
-		eList.add(new Enemy("버터플", 100, 10, 10, 100));
-		eList.add(new Enemy("야도란", 100, 10, 10, 100));
-		eList.add(new Enemy("피죤투", 100, 10, 10, 100));
-		eList.add(new Enemy("또가스", 100, 10, 10, 100));
-		eList.add(new Enemy("잠만보", 100, 10, 10, 100));
-		eList.add(new Enemy("야돈", 100, 10, 10, 100));
-		eList.add(new Enemy("푸린", 100, 10, 10, 10));
-		eList.add(new Enemy("알통몬", 100, 10, 10, 10));
-		eList.add(new Enemy("스라소니", 100, 10, 10, 10));
-		eList.add(new Enemy("또도가스", 100, 10, 10, 10));
-		eList.add(new Enemy("야옹이", 100, 10, 10, 10));
-		eList.add(new Enemy("마자용", 100, 10, 10, 10));
-		eList.add(new Enemy("그래용", 100, 10, 10, 10));
+		eList.add(new Enemy("피카츄", 150, 10, 25, 150));
+		eList.add(new Enemy("라이츄", 140, 20, 30, 140));
+		eList.add(new Enemy("파이리", 120, 35, 13, 130));
+		eList.add(new Enemy("꼬부기", 200, 55, 20, 120));
+		eList.add(new Enemy("버터플", 220, 60, 15, 110));
+		eList.add(new Enemy("야도란", 240, 75, 25, 10));
+		eList.add(new Enemy("피죤투", 300, 80, 30, 150));
+		eList.add(new Enemy("또가스", 120, 20, 19, 140));
+		eList.add(new Enemy("잠만보", 150, 120, 60, 40));
+		eList.add(new Enemy("야돈", 180, 50, 50, 60));
+		eList.add(new Enemy("푸린", 120, 40, 80, 50));
+		eList.add(new Enemy("알통몬", 150, 30, 90, 40));
+		eList.add(new Enemy("스라소니", 130, 70, 100, 30));
+		eList.add(new Enemy("또도가스", 120, 80, 110, 20));
+		eList.add(new Enemy("야옹이", 200, 500, 100, 60));
+		eList.add(new Enemy("마자용", 310, 50, 110, 70));
+		eList.add(new Enemy("그래용", 320, 30, 110, 80));
 
 		return eList.get(i);
 	}
