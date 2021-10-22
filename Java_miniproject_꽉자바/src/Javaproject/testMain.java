@@ -12,6 +12,7 @@ public class testMain {
 		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
 		String main_id = null;
+		
 		while (true) {
 			if (title_menu == 0) {
 				System.out.print("1. 로그인 2. 회원가입 3. 환경설정 4. 종료 >> ");
@@ -21,8 +22,10 @@ public class testMain {
 				String ID = sc.next();
 				System.out.print("비밀번호 입력하세요 >> ");
 				String PW = sc.next();
+				
 				coin = dama.login(ID, PW);
 				title_menu = 0;
+				
 				if (coin == 5) {
 					main_id = ID;
 					break;
@@ -104,7 +107,6 @@ public class testMain {
 				System.out.println("취침을 한다.");
 				
 				game_menu = 0;
-				
 				
 			} else if (game_menu == 5) {
 				System.out.println(" 게임 종료 ");
