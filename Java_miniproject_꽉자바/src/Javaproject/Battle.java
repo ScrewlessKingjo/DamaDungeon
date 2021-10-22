@@ -62,8 +62,12 @@ public class Battle {
 		t = ge.getEnemy();
 		st = dama.dama_loding(id);
 		Anything();
-		int user_dmg = atk - En_def;
-		int En_dmg = En_atk - def;
+		int user_dmg = atk - En_def; // 유저가 적에게 가하는 데미지
+		int En_dmg = En_atk - def; // 적이 유저에게 가하는 데미지
+		int user_EsPro = (spd-En_spd)/100; //유저가 도망에 성공할 확률 확률
+		int En_EsPro = (En_spd-spd)/100; //적이 도망에 성공할 확률
+		System.out.println(user_EsPro);
+		System.out.println(En_EsPro);
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
 		System.out.println("");
@@ -185,4 +189,7 @@ public class Battle {
 		dama.update(id, nick, lv, expe, hp, ene, max_hp, max_ene, atk, def, spd, food, hurbs, startday, sickday);
 	}
 
+	public void En_turn () {
+		
+	}
 }
