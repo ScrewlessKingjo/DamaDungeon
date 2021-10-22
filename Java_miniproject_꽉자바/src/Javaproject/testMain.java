@@ -11,6 +11,7 @@ public class testMain {
 		Scanner sc = new Scanner(System.in);
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
+		DAMAVO vo = new DAMAVO();
 		
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
@@ -67,6 +68,7 @@ public class testMain {
 			} else if (title_menu == 6) {
 				// 아이디 비번 확인하는 메소드
 				dama.select();
+				
 				title_menu = 0;
 			} else {
 				title_menu = 0;
