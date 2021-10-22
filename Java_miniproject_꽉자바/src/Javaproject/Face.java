@@ -14,7 +14,7 @@ public class Face {
 		System.out.println("           　 (O ω O)");
 		System.out.println("           .c(__ｕｕ_)");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 
@@ -25,7 +25,7 @@ public class Face {
 		System.out.println("      Zzz     _( ˘ω˘)  ");
 		System.out.println("           ∽c(____⊃⊂ ) ");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	} 
 	
@@ -37,7 +37,7 @@ public class Face {
 		System.out.println(" ><)))˚>  ( __ _  )   ");
 		System.out.println("           ˘  ˘ ˘˘   ");
 		System.out.println("    Hp()  : "+st.getHp()+"\t Ene() : "+st.getEne());
-		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getDef()+"\t Spd() : "+st.getSpd());
+		System.out.println("    Atk() : "+st.getAtk()+"\t Def() : "+st.getShd()+"\t Spd() : "+st.getSpd());
 		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 	public void Face_Eat_Medi(String id) {
@@ -48,7 +48,7 @@ public class Face {
 		System.out.println("  (_약초_)   ( __ _  )   ");
 		System.out.println("  |     |    ˘  ˘ ˘˘   ");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	
@@ -62,7 +62,7 @@ public class Face {
 		System.out.println("            (  ─┼─   )     ");
 		System.out.println("            (  ─┴─   )∽    ");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	
@@ -73,7 +73,7 @@ public class Face {
 		System.out.println("           　 (> ㅠ<)  ");
 		System.out.println("           .c(__uu_)  "); 
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_run(String id) {
@@ -84,7 +84,7 @@ public class Face {
 		System.out.println("        ┌(     )┘   ");
 		System.out.println("         @@@@@@     ");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Fishing(String id) {
@@ -97,7 +97,7 @@ public class Face {
 		System.out.println("    ><)))˚>           ");
 		System.out.println();
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Get_Medi(String id) {
@@ -109,7 +109,7 @@ public class Face {
 		System.out.println("    ＠>--- 〃  ＠>---      ");
 		System.out.println("         ＠>---         ");
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Fight(String id) {
@@ -139,7 +139,7 @@ public class Face {
 		System.out.println("     │└─────┘│      "); 
 		System.out.println("     └───────┘      "); 
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
-		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getDef()+"\t SPD : "+st.getSpd());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	

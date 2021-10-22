@@ -12,7 +12,6 @@ public class testMain {
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
 		DAMAVO vo = new DAMAVO();
-		vo.lvtableset(); //LEVEL 테이블 최초설정
 		
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
@@ -66,6 +65,7 @@ public class testMain {
 				// 테이블 생성 메소드
 				dama.table1();
 				dama.table2();
+				dama.table3();
 				title_menu = 0;
 			} else if (title_menu == 6) {
 				// 아이디 비번 확인하는 메소드
@@ -105,7 +105,6 @@ public class testMain {
 				
 			} else if (game_menu == 2) {
 				System.out.println("훈련을 떠난다.");
-				vo.experience(150);
 				game_menu = 0;
 				
 				

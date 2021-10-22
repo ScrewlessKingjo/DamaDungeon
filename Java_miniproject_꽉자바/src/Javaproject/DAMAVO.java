@@ -11,169 +11,218 @@ public class DAMAVO {
 	private int expe;
 	private int hp;
 	private int ene;
-	private int max_hp;
-	private int max_ene;
+	private int maxhp;
+	private int maxene;
 	private int atk;
-	private int def;
 	private int spd;
 	private int food;
 	private int hurbs;
 	private int startday;
 	private int sickday;
-	private ArrayList<Integer> lvtable = new ArrayList<>();
-	
-	public void lvtableset() {
-		}
-	
-	public void experience(int exe) {
-		this.expe+=exe;
-		VOdate();
-	}
-	  
+	private int shd;
+	private int str;
+	private int dex;
+	private int wis;
+	private int luk;
+	private int dummi;
+
 	public String getId() {
 		return id;
-	}
-
-	public String getNick() {
-		return nick;
-	}
-
-	public int getLv() {
-		return lv;
-	}
-
-	public int getExpe() {
-		return expe;
-	}
-
-	public int getHp() {
-		return hp;
-	}
-
-	public int getEne() {
-		return ene;
-	}
-
-	public int getMax_hp() {
-		return max_hp;
-	}
-
-	public int getMax_ene() {
-		return max_ene;
-	}
-
-	public int getAtk() {
-		return atk;
-	}
-
-	public int getDef() {
-		return def;
-	}
-
-	public int getSpd() {
-		return spd;
-	}
-
-	public int getFood() {
-		return food;
-	}
-
-	public int getHurbs() {
-		return hurbs;
-	}
-
-	public int getStartday() {
-		return startday;
-	}
-
-	public int getSickday() {
-		return sickday;
 	}
 
 	public void setId(String id) {
 		this.id = id;
 	}
 
+	public String getNick() {
+		return nick;
+	}
+
 	public void setNick(String nick) {
 		this.nick = nick;
+	}
+
+	public int getLv() {
+		return lv;
 	}
 
 	public void setLv(int lv) {
 		this.lv = lv;
 	}
 
+	public int getExpe() {
+		return expe;
+	}
+
 	public void setExpe(int expe) {
 		this.expe = expe;
+	}
+
+	public int getHp() {
+		return hp;
 	}
 
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
 
+	public int getEne() {
+		return ene;
+	}
+
 	public void setEne(int ene) {
 		this.ene = ene;
 	}
 
-	public void setMax_hp(int max_hp) {
-		this.max_hp = max_hp;
+	public int getMaxhp() {
+		return maxhp;
 	}
 
-	public void setMax_ene(int max_ene) {
-		this.max_ene = max_ene;
+	public void setMaxhp(int maxhp) {
+		this.maxhp = maxhp;
+	}
+
+	public int getMaxene() {
+		return maxene;
+	}
+
+	public void setMaxene(int maxene) {
+		this.maxene = maxene;
+	}
+
+	public int getAtk() {
+		return atk;
 	}
 
 	public void setAtk(int atk) {
 		this.atk = atk;
 	}
 
-	public void setDef(int def) {
-		this.def = def;
+	public int getSpd() {
+		return spd;
 	}
 
 	public void setSpd(int spd) {
 		this.spd = spd;
 	}
 
+	public int getFood() {
+		return food;
+	}
+
 	public void setFood(int food) {
 		this.food = food;
+	}
+
+	public int getHurbs() {
+		return hurbs;
 	}
 
 	public void setHurbs(int hurbs) {
 		this.hurbs = hurbs;
 	}
 
+	public int getStartday() {
+		return startday;
+	}
+
 	public void setStartday(int startday) {
 		this.startday = startday;
+	}
+
+	public int getSickday() {
+		return sickday;
 	}
 
 	public void setSickday(int sickday) {
 		this.sickday = sickday;
 	}
 
-	public DAMAVO() {}
-
-	public DAMAVO(String id, String nick, int lv, int expe, int hp, int ene, int max_hp, int max_ene, int atk, int def,
-			int spd, int food, int hurbs, int startday, int sickday) {
-		super();
-		this.id = id;
-		this.nick = nick;
-		this.lv = lv;
-		this.expe = expe;
-		this.hp = hp;
-		this.ene = ene;
-		this.max_hp = max_hp;
-		this.max_ene = max_ene;
-		this.atk = atk;
-		this.def = def;
-		this.spd = spd;
-		this.food = food;
-		this.hurbs = hurbs;
-		this.startday = startday;
-		this.sickday = sickday;
+	public int getShd() {
+		return shd;
 	}
+
+	public void setShd(int shd) {
+		this.shd = shd;
+	}
+
+	public int getStr() {
+		return str;
+	}
+
+	public void setStr(int str) {
+		this.str = str;
+	}
+
+	public int getDex() {
+		return dex;
+	}
+
+	public void setDex(int dex) {
+		this.dex = dex;
+	}
+
+	public int getWis() {
+		return wis;
+	}
+
+	public void setWis(int wis) {
+		this.wis = wis;
+	}
+
+	public int getLuk() {
+		return luk;
+	}
+
+	public void setLuk(int luk) {
+		this.luk = luk;
+	}
+
+	public int getDummi() {
+		return dummi;
+	}
+
+	public void setDummi(int dummi) {
+		this.dummi = dummi;
+	}
+
+	public DAMAVO() {
+		// TODO Auto-generated constructor stub
+	}
+	 
+	public DAMAVO(String getId, String getNick, int getExper, int getLv, int getEne, int getMaxene, int getFood, int getHerbs, int getStart, int getSick) {
+		this.id = getId;
+		this.nick = getNick;
+		this.lv = getLv;
+		this.expe = getExper;
+		this.ene = getEne;
+		this.maxene = getMaxene;
+		this.food = getFood;
+		this.hurbs = getHerbs;
+		this.startday = getStart;
+		this.sickday = getSick;
+	}
+
+
+	public DAMAVO(String getId, int gethp, int getmaxhp, int getatk, int getshd, int getspd, int getstr, int getdex,
+			int getwis, int getluk, int getdummi) {
+		this.id = getId;
+		this.hp = gethp;
+		this.maxhp = getmaxhp;
+		this.atk = getatk;
+		this.shd = getshd;
+		this.spd = getspd;
+		this.str = getstr;
+		this.dex = getdex;
+		this.wis = getwis;
+		this.luk = getluk;
+		this.dummi = getdummi;
+		// TODO Auto-generated constructor stub
+	}
+
 	public void VOdate(){
 		DAMADAO dama = new DAMADAO();
-		dama.update(id, nick, lv, expe, hp, ene, max_hp, max_ene, atk, def, spd, food, hurbs, startday, sickday);
+		dama.update(id, nick, lv, expe, hp, ene, maxhp, maxene, atk, shd, spd, food, hurbs, startday, sickday);
 	}
 
 }

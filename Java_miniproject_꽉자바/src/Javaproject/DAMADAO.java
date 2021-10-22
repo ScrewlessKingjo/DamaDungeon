@@ -60,8 +60,7 @@ public class DAMADAO {
 	public void table1() {
 		getConn();
 
-		sql = "create table user_info " + "(ID varchar2(10)," + "PASSWORD NUMBER(10) NOT NULL," 
-				+ "CONSTRAINT INFO_PK PRIMARY KEY (ID)" + ")";
+		sql = "CREATE TABLE USER_INFO (USER_ID varchar2(10),PASSWORD varchar2(10) NOT NULL,CONSTRAINT INFO_PK PRIMARY KEY (USER_ID))";
 		try {
 			conn.createStatement();
 			psmt = conn.prepareStatement(sql);
@@ -75,11 +74,7 @@ public class DAMADAO {
 
 	public void table2() {
 		getConn();
-		sql = "create table DAMA_INFO (" + "ID VARCHAR2(10)," + "NICK varchar2(10)," + "LV NUMBER(5)," 
-				+ "EXPE NUMBER(5)," + "HP NUMBER(5)," + "ENE NUMBER(5)," + "MAX_HP NUMBER(5),"
-				+ "MAX_ENE NUMBER(5)," + "ATK NUMBER(5)," + "DEF NUMBER(5)," + "SPD NUMBER(5),"
-				+ "FOOD NUMBER(5)," + "HERBS NUMBER(5)," + "STARTDAY NUMBER(5)," + "SICKDAY NUMBER(5)," 
-				+ "CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)" + ")";
+		sql = "CREATE TABLE DAMA_INFO (USER_ID VARCHAR2(10), NICK VARCHAR2(10), EXPER NUMBER(5), LV NUMBER(5), ENERGY NUMBER(5),MAXENERGY NUMBER(5),FOOD NUMBER(5), HERBS NUMBER(5), STARTDAY NUMBER(5), SICKDAY NUMBER(5),CONSTRAINT DAMA_FK FOREIGN KEY(USER_ID) REFERENCES USER_INFO(USER_ID))";
 		try {
 			conn.createStatement();
 			psmt = conn.prepareStatement(sql);
@@ -90,6 +85,20 @@ public class DAMADAO {
 			endClose();
 		}
 	}
+	public void table3() {
+		getConn();
+		sql = "CREATE TABLE BATTLE_INFO (USER_ID VARCHAR2(10), HP NUMBER(5),MAXHP NUMBER(5),ATK NUMBER(5),SHD NUMBER(5),SPD NUMBER(5),STR NUMBER(5),DEX NUMBER(5),WIS NUMBER(5),LUK NUMBER(5),DUMMI NUMBER(5), CONSTRAINT BATTLE_FK FOREIGN KEY(USER_ID) REFERENCES USER_INFO(USER_ID))";
+		try {
+			conn.createStatement();
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+	}
+
 	
 	public int join(String Id, String Pw) {
 		int i=0;
@@ -147,10 +156,11 @@ public class DAMADAO {
 			endClose();
 		}
 	}
+	
 	public void ranksys() {
 		getConn();
 		int i=0;
-		String sql = "select * from dama_info order by Lv,Expe,STARTDAY";
+		String sql = "select * from dama_info order by Lv,Exper,STARTDAY";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -158,9 +168,9 @@ public class DAMADAO {
 				i++;
 				String getID = rs.getString(1);
 				String getnick = rs.getString(2);
-				int getLv = rs.getInt(3);
-				int getExpe = rs.getInt(4);
-				int getturn = rs.getInt(14);
+				int getLv = rs.getInt(4);
+				int getExpe = rs.getInt(3);
+				int getturn = rs.getInt(9);
 				System.out.println(i+"위  아이디 : "+getID + "\t닉네임 : "+getnick+"\t레벨 : "+getLv+"\t경험치 : "+ getExpe +"\t턴수 : "+getturn);
 			}
 		} catch (SQLException e) {
@@ -169,6 +179,7 @@ public class DAMADAO {
 			endClose();
 		}
 	}
+	
 	public DAMAVO dama_loding(String id) {
 		DAMAVO dm = new DAMAVO();
 		getConn();
@@ -180,22 +191,46 @@ public class DAMADAO {
 			if (rs.next()) {
 				String getId = rs.getString(1);
 				String getNick = rs.getString(2);
-				int getLv = rs.getInt(3);
-				int getExpe = rs.getInt(4);
-				int getHp = rs.getInt(5);
-				int getEne = rs.getInt(6);
-				int getMax_hp = rs.getInt(7);
-				int getMax_ene = rs.getInt(8);
-				int getAtk = rs.getInt(9);
-				int getDef = rs.getInt(10);
-				int getSpd = rs.getInt(11);
-				int getFood = rs.getInt(12);
-				int getHerbs = rs.getInt(13);
-				int getStartday = rs.getInt(14);
-				int getSickday = rs.getInt(15);
+				int getExper = rs.getInt(3);
+				int getLv = rs.getInt(4);
+				int getEne = rs.getInt(5);
+				int getMaxene = rs.getInt(6);
+				int getFood = rs.getInt(7);
+				int getHerbs = rs.getInt(8);
+				int getStart = rs.getInt(9);
+				int getSick = rs.getInt(10);
 				
-				dm = new DAMAVO(getId, getNick, getLv, getExpe, getHp, getEne, getMax_hp, getMax_ene, getAtk, getDef, 
-								getSpd, getFood, getHerbs, getStartday, getSickday);
+				dm = new DAMAVO(getId, getNick, getExper, getLv, getEne, getMaxene, getFood, getHerbs, getStart, getSick);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+		return dm;
+	}
+	public DAMAVO battle_loding(String id) {
+		DAMAVO dm = new DAMAVO();
+		getConn();
+		String sql = "select * from BATTLE_INFO where id = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				String getId = rs.getString(1);
+				int gethp = rs.getInt(2);
+				int getmaxhp = rs.getInt(3);
+				int getatk = rs.getInt(4);
+				int getshd = rs.getInt(5);
+				int getspd = rs.getInt(6);
+				int getstr = rs.getInt(7);
+				int getdex = rs.getInt(8);
+				int getwis = rs.getInt(9);
+				int getluk = rs.getInt(10);
+				int getdummi = rs.getInt(11);
+				
+				dm = new DAMAVO(getId, gethp, getmaxhp, getatk, getshd, getspd, getstr, getdex, getwis, getluk, getdummi);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -227,16 +262,16 @@ public class DAMADAO {
 		return i;
 	}
 	
-	public int update(String id,String nick, int lv, int expe, int hp, int ene,int max_hp, int max_ene,int atk,int def, int spd, int food,int herbs, int start, int sick) {        
+	public int update(String id,String nick, int lv, int exps, int hp, int ene,int max_hp, int max_ene,int atk,int def, int spd, int food,int herbs, int start, int sick) {        
         getConn();           
-        String sql = "update DAMA_INFO set id=?,nick=?,lv=?,expe=?,hp=?,ene=?,max_hp=?,max_ene=?,atk=?,def=?,spd=?,food=?,herbs=?,startday=?,sickday=? where id=?";
+        String sql = "update DAMA_INFO set ID=?,NICK=?,LV=?,EXPE=?,HP=?,ENE=?,MAX_HP=?,MAX_ENE=?,ATK=?,DEF=?,SPD=?,FOOD=?,HERBS=?,STARTDAY=?,SICKDAY=? where ID=?";
         try {
            psmt = conn.prepareStatement(sql);
            psmt.setString(1, id);
            psmt.setString(2, nick);
            psmt.setInt(3, lv);
-           psmt.setInt(4, expe);
-           System.out.println("=============="+expe+"================");
+           psmt.setInt(4, exps);
+           System.out.println("=============="+exps+"================");
            psmt.setInt(5, hp);
            psmt.setInt(6, ene);
            psmt.setInt(7, max_hp);
