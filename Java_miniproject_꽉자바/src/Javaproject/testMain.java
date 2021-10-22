@@ -65,7 +65,7 @@ public class testMain {
 			}
 		}
 		
-		
+		 
 		while (coin == 5) {
 			if (game_menu == 0) {
 				fc.Face_Normal(main_id);

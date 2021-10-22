@@ -40,7 +40,7 @@ public class DAMADAO {
 			e.printStackTrace();
 		}
 	}
-
+ 
 	public void endClose() {
 		try {
 			if (rs != null) {
