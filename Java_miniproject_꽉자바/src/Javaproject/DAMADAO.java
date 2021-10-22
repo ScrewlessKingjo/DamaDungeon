@@ -31,9 +31,9 @@ public class DAMADAO {
 	public void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "hr";
-			String password = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "cgi_2_3_1022";
+			String password = "smhrd3";
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) { // 어떠한 오류라도 발생시 캐치해주는 역활
 			System.out.println("연결 오류");
@@ -75,10 +75,10 @@ public class DAMADAO {
 
 	public void table2() {
 		getConn();
-		sql = "create table DAMA_INFO (" + "ID VARCHAR2(10)," + "EXP NUMBER(4),"
-				+ "LV NUMBER(3)," + "HP NUMBER(5)," + "ATK NUMBER(5)," + "DEF NUMBER(5)," + "SPD NUMBER(3),"
-				+ "ENERGY NUMBER(5)," + "FOOD NUMBER(3)," + "HERBS NUMBER(3)," + "STARTDAY NUMBER(3),"
-				+ "DEADDAY NUMBER(3)," + "SICKDAY NUMBER(3)," + "NICK varchar2(10),"
+		sql = "create table DAMA_INFO (" + "ID VARCHAR2(10)," + "NICK varchar2(10)," + "LV NUMBER(5)," 
+				+ "EXP NUMBER(5)," + "HP NUMBER(5)," + "ENE NUMBER(5)," + "MAX_HP NUMBER(5),"
+				+ "MAX_ENE NUMBER(5)," + "ATK NUMBER(5)," + "DEF NUMBER(5)," + "SPD NUMBER(5),"
+				+ "FOOD NUMBER(5)," + "HERBS NUMBER(5)," + "STARTDAY NUMBER(5)," + "SICKDAY NUMBER(5)," 
 				+ "CONSTRAINT DAMA_FK FOREIGN KEY (ID) REFERENCES user_info(ID)" + ")";
 		try {
 			conn.createStatement();
@@ -90,32 +90,15 @@ public class DAMADAO {
 			endClose();
 		}
 	}
-
-	public int insert(String id, String pw, String nick) {
-
-		getConn();
-		try {
-			String sql = "insert into user_info values(?,?,?)";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
-			psmt.setString(3, nick);
-			result = psmt.executeUpdate();// 업데이트 줄수
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			endClose();
-		}
-		return result;
-	}
-	public int join(String id, String pw) {
+	
+	public int join(String Id, String Pw) {
 		int i=0;
 		getConn();
 		try {
 			String sql = "insert into user_info values(?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
+			psmt.setString(1, Id);
+			psmt.setString(2, Pw);
 			int up=psmt.executeUpdate();// 업데이트 줄수
 			if (up>0) {
 				i=5;
@@ -131,13 +114,14 @@ public class DAMADAO {
 		}
 		return i;
 	}
-	public void joinStators(String id, String nick) {
+	
+	public void joinStators(String Id, String Nick) {
 		getConn();
 		try {
-			String sql = "insert into DAMA_INFO values(?,1,1,100,30,10,30,100,5,1,1,1,1,?)";
+			String sql = "insert into DAMA_INFO values(?,?,1,1,100,100,100,100,30,10,30,5,1,1,1)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setString(2, nick);
+			psmt.setString(1, Id);
+			psmt.setString(2, Nick);
 			psmt.executeUpdate();// 업데이트 줄수
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -153,9 +137,9 @@ public class DAMADAO {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
-				String getID = rs.getString(1);
-				String getPW = rs.getString(2);
-				System.out.println("아이디 : "+getID + " 비밀번호 : "+getPW);
+				String getId = rs.getString(1);
+				String getPw = rs.getString(2);
+				System.out.println("아이디 : " + getId + " 비밀번호 : " + getPw);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -172,21 +156,24 @@ public class DAMADAO {
 			psmt.setString(1, id);
 			rs = psmt.executeQuery();
 			if (rs.next()) {
-				String getID = rs.getString(1);
-				int getEXP = rs.getInt(2);
-				int getLEVEL = rs.getInt(3);
-				int getHP = rs.getInt(4);
-				int getATK = rs.getInt(5);
-				int getDEF = rs.getInt(6);
-				int getSPD = rs.getInt(7);
-				int getENERGY = rs.getInt(8);
-				int getFOOD = rs.getInt(9);
-				int getHERBS = rs.getInt(10);
-				int getSTART = rs.getInt(11);
-				int getDEAD = rs.getInt(12);
-				int getSICK = rs.getInt(13);
-				String getNICK = rs.getString(14);
-				dm = new DAMAVO(getID,getEXP,getLEVEL,getHP,getATK,getDEF,getSPD,getENERGY,getFOOD,getHERBS,getSTART,getDEAD,getSICK,getNICK);
+				String getId = rs.getString(1);
+				String getNick = rs.getString(2);
+				int getLv = rs.getInt(3);
+				int getExp = rs.getInt(4);
+				int getHp = rs.getInt(5);
+				int getEne = rs.getInt(6);
+				int getMax_hp = rs.getInt(7);
+				int getMax_ene = rs.getInt(8);
+				int getAtk = rs.getInt(9);
+				int getDef = rs.getInt(10);
+				int getSpd = rs.getInt(11);
+				int getFood = rs.getInt(12);
+				int getHerbs = rs.getInt(13);
+				int getStartday = rs.getInt(14);
+				int getSickday = rs.getInt(15);
+				
+				dm = new DAMAVO(getId, getNick, getLv, getExp, getHp, getEne, getMax_hp, getMax_ene, getAtk, getDef, 
+								getSpd, getFood, getHerbs, getStartday, getSickday);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -196,14 +183,14 @@ public class DAMADAO {
 		return dm;
 	}
 
-	public int login(String ID, String PW) {
+	public int login(String Id, String Pw) {
 		getConn();
 		int i = 0;
 		String sql = "select * from user_info where id = ? and password = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, ID);
-			psmt.setString(2, PW);
+			psmt.setString(1, Id);
+			psmt.setString(2, Pw);
 			rs = psmt.executeQuery();
 			if (rs.next()) {
 				i = 5;
@@ -217,40 +204,5 @@ public class DAMADAO {
 		}
 		return i;
 	}
-	
-
-	public int update(String set, String where) {
-		getConn();
-		try {
-			String sql = "update user_info set pw = ? where id =? ";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, set);
-			psmt.setString(2, where);
-			result = psmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			endClose();
-		}
-		return result;
-
-	}
-
-	public int delete(String id, String pw) {
-		getConn();
-		try {
-			String sql = "delete from user_info where id=? and pw =?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
-			result = psmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			endClose();
-		}
-		return result;
-	}
-
-	
+		
 }
