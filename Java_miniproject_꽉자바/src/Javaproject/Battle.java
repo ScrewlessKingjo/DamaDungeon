@@ -425,14 +425,15 @@ public class Battle {
 				if (En_dmgR < 0) {
 					En_dmgR = 0;
 				}
-				fc.Face_Fight(id);
-				System.out.println(En_name + "의 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
-				System.out.println("");
 				if (shd >= En_dmgR) {
 					En_dmgR = 0;
 				} else {
 					hp -= En_dmgR;
 				}
+				fc.Face_Fight(id);
+				System.out.println(En_name + "의 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
+				System.out.println("");
+
 			}
 
 		} else {
