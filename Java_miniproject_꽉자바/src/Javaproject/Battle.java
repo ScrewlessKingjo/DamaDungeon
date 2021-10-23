@@ -252,15 +252,15 @@ public class Battle {
 						System.out.println("에너지가 없다! 지금 파이어볼을 쓰는 건 위험하다!");
 						System.out.println("");
 					} else {
-						user_dmg = (atk * wis) / 2;
+						int fire_dmg = (atk * wis) / 2;
 						if ((atk * wis) % 2 == 1) {
-							user_dmg = (atk * wis + 1) / 2;
+							fire_dmg = (atk * wis + 1) / 2;
 						}
 						ene -= 30;
 						System.out.println(
-								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + user_dmg + "의 데미지를 받았다!");
+								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + fire_dmg + "의 데미지를 받았다!");
 						System.out.println("");
-						En_hp -= user_dmg;
+						En_hp -= fire_dmg;
 						break;
 					}
 				} else if (choice_skill == 2) {
@@ -415,11 +415,11 @@ public class Battle {
 			if (WeightsPro(En_CriPro)) {
 				En_dmgR = En_atk;
 				fc.Face_Cri(id);
-				System.out.println(En_name + "의 치명적인 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
-				System.out.println("");
 				if (shd >= En_atk) {
 					En_dmgR = 0;
-				}
+				}		
+				System.out.println(En_name + "의 치명적인 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
+				System.out.println("");
 				hp -= En_dmgR;
 			} else {
 				if (En_dmgR < 0) {
