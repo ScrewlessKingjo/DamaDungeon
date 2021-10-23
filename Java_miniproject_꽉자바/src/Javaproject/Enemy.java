@@ -99,7 +99,7 @@ public class Enemy {
 		int i = rd.nextInt(17);
 		ArrayList<Enemy> eList = new ArrayList<>();
 
-		eList.add(new Enemy("1", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("1", 10, 10, 25, 10, 10, 10, 10, 10));
 		eList.add(new Enemy("2", 150, 10, 25, 10, 10, 10, 10, 10));
 		eList.add(new Enemy("3", 150, 10, 25, 10, 10, 10, 10, 10));
 		eList.add(new Enemy("4", 150, 10, 25, 10, 10, 10, 10, 10));
@@ -118,7 +118,7 @@ public class Enemy {
 		eList.add(new Enemy("17", 150, 10, 25, 10, 10, 10, 10, 10));
 
 
-		return eList.get(i);
+		return eList.get(0);
 	}
 
 	public Enemy(String en_name, int en_hp, int en_atk, int en_def, int en_spd, int en_str, int en_dex, int en_wis, int en_luk) {

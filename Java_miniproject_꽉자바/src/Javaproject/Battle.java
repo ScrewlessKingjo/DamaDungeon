@@ -63,10 +63,10 @@ public class Battle {
 	int En_CriPro;
 	int En_dmgR;
 	private int user_dmg = 0;
-	
+
 	// DAMAVO와 Enemy에서 각각 유저 스탯, 적 스탯을 불러옴.
 	public void Anything() {
-		
+
 		id = st.getId();
 		nick = st.getNick();
 		lv = st.getLv();
@@ -105,7 +105,6 @@ public class Battle {
 
 		// 적 데미지 분산값
 
-
 		// 가중확률 선언. Turn 메소드 내에서 계산된 확률 기반.
 		WeightsPro(user_EsPro);
 		WeightsPro(user_HitPro);
@@ -113,7 +112,7 @@ public class Battle {
 		WeightsPro(En_EsPro);
 		WeightsPro(En_HitPro);
 		WeightsPro(En_CriPro);
-		
+
 		int[] En_dmgList = { En_dmg - 5, En_dmg - 4, En_dmg - 3, En_dmg - 2, En_dmg - 1, En_dmg, En_dmg + 1, En_dmg + 2,
 				En_dmg + 3, En_dmg + 4, En_dmg + 5 };
 		int En_dmgDev = rd.nextInt(10);
@@ -125,21 +124,20 @@ public class Battle {
 
 		int basePro = 50;
 
-		int En_EsPro = basePro + (En_spd - spd);
-		int En_HitPro = (basePro + 20) + (En_spd - spd);
-		int En_CriPro = (basePro - 40) + (En_luk - luk);
-
+		En_EsPro = basePro + (En_spd - spd);
+		En_HitPro = (basePro + 20) + (En_spd - spd);
+		En_CriPro = (basePro - 40) + (En_luk - luk);
 
 	}
 
 	// 전투 기본 메소드
 	public void Phase(String id) {
-		
+
 		Enemy ge = new Enemy();
 		t = ge.getEnemy();
-		st = dama.vo_loding(id);	
+		st = dama.vo_loding(id);
+
 		Anything();
-		
 
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
@@ -177,7 +175,7 @@ public class Battle {
 
 	// 유저 턴 메소드
 	public int Turn() {
-		
+
 		System.out.println(st.getNick() + "의 턴");
 
 		Anything();
@@ -233,7 +231,6 @@ public class Battle {
 								En_hp -= user_dmgR;
 							}
 						}
-						break;
 					} else {
 						fc.Face_Miss(id);
 						System.out.println(En_name + " 회피! " + st.getNick() + "은(는) 아무런 피해도 입히지 못했다!");
@@ -265,12 +262,11 @@ public class Battle {
 						System.out.println("");
 						En_hp -= user_dmg;
 					}
-					break;
 				} else if (choice_skill == 2) {
 					int a = 30;
 
 					if (hp <= 30) {
-						System.out.println(st.getNick() + " : '그래. 이젠 이 방법밖엔 없어..'");
+						System.out.println(st.getNick() + " : '그래. 이젠 이 방법밖엔 없어..!'");
 					} else {
 						user_dmg = (atk * wis * str) / 2;
 						if ((atk * wis) % 2 == 1) {
@@ -283,7 +279,7 @@ public class Battle {
 						En_hp -= user_dmg;
 						hp -= a;
 					}
-					break;
+
 				} else if (choice_skill == 3) {
 					if (hurbs < 1) {
 						System.out.println("약초가 없다! 회복이 불가능하다!");
@@ -298,7 +294,6 @@ public class Battle {
 						System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
 						System.out.println("");
 					}
-					break;
 				}
 
 			}
@@ -328,21 +323,19 @@ public class Battle {
 						hp -= En_dmgR;
 
 					}
-					break;
 				}
 			}
-
+			break;
 		}
 		return turnCount;
 	}
 
 	// 적 턴 메소드
 	public int En_Turn() {
-		
-		Anything();
-		
-		System.out.println(t.getEn_name() + "의 턴");
 
+		Anything();
+
+		System.out.println(t.getEn_name() + "의 턴");
 
 		if (En_hp < user_dmg && En_EsPro < 50) {
 			if (WeightsPro(En_EsPro)) {
@@ -393,7 +386,6 @@ public class Battle {
 
 	public static int getRandom(int p_start, int p_end) {
 
-
 		Random rnd = new Random();
 
 		if (p_start >= p_end) {
@@ -406,10 +398,10 @@ public class Battle {
 		}
 
 	}
-	
-	//적 턴 알고리즘
+
+	// 적 턴 알고리즘
 	public void En_Attack() {
-		
+
 		int En_dmg = (En_str + En_atk - shd);
 		int[] En_dmgList = { En_dmg - 5, En_dmg - 4, En_dmg - 3, En_dmg - 2, En_dmg - 1, En_dmg, En_dmg + 1, En_dmg + 2,
 				En_dmg + 3, En_dmg + 4, En_dmg + 5 };
@@ -419,11 +411,7 @@ public class Battle {
 		int En_EsPro = basePro + (En_spd - spd);
 		int En_HitPro = (basePro + 20) + (En_spd - spd);
 		int En_CriPro = (basePro - 40) + (En_luk - luk);
-		
-		System.out.println("적탈출확률" + En_EsPro);
-		System.out.println("적명중률" + En_HitPro);
-		System.out.println("적치명율" + En_CriPro);
-		
+
 		if (WeightsPro(En_HitPro)) {
 			if (WeightsPro(En_CriPro)) {
 				En_dmgR = En_atk;
@@ -492,5 +480,3 @@ public class Battle {
 		System.out.println("적치명율" + En_CriPro);
 	}
 }
-
-
