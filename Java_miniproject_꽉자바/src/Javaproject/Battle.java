@@ -47,7 +47,7 @@ public class Battle {
 	private int En_dex;
 	private int En_wis;
 	private int En_luk;
-	private int EN_turnCount =0;
+	private int EN_turnCount = 0;
 
 	// 적 공격력 선언. 적의 속도가 빠를 경우 턴 메소드 실행 이전에 선공을 진행하므로 미리 선언함
 	int En_dmg;
@@ -136,11 +136,11 @@ public class Battle {
 	public void Phase(String id, int a) {
 		Enemy ge = new Enemy();
 		st = dama.vo_loding(id);
-		if (a==1) {
-		t = ge.getEnemyLand(id);
-		} else if (a==2) {
+		if (a == 1) {
+			t = ge.getEnemyLand(id);
+		} else if (a == 2) {
 			t = ge.getEnemySea(id);
-		} else if (a==3) {
+		} else if (a == 3) {
 			t = ge.getEnemyAir(id);
 		}
 
@@ -157,10 +157,11 @@ public class Battle {
 			}
 		}
 		while (true) {
-			if (turnCount == 2|| EN_turnCount == 2) {
+			if (turnCount == 2 || EN_turnCount == 2) {
 				System.out.println("도망 성공");
 				break;
 			}
+			checkEnValues();
 			System.out.println(t.getEn_name() + " 정보// 체력 :" + En_hp + " 공격력 : " + En_atk + " 방어력 : " + En_def
 					+ " 속도 : " + En_spd);
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
@@ -172,10 +173,15 @@ public class Battle {
 				break;
 			} else if (En_hp < 1) {
 				System.out.println("이겼다!" + t.getEn_name() + "을 해치웠다!");
+				System.out.println(st.getNick() + "은(는) " + t.getEn_hp() + "만큼의 경험치를 얻었다!");
+				st.VO_experience(t.getEn_hp(), id);
 				break;
 			}
 
 		}
+		dama.vo_update(id, st.getNick(), st.getLv(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 	}
 
 	// 유저 턴 메소드
@@ -277,19 +283,19 @@ public class Battle {
 
 					if (hp <= 30) {
 						System.out.println(st.getNick() + " : '그래. 이젠 이 방법밖엔 없어..!'");
-					} else {
-						user_dmg = (atk * wis * str) / 2;
-						if ((atk * wis) % 2 == 1) {
-							user_dmg = (atk * wis + 1) / 2;
-						}
-						ene -= 30;
-						System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + user_dmg + "의 데미지를 받았다!");
-						System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
-						System.out.println("");
-						En_hp -= user_dmg;
-						hp -= a;
-						break;
 					}
+
+					int charge_dmg = (atk * wis * str) / 2;
+					if ((atk * wis) % 2 == 1) {
+						charge_dmg = (atk * wis + 1) / 2;
+					}
+					ene -= 30;
+					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
+					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
+					System.out.println("");
+					En_hp -= charge_dmg;
+					hp -= a;
+					break;
 
 				} else if (choice_skill == 3) {
 					if (hurbs < 1) {
@@ -334,7 +340,6 @@ public class Battle {
 						}
 						hp -= En_dmgR;
 						break;
-
 					}
 				}
 			}
@@ -349,7 +354,7 @@ public class Battle {
 		if (En_hp < user_dmg && En_EsPro < 50) {
 			if (WeightsPro(En_EsPro)) {
 				System.out.println(En_name + "이(가) 도망쳤다!");
-				EN_turnCount =2;
+				EN_turnCount = 2;
 			} else {
 				En_Attack();
 			}
@@ -426,7 +431,7 @@ public class Battle {
 				fc.Face_Cri(id);
 				if (shd >= En_atk) {
 					En_dmgR = 0;
-				}		
+				}
 				System.out.println(En_name + "의 치명적인 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
 				System.out.println("");
 				hp -= En_dmgR;
@@ -439,7 +444,7 @@ public class Battle {
 				} else {
 					hp -= En_dmgR;
 				}
-				
+
 				fc.Face_Fight(id);
 				System.out.println(En_name + "의 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
 				System.out.println("");

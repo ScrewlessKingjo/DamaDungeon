@@ -150,7 +150,7 @@ public class Enemy {
 
 
 
-		return eList.get(0);
+		return eList.get(i);
 		
 	}
 	
@@ -195,7 +195,7 @@ public class Enemy {
 
 
 
-		return eList.get(0);
+		return eList.get(i);
 		
 	}
 
@@ -240,7 +240,7 @@ public class Enemy {
 
 
 
-		return eList.get(0);
+		return eList.get(i);
 		
 	}
 	

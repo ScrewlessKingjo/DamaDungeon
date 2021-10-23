@@ -21,6 +21,7 @@ public class testMain {
 		mu.BattleBrothers();
 		while (true) {
 			if (title_menu == 0) {
+				fc.face_main();
 				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
 				title_menu = sc.nextInt();
 			} else if (title_menu == 1) {
