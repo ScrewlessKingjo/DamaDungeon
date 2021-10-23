@@ -173,7 +173,7 @@ public class DAMADAO {
 	public void ranksys() {
 		getConn();
 		int i=0;
-		String sql = "select * from DAMA_INFO order by Lv,Es asc";
+		String sql = "select * from dama_info order by LV desc";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -184,8 +184,30 @@ public class DAMADAO {
 				int getLv = rs.getInt(4);
 				int getExpe = rs.getInt(3);
 				int getturn = rs.getInt(9);
-				System.out.println(i+"위  아이디 : "+getID + "\t닉네임 : "+getnick+"\t레벨 : "+getLv+"\t경험치 : "+ getExpe +"\t턴수 : "+getturn);
+				System.out.println(i+"위  아이디 : "+getID + "\t  닉네임 : "+getnick+"\t  레벨 : "+getLv+"\t  경험치 : "+ getExpe +"\t  턴수 : "+getturn);
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			endClose();
+		}
+	}
+	public void all_delete() {
+		getConn();
+		try {
+			System.out.println("0");
+			String sql1 = "delete from BATTLE_INFO";
+			psmt = conn.prepareStatement(sql1);
+			psmt.executeUpdate();
+			System.out.println("1");
+			String sql2 = "delete from DAMA_INFO";
+			psmt = conn.prepareStatement(sql2);
+			psmt.executeUpdate();
+			System.out.println("2");
+			String sql3 = "delete from USER_INFO";
+			psmt = conn.prepareStatement(sql3);
+			psmt.executeUpdate();
+			System.out.println("3");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

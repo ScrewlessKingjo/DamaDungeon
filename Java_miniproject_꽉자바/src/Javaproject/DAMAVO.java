@@ -25,7 +25,18 @@ public class DAMAVO {
 	private int luk;
 	private int dummi;
 	private int jobid;
+	private int[] LVtable = {100,200,300};
 	
+	
+	public void VO_experience(int exe) {
+		this.expe += exe;
+		if (lv<LVtable.length) {
+		if (LVtable[lv]<expe) {
+			expe-=LVtable[lv];
+			lv++;
+		}}
+		
+	}
 
 	public String getId() {
 		return id;
