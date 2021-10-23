@@ -99,23 +99,23 @@ public class Enemy {
 		int i = rd.nextInt(17);
 		ArrayList<Enemy> eList = new ArrayList<>();
 
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
-		eList.add(new Enemy("ÇÇÄ«Ãò", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("1", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("2", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("3", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("4", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("5", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("6", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("7", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("8", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("9", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("10", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("11", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("12", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("13", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("14", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("15", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("16", 150, 10, 25, 10, 10, 10, 10, 10));
+		eList.add(new Enemy("17", 150, 10, 25, 10, 10, 10, 10, 10));
 
 
 		return eList.get(i);

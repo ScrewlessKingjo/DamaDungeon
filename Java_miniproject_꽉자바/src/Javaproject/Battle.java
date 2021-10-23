@@ -9,13 +9,17 @@ import java.util.stream.IntStream;
 import java.lang.Math;
 
 public class Battle {
+	// Battle 내에서 사용할 외부 메소드를 불러옴.
 	Face fc = new Face();
 	DAMADAO dama = new DAMADAO();
 	DAMAVO st;
 	Enemy t;
+
+	// 안에서 사용할 Random과 Scanner 불러옴.
 	Random rd = new Random();
 	Scanner sc = new Scanner(System.in);
 
+	// 외부 변수 선언. DAMADAO와 DAMAVO에서 가져올 변수를 미리 선언함.
 	private String id;
 	private String nick;
 	private int lv;
@@ -44,8 +48,15 @@ public class Battle {
 	private int En_dex;
 	private int En_wis;
 	private int En_luk;
-	int En_dmg = 0;
+
+	// 적 공격력 선언. 적의 속도가 빠를 경우 턴 메소드 실행 이전에 선공을 진행하므로 미리 선언함
+	int En_dmg;
+
+	// 기본 확률 선언. basePro는 유저 턴과 적 턴 메소드를 분리해서 초기화하므로
+	// 유저의 확률과 적의 확률을 다르게 설정하여 난이도 조절을 할 수 있도록 함
 	int basePro;
+
+	// 확률 선언.
 	int user_EsPro;
 	int user_HitPro;
 	int user_CriPro;
@@ -55,7 +66,9 @@ public class Battle {
 
 	private int user_dmg = 0;
 
+	// DAMAVO와 Enemy에서 각각 유저 스탯, 적 스탯을 불러옴.
 	public void Anything() {
+
 		id = st.getId();
 		nick = st.getNick();
 		lv = st.getLv();
@@ -67,6 +80,10 @@ public class Battle {
 		atk = st.getAtk();
 		shd = st.getShd();
 		spd = st.getSpd();
+		str = st.getStr();
+		dex = st.getDex();
+		wis = st.getWis();
+		luk = st.getLuk();
 		food = st.getFood();
 		hurbs = st.getHurbs();
 		startday = st.getStartday();
@@ -76,19 +93,18 @@ public class Battle {
 		En_atk = t.getEn_atk();
 		En_def = t.getEn_def();
 		En_spd = t.getEn_spd();
-
+		En_str = t.getEn_str();
+		En_dex = t.getEn_dex();
+		En_wis = t.getEn_wis();
+		En_luk = t.getEn_luk();
+		// 유저 데미지
 		int user_dmg = (str + atk - En_def);
+		// 적 데미지
 		int En_dmg = (En_str + En_atk - shd);
 
-		int basePro = 50;
+		int basePro;
 
-		int user_EsPro = (basePro - 20) + (spd - En_spd);
-		int user_HitPro = (basePro + 30) + (dex - En_dex);
-		int user_CriPro = (basePro - 40) + (luk - En_luk);
-		int En_EsPro = basePro + (En_spd - spd);
-		int En_HitPro = (basePro + 20) + (En_spd - spd);
-		int En_CriPro = (basePro - 40) + (En_luk - luk);
-
+		// 가중확률 선언. Turn 메소드 내에서 계산된 확률 기반.
 		WeightsPro(user_EsPro);
 		WeightsPro(user_HitPro);
 		WeightsPro(user_CriPro);
@@ -99,17 +115,15 @@ public class Battle {
 	}
 
 	public void Phase(String id) {
-
-		fc.Face_Fight(id);
 		Enemy ge = new Enemy();
 		t = ge.getEnemy();
-		st = dama.dama_loding(id);
+		st = dama.vo_loding(id);
 		Anything();
 
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
 		System.out.println("");
-		if (En_spd >= spd) {
+		if (En_spd > spd + 10) {
 			System.out.println(t.getEn_name() + "의 기습공격! " + st.getNick() + "은 " + En_dmg + "의 데미지를 받았다!");
 			System.out.println("");
 			if (shd >= En_atk) {
@@ -121,9 +135,12 @@ public class Battle {
 					t.getEn_name() + " 정보// 체력 :" + En_hp + "공격력 : " + En_atk + "방어력 : " + En_def + "속도 : " + En_spd);
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + "공격력 : " + atk + "방어력 : " + shd + "속도 : " + spd);
 			System.out.println("");
+			
 			Turn();
-			if (Turn() == 2) {
+			En_Turn();
+			if (Turn() ==2 || En_Turn()==2) {
 				break;
+				
 			}
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
@@ -137,113 +154,153 @@ public class Battle {
 	}
 
 	public int Turn() {
+		System.out.println(st.getNick()+"의 턴");
 		Anything();
-		System.out.println("[1] 공격한다 [2] 스킬 [3] 도망친다");
-		System.out.println(" ");
-		int choice = sc.nextInt();
 
-		if (choice == 1) {
-			if (WeightsPro(user_HitPro)) {
-				if (WeightsPro(user_CriPro)) {
-					user_dmg = atk;
-					System.out.println("크리티컬! " + En_name + "은 " + user_dmg + "의 데미지를 받았다! ");
-					System.out.println("");
-					En_hp -= user_dmg;
-				} else {
-					System.out.println(st.getNick() + "의 강력한 펀치! " + En_name + "은(는) " + user_dmg + "의 데미지를 받았다!");
-					System.out.println("");
-					if (En_def >= atk) {
-						user_dmg = 0;
+		int basePro = 50;
+		int turnCount = 1;
+		int user_EsPro = (basePro - 20) + (spd - En_spd);
+		int user_HitPro = (basePro + 30) + (dex - En_dex);
+		int user_CriPro = (basePro - 40) + (luk - En_luk);
+
+
+
+		while (true) {
+			
+			System.out.println("[1] 공격한다 [2] 스킬 [3] 도망친다");
+			System.out.println(" ");
+			int choice = sc.nextInt();
+			if (choice == 1) {
+
+				System.out.println("공격하시겠습니까? 명중확률 : " + user_HitPro + "%   예상 데미지 : " + user_dmg + "~" + atk);
+				System.out.println("[1] 공격한다 [2] 뒤로가기");
+
+				int choice_attack = sc.nextInt();
+
+				if (choice_attack == 1) {
+					if (WeightsPro(user_HitPro)) {
+						if (WeightsPro(user_CriPro)) {
+							user_dmg = atk;
+							fc.Face_Cri(id);
+							System.out.println("크리티컬! " + En_name + "은 " + user_dmg + "의 데미지를 받았다! ");
+							System.out.println("");
+							En_hp -= user_dmg;
+						} else {
+							fc.Face_Fight(id);
+							System.out.println(
+									st.getNick() + "의 펀치! " + En_name + "은(는) " + user_dmg + "의 데미지를 받았다!");
+							System.out.println("");
+							if (En_def >= atk) {
+								user_dmg = 0;
+							} else {
+								En_hp -= user_dmg;
+							}
+						}
+						break;
 					} else {
+						fc.Face_Miss(id);
+						System.out.println(En_name + " 회피! " + st.getNick() + "은(는) 아무런 피해도 입히지 못했다!");
+						System.out.println("");
+						break;
+					}
+					
+				}
+
+			}
+
+			else if (choice == 2) {
+
+				System.out.println("[1] 파이어볼 [2] 돌진  [3] 힐 [4] 뒤로가기");
+				System.out.println("");
+				int choice_skill = sc.nextInt();
+				if (choice_skill == 1) {
+					if (ene <= 30) {
+						System.out.println("에너지가 없다! 지금 파이어볼을 쓰는 건 위험하다!");
+						System.out.println("");
+					} else {
+						user_dmg = (atk * wis) / 2;
+						if ((atk * wis) % 2 == 1) {
+							user_dmg = (atk * wis + 1) / 2;
+						}
+						ene -= 30;
+						System.out.println(
+								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + user_dmg + "의 데미지를 받았다!");
+						System.out.println("");
 						En_hp -= user_dmg;
 					}
-				}
+					break;
+				} else if (choice_skill == 2) {
+					int a = 30;
 
-			} else {
-				System.out.println(En_name + "회피! " + st.getNick() + "은(는) 아무런 피해도 입히지 못했다!");
-				System.out.println("");
-			}
-
-		} else if (choice == 2) {
-			System.out.println("[1] 파이어볼 [2] 돌진  [3] 힐 [4] 뒤로가기");
-			System.out.println("");
-			int choice_skill = sc.nextInt();
-			if (choice_skill == 1) {
-				if (ene <= 30) {
-					System.out.println("에너지가 없다! 지금 파이어볼을 쓰는 건 위험하다!");
-					System.out.println("");
-				} else {
-					user_dmg = (atk * wis) / 2;
-					if (atk * wis == 1) {
-						user_dmg = (atk * wis + 1) / 2;
+					if (hp <= 30) {
+						System.out.println(st.getNick() + " : '그래. 이젠 이 방법밖엔 없어..'");
+					} else {
+						user_dmg = (atk * wis * str) / 2;
+						if ((atk * wis) % 2 == 1) {
+							user_dmg = (atk * wis + 1) / 2;
+						}
+						ene -= 30;
+						System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + user_dmg + "의 데미지를 받았다!");
+						System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
+						System.out.println("");
+						En_hp -= user_dmg;
+						hp -= a;
 					}
-					ene -= 30;
-					System.out.println(
-							st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + user_dmg + "의 데미지를 받았다!");
-					System.out.println("");
-					En_hp -= user_dmg;
+					break;
+				} else if (choice_skill == 3) {
+					if (hurbs < 1) {
+						System.out.println("약초가 없다! 회복이 불가능하다!");
+						System.out.println(st.getNick() + " : '제길! 이럴 줄 알았으면 더 구해놓는 건데!'");
+						System.out.println("");
+					} else {
+						hp += 20;
+						hurbs--;
+						if (hp > maxhp) {
+							hp = maxhp;
+						}
+						System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
+						System.out.println("");
+					}
+					break;
 				}
-			} else if (choice_skill == 2) {
-				int a = 30;
 
-				if (hp <= 30) {
-					System.out.println(st.getNick() + " : '그래. 이젠 이 방법밖엔 없어..'");
-				} else {
-					user_dmg = (atk * wis * str) / 2;
-					if (atk * wis == 1) {
-						user_dmg = (atk * wis + 1) / 2;
-					}
-					ene -= 30;
-					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + user_dmg + "의 데미지를 받았다!");
-					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
-					System.out.println("");
-					En_hp -= user_dmg;
-					hp -= a;
-				}
-			} else if (choice_skill == 3) {
-				if (hurbs < 1) {
-					System.out.println("약초가 없다! 회복이 불가능하다!");
-					System.out.println(st.getNick() + " : '제길! 이럴 줄 알았으면 더 구해놓는 건데!'");
-					System.out.println("");
-				} else {
-					hp += 20;
-					hurbs--;
-					if (hp > maxhp) {
-						hp = maxhp;
-					}
-					System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
-					System.out.println("");
-				}
-			}
-		} else if (choice == 3) {
-			if (WeightsPro(user_EsPro)) {
-				fc.Face_Escape(id);
-				System.out.println(st.getNick() + "은(는) 겁쟁이처럼 도망갔다!");
-				System.out.println("");
 			}
 
-			else {
-				System.out.println(st.getNick() + "은(는) 도망칠 수 없었다! " + En_dmg + "의 데미지를 받았다!");
-				System.out.println("");
-				if (shd >= En_dmg) {
-					En_dmg = 0;
+			else if (choice == 3) {
+				if (WeightsPro(user_EsPro)) {
+					fc.Face_Escape(id);
+					System.out.println(st.getNick() + "은(는) 겁쟁이처럼 도망갔다!");
+					System.out.println("");
+					hp -= En_dmg;
+					turnCount = 2;
 				}
-				hp -= En_dmg;
-				return 2;
+				
+				else {
+					System.out.println(st.getNick() + "은(는) 도망칠 수 없었다! " + En_dmg + "의 데미지를 받았다!");
+					System.out.println("");
+					if (shd >= En_dmg) {
+						En_dmg = 0;
+					}
+
+				}
+				break;
 			}
+
 		}
-
-		return 1;
-
+		return turnCount;
 	}
 
 	public int En_Turn() {
-		if (rd.nextInt(5) == 0) {
-			System.out.println(st.getNick() + "의 재빠른 회피! " + En_name + "은(는) 어떠한 피해도 입히지 못했다!");
-			System.out.println("");
-		} else {
-			if (rd.nextInt(5) == 0) {
+		System.out.println(t.getEn_name()+"의 턴");
+		int basePro = 50;
+
+		int En_EsPro = basePro + (En_spd - spd);
+		int En_HitPro = (basePro + 20) + (En_spd - spd);
+		int En_CriPro = (basePro - 40) + (En_luk - luk);
+		if (WeightsPro(En_HitPro)) {
+			if (WeightsPro(En_CriPro)) {
 				En_dmg = En_atk;
+				fc.Face_Cri(id);
 				System.out.println(En_name + "의 치명적인 공격! " + st.getNick() + "은(는)" + En_dmg + "의 데미지를 받았다!");
 				System.out.println("");
 				if (shd >= En_atk) {
@@ -251,6 +308,7 @@ public class Battle {
 				}
 				hp -= En_dmg;
 			} else {
+				fc.Face_Fight(id);
 				System.out.println(En_name + "의 공격! " + st.getNick() + "은(는)" + En_dmg + "의 데미지를 받았다!");
 				System.out.println("");
 				if (shd >= En_atk) {
@@ -259,9 +317,21 @@ public class Battle {
 					hp -= En_dmg;
 				}
 			}
-			return 1;
+
+		} else {
+			fc.Face_Miss(id);
+			System.out.println(st.getNick() + "의 재빠른 회피! " + En_name + "은(는) 어떠한 피해도 입히지 못했다!");
+			System.out.println("");
 		}
-		return 2;
+
+		if (En_hp < user_dmg && En_EsPro < 50) {
+			if (WeightsPro(En_EsPro)) {
+				System.out.println(En_name + "이(가) 도망쳤다!");
+				return 2;
+			}
+
+		}
+		return 1;
 	}
 
 	public static boolean WeightsPro(int percentNum) {
@@ -311,4 +381,37 @@ public class Battle {
 
 	}
 
+	public void checkUserValues() {
+		System.out.println("레벨"+lv);
+		System.out.println("경험치"+expe);
+		System.out.println("체력"+hp);
+		System.out.println("에너지"+ene);
+		System.out.println("최대체력"+maxhp);
+		System.out.println("최대에너지"+maxene);
+		System.out.println("공격력"+atk);
+		System.out.println("속도"+spd);
+		System.out.println("음식"+food);
+		System.out.println("약초"+hurbs);
+		System.out.println("방어력"+shd);
+		System.out.println("힘"+str);
+		System.out.println("민"+dex);
+		System.out.println("지"+wis);
+		System.out.println("운"+luk);
+		System.out.println("탈출확률"+user_EsPro);
+		System.out.println("치명율"+user_CriPro);
+		System.out.println("명중률"+user_HitPro);
+	}
+	public void checkEnValues() {
+		System.out.println("적체력"+En_hp);
+		System.out.println("적공격력"+En_atk);
+		System.out.println("적속도"+En_spd);
+		System.out.println("적방어력"+En_def);
+		System.out.println("적힘"+En_str);
+		System.out.println("적민"+En_dex);
+		System.out.println("적지"+En_wis);
+		System.out.println("적운"+En_luk);
+		System.out.println("적탈출확률"+En_EsPro);
+		System.out.println("적명중률"+En_HitPro);
+		System.out.println("적치명율"+En_CriPro);
+	}
 }

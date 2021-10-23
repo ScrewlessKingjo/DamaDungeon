@@ -128,6 +128,20 @@ public class Face {
 		System.out.println("                   @@@@@        ");
 
 	}
+	public void Face_Miss(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("    !감나빗      ∧___∧   !!   ");
+		System.out.println("              (◐∇◐;;)       ");
+		System.out.println("             ∽(⊂     )⊃      ");
+
+	}
+	public void Face_Cri(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("  Critical         ∧___∧      ");
+		System.out.println("      Hit   !!!   (x∇x !!)       ");
+		System.out.println("                 ∽(⊂     )⊃      ");
+
+	}
 	
 	public void Face_Sick(String id) {
 		st=dama.vo_loding(id);

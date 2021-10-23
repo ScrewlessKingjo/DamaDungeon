@@ -122,6 +122,7 @@ public class testMain {
 				
 				
 				
+				
 			} else if (game_menu == 4) {
 				System.out.println("취침을 한다.");
 				fc.Face_Sleep(main_id);
