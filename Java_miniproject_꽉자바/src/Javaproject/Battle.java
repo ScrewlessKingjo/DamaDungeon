@@ -16,7 +16,7 @@ public class Battle {
 	// 안에서 사용할 Random과 Scanner 불러옴.
 	Random rd = new Random();
 	Scanner sc = new Scanner(System.in);
-
+	Music mu = new Music();
 	// 외부 변수 선언. DAMADAO와 DAMAVO에서 가져올 변수를 미리 선언함.
 	private String id;
 	private String nick;
@@ -133,11 +133,16 @@ public class Battle {
 	}
 
 	// 전투 기본 메소드
-	public void Phase(String id) {
-
+	public void Phase(String id, int a) {
 		Enemy ge = new Enemy();
-		t = ge.getEnemy();
 		st = dama.vo_loding(id);
+		if (a==1) {
+		t = ge.getEnemyLand(id);
+		} else if (a==2) {
+			t = ge.getEnemySea(id);
+		} else if (a==3) {
+			t = ge.getEnemyAir(id);
+		}
 
 		Anything();
 
@@ -212,12 +217,15 @@ public class Battle {
 						if (WeightsPro(user_CriPro)) {
 							user_dmgR = atk;
 							fc.Face_Cri(id);
+							mu.Bloody();
+							mu.ASingularStrike();
 							System.out.println("크리티컬! " + En_name + "은 " + user_dmgR + "의 데미지를 받았다! ");
 							System.out.println("");
 							En_hp -= user_dmgR;
 							break;
 						} else {
 							fc.Face_Fight(id);
+							mu.Bloody();
 							if (user_dmgR < 0) {
 								user_dmgR = 0;
 							}
@@ -232,6 +240,7 @@ public class Battle {
 							break;
 						}
 					} else {
+						mu.AirCut();
 						fc.Face_Miss(id);
 						System.out.println(En_name + " 회피! " + st.getNick() + "은(는) 아무런 피해도 입히지 못했다!");
 						System.out.println("");
@@ -430,12 +439,12 @@ public class Battle {
 				} else {
 					hp -= En_dmgR;
 				}
+				
 				fc.Face_Fight(id);
 				System.out.println(En_name + "의 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
 				System.out.println("");
 
 			}
-
 		} else {
 			fc.Face_Miss(id);
 			System.out.println(st.getNick() + "의 재빠른 회피! " + En_name + "은(는) 어떠한 피해도 입히지 못했다!");

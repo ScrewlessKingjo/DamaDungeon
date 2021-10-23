@@ -11,7 +11,7 @@ public class Music {
               AudioInputStream stream;
               AudioFormat format;
               DataLine.Info info;
-              bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_꽉자바/music/ASingularStrike.wav"); // 사용시에는 개별 폴더로 변경할 것
+              bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\ASingularStrike.wav"); // 사용시에는 개별 폴더로 변경할 것
               Clip clip;
               try {
                      stream = AudioSystem.getAudioInputStream(bgm);
@@ -29,7 +29,7 @@ public class Music {
            AudioInputStream stream;
            AudioFormat format;
            DataLine.Info info;
-           bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_꽉자바/music/BattleBrothers.wav"); // 사용시에는 개별 폴더로 변경할 것
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\BattleBrotherswav.wav"); // 사용시에는 개별 폴더로 변경할 것
            Clip clip;
            try {
                   stream = AudioSystem.getAudioInputStream(bgm);
@@ -47,7 +47,7 @@ public class Music {
            AudioInputStream stream;
            AudioFormat format;
            DataLine.Info info;
-           bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_꽉자바/music/AirCut.wav"); // 사용시에는 개별 폴더로 변경할 것
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\AirCut.wav"); // 사용시에는 개별 폴더로 변경할 것
            Clip clip;
            try {
                   stream = AudioSystem.getAudioInputStream(bgm);
@@ -65,7 +65,7 @@ public class Music {
            AudioInputStream stream;
            AudioFormat format;
            DataLine.Info info;
-           bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_꽉자바/music/Bloody.wav"); // 사용시에는 개별 폴더로 변경할 것
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\Bloody.wav"); // 사용시에는 개별 폴더로 변경할 것
            Clip clip;
            try {
                   stream = AudioSystem.getAudioInputStream(bgm);

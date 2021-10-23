@@ -102,7 +102,9 @@ public class testMain {
 
 			} else if (game_menu == 1) {
 				System.out.println("¸ðÇèÀ» ¶°³­´Ù.");
-				bt.Phase(main_id);
+				System.out.println("[1]À”ºû½£ [2]½ÉÇØ [3]ÆøÇ³Á¤¿ø");
+				int a=sc.nextInt();
+				bt.Phase(main_id, a);
 				game_menu = 0;
 				
 				
