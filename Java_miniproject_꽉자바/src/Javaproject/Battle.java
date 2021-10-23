@@ -132,12 +132,13 @@ public class Battle {
 		}
 		while (true) {
 			System.out.println(
-					t.getEn_name() + " 정보// 체력 :" + En_hp + "공격력 : " + En_atk + "방어력 : " + En_def + "속도 : " + En_spd);
-			System.out.println(st.getNick() + " 정보// 체력 :" + hp + "공격력 : " + atk + "방어력 : " + shd + "속도 : " + spd);
+					t.getEn_name() + " 정보// 체력 :" + En_hp + " 공격력 : " + En_atk + " 방어력 : " + En_def + " 속도 : " + En_spd);
+			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
 			System.out.println("");
 			
 			Turn();
 			En_Turn();
+			
 			if (Turn() ==2 || En_Turn()==2) {
 				break;
 				
@@ -267,6 +268,10 @@ public class Battle {
 			}
 
 			else if (choice == 3) {
+				System.out.println("도망치시겠습니까? 탈출확률 : "+user_EsPro+"%");
+				System.out.println("[1] 예 [2] 아니오");
+				int choice_Escape = sc.nextInt();
+				if (choice_Escape == 1) {
 				if (WeightsPro(user_EsPro)) {
 					fc.Face_Escape(id);
 					System.out.println(st.getNick() + "은(는) 겁쟁이처럼 도망갔다!");
@@ -284,6 +289,7 @@ public class Battle {
 
 				}
 				break;
+			}
 			}
 
 		}
