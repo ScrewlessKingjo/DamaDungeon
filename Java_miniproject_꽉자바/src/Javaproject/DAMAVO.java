@@ -47,7 +47,7 @@ public class DAMAVO {
 		System.out.println(id);
 		this.dummi += stat;
 		while(dummi>0) {
-			System.out.println("=========스테이터스 추가포인트["+dummi+"]==========");
+			System.out.println("         스테이터스 추가포인트["+dummi+"]    ");
 			System.out.println("[1]근력\t[2]민첩\t[3]지력\t[4]행운\t[5]나가기");
 			select_st=sc.nextInt();
 			if (select_st==1) {
