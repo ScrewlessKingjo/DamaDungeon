@@ -37,6 +37,7 @@ public class Battle {
 	private int dex;
 	private int wis;
 	private int luk;
+	private int turnCount = 0;
 	private String En_name;
 	private int En_atk;
 	private int En_def;
@@ -46,6 +47,7 @@ public class Battle {
 	private int En_dex;
 	private int En_wis;
 	private int En_luk;
+	private int EN_turnCount =0;
 
 	// 적 공격력 선언. 적의 속도가 빠를 경우 턴 메소드 실행 이전에 선공을 진행하므로 미리 선언함
 	int En_dmg;
@@ -150,18 +152,16 @@ public class Battle {
 			}
 		}
 		while (true) {
+			if (turnCount == 2|| EN_turnCount == 2) {
+				System.out.println("도망 성공");
+				break;
+			}
 			System.out.println(t.getEn_name() + " 정보// 체력 :" + En_hp + " 공격력 : " + En_atk + " 방어력 : " + En_def
 					+ " 속도 : " + En_spd);
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
 			System.out.println("");
-
 			Turn();
 			En_Turn();
-
-			if (Turn() == 2 || En_Turn() == 2) {
-				break;
-
-			}
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
 				break;
@@ -174,11 +174,9 @@ public class Battle {
 	}
 
 	// 유저 턴 메소드
-	public int Turn() {
+	public void Turn() {
 
 		System.out.println(st.getNick() + "의 턴");
-
-		Anything();
 
 		int[] user_dmgList = { user_dmg - 5, user_dmg - 4, user_dmg - 3, user_dmg - 2, user_dmg - 1, user_dmg,
 				user_dmg + 1, user_dmg + 2, user_dmg + 3, user_dmg + 4, user_dmg + 5 };
@@ -190,7 +188,6 @@ public class Battle {
 		int En_dmgR = En_dmgList[En_dmgDev];
 
 		int basePro = 50;
-		int turnCount = 1;
 		int user_EsPro = (basePro - 20) + (spd - En_spd);
 		int user_HitPro = (basePro + 30) + (dex - En_dex);
 		int user_CriPro = (basePro - 40) + (luk - En_luk);
@@ -218,7 +215,6 @@ public class Battle {
 							System.out.println("크리티컬! " + En_name + "은 " + user_dmgR + "의 데미지를 받았다! ");
 							System.out.println("");
 							En_hp -= user_dmgR;
-
 							break;
 						} else {
 							fc.Face_Fight(id);
@@ -265,6 +261,7 @@ public class Battle {
 								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + user_dmg + "의 데미지를 받았다!");
 						System.out.println("");
 						En_hp -= user_dmg;
+						break;
 					}
 				} else if (choice_skill == 2) {
 					int a = 30;
@@ -282,6 +279,7 @@ public class Battle {
 						System.out.println("");
 						En_hp -= user_dmg;
 						hp -= a;
+						break;
 					}
 
 				} else if (choice_skill == 3) {
@@ -297,6 +295,7 @@ public class Battle {
 						}
 						System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
 						System.out.println("");
+						break;
 					}
 				}
 
@@ -311,8 +310,8 @@ public class Battle {
 						fc.Face_Escape(id);
 						System.out.println(st.getNick() + "은(는) 겁쟁이처럼 도망갔다!");
 						System.out.println("");
-
 						turnCount = 2;
+						break;
 					}
 
 					else {
@@ -325,25 +324,23 @@ public class Battle {
 							En_dmg = 0;
 						}
 						hp -= En_dmgR;
+						break;
 
 					}
 				}
 			}
 		}
-		return turnCount;
 	}
 
 	// 적 턴 메소드
-	public int En_Turn() {
-
-		Anything();
+	public void En_Turn() {
 
 		System.out.println(t.getEn_name() + "의 턴");
 
 		if (En_hp < user_dmg && En_EsPro < 50) {
 			if (WeightsPro(En_EsPro)) {
 				System.out.println(En_name + "이(가) 도망쳤다!");
-				return 2;
+				EN_turnCount =2;
 			} else {
 				En_Attack();
 			}
@@ -351,7 +348,6 @@ public class Battle {
 		} else {
 			En_Attack();
 		}
-		return 1;
 	}
 
 	// 가중 확률 추출용 메소드
