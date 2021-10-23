@@ -60,16 +60,13 @@ public class DAMAVO {
 			dex++;
 			dummi --;
 			spd+=1;
-
 			}else if(select_st==3) {
 			wis++;
 			dummi --;
 			shd+=1;	
-			
 			}else if(select_st==4) {
 			luk++;
 			dummi --;
-			
 			}else if(select_st==5) {
 			break;
 			}
