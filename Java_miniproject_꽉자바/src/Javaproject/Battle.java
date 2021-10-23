@@ -218,6 +218,8 @@ public class Battle {
 							System.out.println("크리티컬! " + En_name + "은 " + user_dmgR + "의 데미지를 받았다! ");
 							System.out.println("");
 							En_hp -= user_dmgR;
+
+							break;
 						} else {
 							fc.Face_Fight(id);
 							if (user_dmgR < 0) {
@@ -225,11 +227,13 @@ public class Battle {
 							}
 							System.out.println(st.getNick() + "의 펀치! " + En_name + "은(는) " + user_dmgR + "의 데미지를 받았다!");
 							System.out.println("");
+
 							if (En_def >= user_dmgR) {
 								user_dmgR = 0;
 							} else {
 								En_hp -= user_dmgR;
 							}
+							break;
 						}
 					} else {
 						fc.Face_Miss(id);
@@ -325,7 +329,6 @@ public class Battle {
 					}
 				}
 			}
-			break;
 		}
 		return turnCount;
 	}
