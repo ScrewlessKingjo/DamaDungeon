@@ -1,6 +1,5 @@
 package Javaproject;
-
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DAMAVO {
 	
@@ -26,16 +25,56 @@ public class DAMAVO {
 	private int dummi;
 	private int jobid;
 	private int[] LVtable = {100,200,300};
+	private int select_st;
+	Scanner sc= new Scanner(System.in);
 	
 	
-	public void VO_experience(int exe) {
+	public void VO_experience(int exe,String main_id) {
 		this.expe += exe;
 		if (lv<LVtable.length) {
 		if (LVtable[lv]<expe) {
 			expe-=LVtable[lv];
 			lv++;
+			System.out.println("     ┌──────────────────┐");
+			System.out.println("     │     LEVEL UP     │");
+			System.out.println("     └──────────────────┘");
+			VO_Stators(5,main_id);
 		}}
 		
+	}
+	public void VO_Stators(int stat,String main_id) {
+		select_st=0;
+		System.out.println(id);
+		this.dummi += stat;
+		while(dummi>0) {
+			System.out.println("=========스테이터스 추가포인트["+dummi+"]==========");
+			System.out.println("[1]근력\t[2]민첩\t[3]지력\t[4]행운\t[5]나가기");
+			select_st=sc.nextInt();
+			if (select_st==1) {
+			str++;
+			dummi --;
+			atk+=1;
+			maxhp+=10;
+			hp+=10;
+			}else if(select_st==2) {
+			dex++;
+			dummi --;
+			spd+=1;
+
+			}else if(select_st==3) {
+			wis++;
+			dummi --;
+			shd+=1;	
+			
+			}else if(select_st==4) {
+			luk++;
+			dummi --;
+			
+			}else if(select_st==5) {
+			break;
+			}
+		}
+		Alldate(main_id);
 	}
 
 	public String getId() {

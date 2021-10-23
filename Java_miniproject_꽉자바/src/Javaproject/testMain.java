@@ -4,14 +4,12 @@ import java.util.Scanner;
 
 public class testMain {
 	public static void main(String[] args) {
-		Enemy en = new Enemy();
 		DAMADAO dama = new DAMADAO();
 		Face fc = new Face();
 	    Eat eat = new Eat();
 		Scanner sc = new Scanner(System.in);
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
-		DAMAVO vo = new DAMAVO();
 		Training tr = new Training();
 		
 		int coin = 0;				// 게임 시작 여부 확인 변수
