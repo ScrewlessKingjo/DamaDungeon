@@ -6,13 +6,12 @@ public class Eat {
 	// 음식을 먹는 클레스입니다.
 	
 	Scanner sc = new Scanner(System.in);
-
 	DAMADAO dama = new DAMADAO();
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
 
 	public void Eat_menu(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		int her = st.getHurbs();
 		int bob = st.getFood();
 		int hp = st.getHp();
@@ -23,7 +22,6 @@ public class Eat {
 		if (eat_choice == 1) {
 			
 			System.out.println("밥을 먹는다.");
-			System.out.println();
 			if (bob > 0) {
 				bob--;
 				ene+=10;
@@ -31,25 +29,28 @@ public class Eat {
 				st.setFood(bob);
 				st.setEne(ene);
 				
-				fa.Face_Eat_Fish(id);
-				st.VOdate();
+				fa.Face_Fishing(id);
+				st.Alldate(id);
+			}else {
+				System.out.println("밥이 없다.");
 			}
-			System.out.println();
 
 		} else if (eat_choice == 2) {
 			
 			System.out.println("약초를 먹는다.");
-			System.out.println();
 			if (her > 0) {
 				her--;
 				hp+=10;
 				st.setHurbs(her);
 				st.setHp(hp);
 				
-				fa.Face_Eat_Medi(id);
-				st.VOdate();
+				fa.Face_Eat_Fish(id);
+				st.Alldate(id);
+				}
+			else {
+				System.out.println("약초가 없다.");
 			}
-			System.out.println();
+				
 		}
 		
 	}

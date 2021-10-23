@@ -20,7 +20,7 @@ public class Face {
 	}
 
 	public void Face_Sleep(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("                ∧__∧  ");
 		System.out.println("      Zzz     _( ˘ω˘)  ");
@@ -31,7 +31,7 @@ public class Face {
 	} 
 	
 	public void Face_Eat_Fish(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+ " 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
 		System.out.println("           ∧__∧    ");
 		System.out.println("         　(☆o☆ )_ ! ");
@@ -42,7 +42,7 @@ public class Face {
 		System.out.println("    Lv()  : "+st.getLv()+"\t Exp() : "+st.getExpe());
 	}
 	public void Face_Eat_Medi(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+ " 약초를 먹지 우웩 쓰다 써 인생");
 		System.out.println("            ∧__∧    ");
 		System.out.println("   _____  　(＊＾＊ )_ & ");
@@ -54,7 +54,7 @@ public class Face {
 	}
 	
 	public void Face_Health(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("                    ");
 		System.out.println("          O---∧ _ ∧ ---O      ");
@@ -68,7 +68,7 @@ public class Face {
 	}
 	
 	public void Face_맷집(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (> ㅠ<)  ");
@@ -78,7 +78,7 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_run(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("           ∧ _ ∧   ");
 		System.out.println("       　  (● ω●)  ");
@@ -89,7 +89,7 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Fishing(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("              ∧__∧    ");
 		System.out.println("            　(ºωº )   ");
@@ -102,7 +102,7 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Get_Medi(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("              ∧__∧     ");
 		System.out.println("             (ºωº )    ");
@@ -114,14 +114,14 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Fight(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("        ∧__∧    X    ∩__∩     ");
 		System.out.println("       ( ≫⌒≪) /  ＼ (≫⌒≪ )    ");
 		System.out.println("     ∽(  ___ )      (_____ )∽  ");
 
 	}
 	public void Face_Escape(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("        ∩__∩         ∧___∧      ");
 		System.out.println("    ＼ (＠⌒＠ )       (◐∇ ◐;)    ");
 		System.out.println("      (_____ )∽   ∽(⊂     )⊃    ");
@@ -130,7 +130,7 @@ public class Face {
 	}
 	
 	public void Face_Sick(String id) {
-		st=dama.dama_loding(id);
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick());
 		System.out.println("       ∧ _ ∧        ");
 		System.out.println("      (＠ △＠)       ");

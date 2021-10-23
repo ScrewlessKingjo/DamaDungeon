@@ -257,11 +257,9 @@ public class DAMAVO {
 		this.jobid = jobid;
 	}
 
-
-	public void VOdate(String main_id){
+	public void Alldate(String main_id){
 		DAMADAO dama = new DAMADAO();
-		dama.battle_update(main_id, hp, maxhp, atk, shd, spd, str, dex, wis, luk, dummi);
-		dama.dama_update(main_id, nick, expe, lv, ene, maxene, food, hurbs, startday, sickday, jobid);
+		dama.vo_update(main_id, nick, expe, lv, ene, maxene, food, hurbs, startday, sickday, jobid, hp, maxhp, atk, shd, spd, str, dex, wis, luk, dummi);
 	}
 
 }

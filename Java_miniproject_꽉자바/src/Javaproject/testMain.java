@@ -12,10 +12,11 @@ public class testMain {
 		Battle bt = new Battle();
 		Sleep sp = new Sleep();
 		DAMAVO vo = new DAMAVO();
+		Training tr = new Training();
 		
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
-		int game_menu = 0;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
+		int game_menu = -1;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
 		String main_id = null;
 		
@@ -80,8 +81,8 @@ public class testMain {
 		
 		 
 		while (coin == 5) {
+			if (game_menu == -1) {fc.Face_Normal(main_id);game_menu=0;}
 			if (game_menu == 0) {
-				fc.Face_Normal(main_id);
 				System.out.println("1.모험 2.훈련 3.먹기 4.취침 5.종료 ");
 				select_menu = sc.nextInt();
 				if (select_menu == 1) {
@@ -106,21 +107,21 @@ public class testMain {
 				
 			} else if (game_menu == 2) {
 				System.out.println("훈련을 떠난다.");
-				vo.setLv(100);
-				vo.VOdate(main_id);
+				tr.training_base(main_id);
 				game_menu = 0;
 				
 				
 			} else if (game_menu == 3) {
+				
 				System.out.println("먹어보자!!");
-				game_menu = 0;
 				eat.Eat_menu(main_id);
+				game_menu = 0;
 				
 				
 				
 			} else if (game_menu == 4) {
 				System.out.println("취침을 한다.");
-				
+				fc.Face_Sleep(main_id);
 				int cnt = sp.sleep(main_id);
 				
 				if(cnt > 0) {
@@ -132,6 +133,7 @@ public class testMain {
 				game_menu = 0;
 				
 			} else if (game_menu == 5) {
+				fc.Face_Escape(main_id);
 				System.out.println(" 게임 종료 ");
 				break;
 			}
