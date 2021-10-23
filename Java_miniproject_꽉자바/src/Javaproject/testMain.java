@@ -70,7 +70,6 @@ public class testMain {
 			} else if (title_menu == 6) {
 				// 아이디 비번 확인하는 메소드
 				dama.select();
-				mu.ASingularStrike();
 				title_menu = 0;
 			} else if (title_menu == 7) {
 				// 아이디 비번 확인하는 메소드
