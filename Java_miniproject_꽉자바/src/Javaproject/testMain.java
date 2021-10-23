@@ -18,7 +18,6 @@ public class testMain {
 		int game_menu = -1;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
 		String main_id = null;
-		mu.BattleBrothers();
 		while (true) {
 			if (title_menu == 0) {
 				fc.face_main();

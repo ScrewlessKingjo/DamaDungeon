@@ -202,7 +202,7 @@ public class Enemy {
 	public Enemy getEnemyAir(String id) {
 		
 		st = dama.vo_loding(id);
-		int i = rd.nextInt(21);
+		int i = rd.nextInt(20);
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
@@ -216,28 +216,26 @@ public class Enemy {
 		
 		ArrayList<Enemy> eList = new ArrayList<>();
 
-		eList.add(new Enemy("Åä³¢", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("»ç½¿", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("°í¾çÀÌ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("±â¸°", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("´Ù¶÷Áã", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("»çÀÚ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("¿ø¼þÀÌ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("¿À¶û¿ìÅº", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("°íÁú¶ó", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("È£¶ûÀÌ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("°õ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("¸ËµÅÁö", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("¹ì", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("¹«½º", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("°í½¿µµÄ¡", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("Ä¡Å¸", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("Ç¥¹ü", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("¹Ý´Þ°¡½¿°õ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("³ª¹«´Ãº¸", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("Ä»°Å·ç", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-		eList.add(new Enemy("ÆÄÀÌ¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
-
+		eList.add(new Enemy("¿Õµ¶¼ö¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("´ë¸Ó¸®µ¶¼ö¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("±î¸¶±Í", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("¹í»õ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("Àå¼ö¸»¹ú", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("²æ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("ÇÐ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("Å¸Á¶", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("ÇÏ´Ã°ÅºÏÀÌ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("½ºÄ«ÀÌÆÛÇÇ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("ÆÄ¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("ÀáÀÚ¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("µüµû±¸¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("¹ú»õ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("È£¶û³ªºñ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("¼ÒÂ½»õ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("µÎ·ç¹Ì", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("Á÷¹Ú±¸¸®", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("È²Á¶·ÕÀÌ", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
+		eList.add(new Enemy("µû¿À±â", randomCal(st.getMaxhp(), a), randomCal(st.getAtk(), b), randomCal(st.getShd(), c), randomCal(st.getSpd(), d), randomCal(st.getStr(), e), randomCal(st.getDex(), f), randomCal(st.getWis(), g), randomCal(st.getLuk(), 1)));
 
 
 		return eList.get(i);
@@ -269,7 +267,7 @@ public class Enemy {
 	}
 	
 	public int randomCal (int a, int b) {
-		int t=rd.nextInt(1);
+		int t=rd.nextInt(2);
 		int result;
 		if (t==0) {
 			result = a+b;
