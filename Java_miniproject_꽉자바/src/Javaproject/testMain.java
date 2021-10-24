@@ -82,8 +82,9 @@ public class testMain {
 		
 		 
 		while (coin == 5) {
+			
 			if (game_menu == -1) {fc.Face_Normal(main_id);game_menu=0;}
-			if (game_menu == 0) {
+			else if (game_menu == 0) {
 				System.out.println("1.모험 2.훈련 3.먹기 4.취침 5.종료 ");
 				select_menu = sc.nextInt();
 				if (select_menu == 1) {
