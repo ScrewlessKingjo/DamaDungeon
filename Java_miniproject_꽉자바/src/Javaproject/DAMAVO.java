@@ -28,14 +28,16 @@ public class DAMAVO {
 	private int select_st;
 	Scanner sc= new Scanner(System.in);
 	DAMADAO dama = new DAMADAO();
-	
-	
+
 	public void VO_deadly(String main_id) {
+		Face fc = new Face();
 		testMain main_vlu = new testMain();
 		if (hp < 1) {
-			System.out.println(" 사망하셨습니다. 당신의 발자취는 기록될 것입니다.");
 			hp=0;
+			fc.Face_Die(main_id);
+			System.out.println(" 사망하셨습니다. 당신의 발자취는 기록될 것입니다.");
 			main_vlu.setcoin(0);
+			
 		}
 		
 	}
