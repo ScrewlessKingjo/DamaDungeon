@@ -50,26 +50,26 @@ public class testMain {
 				System.out.print("설정하실 닉네임을 입력하세요 >> ");
 				String NICK = sc.next();
 				System.out.print(NICK+"의 직업을 선택해주세요.");
-				System.out.print("[1] 전사 [2] 도적 [3] 마법사 [4] 거지");
-				int job_choice = sc.nextInt();
-				if (job_choice == 1) {
-					System.out.println("전사는 전선에서 직접 적과 검을 맞대는, 두려움을 모르는 싸움꾼입니다.");
-					System.out.println("근력에 많은 보너스를 받은 채로 시작하며, 이를 기반으로 적을 직접적으로 공격하는 기술들을 가지고 있습니다.");
-				} else if (job_choice ==2 ) {
-					System.out.println("도적은 야비하고, 무자비한 무법자입니다.");
-					System.out.println("민첩에 많은 보너스를 받은 채로 시작하며, 자신의 운에 모든걸 맡기는 술책을 사용합니다.");
-				}  else if (job_choice ==3 ) {
-					System.out.println("마법사는 세상의 이치를 찾아 돌아다니는 방랑자입니다.");
-					System.out.println("지혜는 마법사의 최대 장점이며, 마법사는 자신의 지혜를 가지고 여러가지 마법을 사용합니다.");
-				}  else if (job_choice ==4 ) {
-					System.out.println("거지는 이곳에 있어서는 안되는 불우한 자입니다.");
-					System.out.println("다른 직업에 비해서 빼어난 특기는 없지만, 아무것도 가지지 못한 자는 다른 사람보다 무서운 법입니다....");
-				} 
+				System.out.println("[1] 전사 [2] 도적 [3] 마법사 [4] 거지");
 				coin = dama.join(ID, PW);
 				title_menu = 0;
 				if (coin == 5) {
-					dama.joinStators1(ID, NICK);
-					dama.joinStators2(ID);
+					int job_choice = sc.nextInt();
+					if (job_choice == 1) {
+						System.out.println("전사는 전선에서 직접 적과 검을 맞대는, 두려움을 모르는 싸움꾼입니다.");
+						System.out.println("근력에 많은 보너스를 받은 채로 시작하며, 이를 기반으로 적을 직접적으로 공격하는 기술들을 가지고 있습니다.");
+					} else if (job_choice ==2 ) {
+						System.out.println("도적은 야비하고, 무자비한 무법자입니다.");
+						System.out.println("민첩에 많은 보너스를 받은 채로 시작하며, 자신의 운에 모든걸 맡기는 술책을 사용합니다.");
+					}  else if (job_choice ==3 ) {
+						System.out.println("마법사는 세상의 이치를 찾아 돌아다니는 방랑자입니다.");
+						System.out.println("지혜는 마법사의 최대 장점이며, 마법사는 자신의 지혜를 가지고 여러가지 마법을 사용합니다.");
+					}  else if (job_choice ==4 ) {
+						System.out.println("거지는 이곳에 있어서는 안되는 불우한 자입니다.");
+						System.out.println("다른 직업에 비해서 빼어난 특기는 없지만, 아무것도 가지지 못한 자는 다른 사람보다 무서운 법입니다....");
+					} 
+					dama.joinStators1(ID, NICK,job_choice);
+					dama.joinStators2(ID,job_choice);
 					main_id = ID;
 					break;
 				}else {
