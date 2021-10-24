@@ -176,26 +176,27 @@ public class Enemy {
 		
 		ArrayList<Enemy> eList = new ArrayList<>();
 
-		eList.add(new Enemy("왕독수리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("대머리독수리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("까마귀", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("뱁새", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("장수말벌", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("꿩", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("학", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("타조", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("하늘거북이", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("스카이퍼피", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("파리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("잠자리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("딱따구리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("벌새", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("호랑나비", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("소쩍새", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("두루미", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("직박구리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("황조롱이", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-		eList.add(new Enemy("따오기", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+
+		eList.add(new Enemy("송어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("숭어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("고등어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("갈치", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("정어리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("참치", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("멸치", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("꽁치", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("연어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("청상아리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("백상아리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("철갑상어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("혹등고래", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("범고래", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("심해어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("꼬부기", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("아기상어", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("거북이", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("바다표범", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
+		eList.add(new Enemy("펭귄", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 
 		return eList.get(i);
 		
@@ -222,7 +223,7 @@ public class Enemy {
 		int t = 20+st.getStartday();
 		int z = 20+(st.getStartday()*10);
 		ArrayList<Enemy> eList = new ArrayList<>();
-
+		
 		eList.add(new Enemy("왕독수리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("대머리독수리", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("까마귀", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
@@ -248,7 +249,16 @@ public class Enemy {
 		
 	}
 	
-	public Enemy getEnemyBoss() {
+	public Enemy getEnemyBoss(String id) {
+		
+		st = dama.vo_loding(id);
+		UserInfo();
+
+		System.out.println("이 여행을 시작한 지 50일이 지났다."+st.getNick()+"은(는) 지금껏 싸워온 적들을 생각했다.");
+		System.out.println("'그 모든 싸움은, 지금 이 순간을 위한 것이다.' "+st.getNick()+"은(는) 생각했다.");
+		System.out.println(st.getNick()+" : '모든 길은 끝나기 마련이지. 가보기 전에는 그 끝을 알 수 없을 뿐.'");
+		System.out.println(st.getNick()+"은(는) 마지막 전투를 준비했다.");
+		System.out.println("");
 		
 		return new Enemy("자바", 1000, 100,100,100, 100, 100, 100,100);
 	}
