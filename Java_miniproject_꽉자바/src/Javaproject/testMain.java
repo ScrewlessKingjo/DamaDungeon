@@ -45,10 +45,10 @@ public class testMain {
 				System.out.print("설정하실 닉네임을 입력하세요 >> ");
 				String NICK = sc.next();
 				coin = dama.join(ID, PW);
-				dama.joinStators1(ID, NICK);
-				dama.joinStators2(ID);
 				title_menu = 0;
 				if (coin == 5) {
+					dama.joinStators1(ID, NICK);
+					dama.joinStators2(ID);
 					main_id = ID;
 					break;
 				}else {
