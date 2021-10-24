@@ -126,7 +126,9 @@ public class Battle {
 		int user_dmgR = user_dmgList[user_dmgDev];
 
 		int basePro = 50;
-
+		user_EsPro = (basePro - 20) + (spd - En_spd);
+		user_HitPro = (basePro + 30) + (dex - En_dex);
+		user_CriPro = (basePro - 40) + (luk - En_luk);
 		En_EsPro = basePro + (En_spd - spd);
 		En_HitPro = (basePro + 20) + (En_spd - spd);
 		En_CriPro = (basePro - 40) + (En_luk - luk);
@@ -149,6 +151,8 @@ public class Battle {
 
 		Anything();
 
+		
+		
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
 		System.out.println("");
@@ -180,10 +184,12 @@ public class Battle {
 			if (En_hp > 0 && turnCount == 1 && skill_var != 1) {
 				En_Turn();
 			}
+			skill_var = 0;
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
 				break;
 			} else if (En_hp < 1) {
+				mu.enemyDeath();
 				System.out.println("이겼다!" + t.getEn_name() + "을 해치웠다!");
 				System.out.println(st.getNick() + "은(는) " + t.getEn_hp() + "만큼의 경험치를 얻었다!");
 				st.VO_experience(t.getEn_hp(), id);
@@ -281,9 +287,9 @@ public class Battle {
 					} else {
 						mu.Determination();
 						ene -= 30;
-						shd += 1;
-						str += 1;
-						System.out.println(st.getNick() + "은(는) 지난 경험을 되새기며 결의를 다졌다. 방어력과 근력이 1만큼 증가했다.");
+						shd += 5;
+						str += 5;
+						System.out.println(st.getNick() + "은(는) 지난 경험을 되새기며 결의를 다졌다. 방어력과 근력이 5만큼 증가했다.");
 						System.out.println(st.getNick() + " : '이 정도는 아무것도 아니야.'");
 						System.out.println("");
 						break;
@@ -299,6 +305,7 @@ public class Battle {
 					if ((charge_dmg) % 2 == 1) {
 						charge_dmg = (atk * str * shd + 1) / 10;
 					}
+					mu.warcry();
 					ene -= 30;
 					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
 					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
@@ -313,7 +320,8 @@ public class Battle {
 						System.out.println(st.getNick() + " : '제길! 이럴 줄 알았으면 더 구해놓는 건데!'");
 						System.out.println("");
 					} else {
-						hp += 20;
+						mu.Heal();
+						hp += 100;
 						hurbs--;
 						if (hp > maxhp) {
 							hp = maxhp;
@@ -372,9 +380,7 @@ public class Battle {
 		int En_dmgR = En_dmgList[En_dmgDev];
 
 		int basePro = 50;
-		user_EsPro = (basePro - 20) + (spd - En_spd);
-		user_HitPro = (basePro + 30) + (dex - En_dex);
-		user_CriPro = (basePro - 40) + (luk - En_luk);
+
 
 		while (true) {
 
@@ -437,9 +443,11 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
-					En_HitPro -= 5;
+					mu.Determination();
+					user_EsPro +=5;
 					user_HitPro += 5;
-					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 회피율과 명중률이 5씩 상승했다.");
+					user_CriPro += 5;
+					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 명중률, 치명율, 탈출확률이 5씩 상승했다.");
 					break;
 
 				} else if (choice_skill == 2) {
@@ -468,14 +476,16 @@ public class Battle {
 						System.out.println(st.getNick() + " : '제길! 이럴 줄 알았으면 더 구해놓는 건데!'");
 						System.out.println("");
 					} else {
-						hp += 20;
+						hp += 100;
 						hurbs--;
 						if (hp > maxhp) {
 							hp = maxhp;
 						}
+						mu.Heal();
 						System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
 						System.out.println("");
 						break;
+
 					}
 				}
 
@@ -628,11 +638,12 @@ public class Battle {
 						System.out.println(st.getNick() + " : '제길! 이럴 줄 알았으면 더 구해놓는 건데!'");
 						System.out.println("");
 					} else {
-						hp += 20;
+						hp += 100;
 						hurbs--;
 						if (hp > maxhp) {
 							hp = maxhp;
 						}
+						mu.Heal();
 						System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
 						System.out.println("");
 						break;
@@ -749,9 +760,10 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은(는) 결의를 다질 수 없었다!");
 						System.out.println("");
 					} else {
-						ene -= 30;
-						shd += 1;
-						str += 1;
+						ene -= 15;
+						shd += 3;
+						str += 3;
+						mu.Determination();
 						System.out.println(st.getNick() + "은(는) 지난 경험을 되새기며 결의를 다졌다. 방어력과 근력이 1만큼 증가했다.");
 						System.out.println(st.getNick() + " : '이 정도는 아무것도 아니야.'");
 						System.out.println("");
@@ -768,7 +780,7 @@ public class Battle {
 					if ((charge_dmg) % 2 == 1) {
 						charge_dmg = (atk * str * shd + 1) / 10;
 					}
-					ene -= 30;
+					mu.warcry();
 					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
 					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
 					System.out.println("");
@@ -783,9 +795,10 @@ public class Battle {
 					}
 					En_HitPro -= 5;
 					user_HitPro += 5;
+					mu.Determination();
 					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 회피율과 명중률이 5씩 상승했다.");
 					break;
-
+					
 				} else if (choice_skill == 4) {
 					int a = 30;
 					if (ene <= 30) {
@@ -797,7 +810,8 @@ public class Battle {
 					if (shoot_dmg == 1) {
 						shoot_dmg = (atk * dex + 1) / 3;
 					}
-					ene -= 30;
+					ene -= 10;
+					mu.gunshot2();
 					System.out.println(st.getNick() + "의 권총 사격! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
 					System.out.println(st.getNick() + " : '날아오는걸 못봤구나. 그렇지?'");
 					System.out.println("");
@@ -816,6 +830,7 @@ public class Battle {
 							fire_dmg = (atk * wis + 1) / 2;
 						}
 						ene -= 30;
+						mu.fireball();
 						System.out.println(
 								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + fire_dmg + "의 데미지를 받았다!");
 						System.out.println("");
@@ -833,6 +848,7 @@ public class Battle {
 							ice_dmg = (atk * wis + 1) / 2;
 						}
 						ene -= 10;
+						mu.ice();
 						System.out.println(st.getNick() + "의 아이스 스피어! " + En_name + "은(는) " + ice_dmg + "의 데미지를 받았다!");
 						System.out.println("");
 						En_hp -= ice_dmg;
@@ -846,11 +862,12 @@ public class Battle {
 						System.out.println(st.getNick() + " : '제길! 이럴 줄 알았으면 더 구해놓는 건데!'");
 						System.out.println("");
 					} else {
-						hp += 20;
+						hp += 100;
 						hurbs--;
 						if (hp > maxhp) {
 							hp = maxhp;
 						}
+						mu.Heal();
 						System.out.println(st.getNick() + "은(는) 약초를 사용하여 체력을 회복했다! 20만큼 체력이 회복되었다!");
 						System.out.println("");
 						break;

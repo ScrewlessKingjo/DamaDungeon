@@ -13,7 +13,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/miniStrike.wav");
+		bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\miniStrike.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -32,7 +32,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/BattleBrotherswav.wav");
+		bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\BattleBrotherswav.wav");
 		Clip clip = null;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -52,7 +52,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/AirCut.wav");
+		bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\AirCut.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -71,7 +71,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/Bloody.wav");
+		bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\Bloody.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -90,7 +90,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/fireBall.wav");
+		bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\fireBall.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -109,7 +109,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File("C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/shrineofenirhs.wav");
+		bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\shrineofenirhs.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -148,7 +148,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/524912__andrest2003__gunshot-pitch-a.wav");
+				"C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\524912__andrest2003__gunshot-pitch-a.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -167,7 +167,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/fireball.wav");
+				"C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\fireBall.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -186,7 +186,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/ice.wav");
+				"C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\ice.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -205,7 +205,45 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:/Users/smhrd/Desktop/JAVAstudy/Javaminiproject1/Java_miniproject_²ËÀÚ¹Ù/music/warcry.wav");
+				"C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\shout1.wav");
+		Clip clip;
+		try {
+			stream = AudioSystem.getAudioInputStream(bgm);
+			format = stream.getFormat();
+			info = new DataLine.Info(Clip.class, format);
+			clip = (Clip) AudioSystem.getLine(info);
+			clip.open(stream);
+			clip.start();
+		} catch (Exception e) {
+			System.out.println("err : " + e);
+		}
+	}
+	public void enemyDeath() {
+		File bgm;
+		AudioInputStream stream;
+		AudioFormat format;
+		DataLine.Info info;
+		bgm = new File(
+				"C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\death1.wav");
+		Clip clip;
+		try {
+			stream = AudioSystem.getAudioInputStream(bgm);
+			format = stream.getFormat();
+			info = new DataLine.Info(Clip.class, format);
+			clip = (Clip) AudioSystem.getLine(info);
+			clip.open(stream);
+			clip.start();
+		} catch (Exception e) {
+			System.out.println("err : " + e);
+		}
+	}
+	public void Heal() {
+		File bgm;
+		AudioInputStream stream;
+		AudioFormat format;
+		DataLine.Info info;
+		bgm = new File(
+				"C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\refill.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
