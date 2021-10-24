@@ -99,11 +99,11 @@ public class Battle {
 		En_luk = t.getEn_luk();
 		// 유저 데미지 기본값
 
-		int user_dmg = (str + atk - En_def);
+		user_dmg = (str + atk - En_def);
 		// 유저 데미지 분산값
 
 		// 적 데미지 기본값
-		int En_dmg = (En_str + En_atk - shd);
+		En_dmg = (En_str + En_atk - shd);
 
 		// 적 데미지 분산값
 
@@ -167,7 +167,7 @@ public class Battle {
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
 			System.out.println("");
 			Turn();
-			if ( En_hp>0&&turnCount==1) {
+			if (En_hp > 0 && turnCount == 1) {
 				En_Turn();
 			}
 			if (hp < 1) {
@@ -184,7 +184,7 @@ public class Battle {
 		dama.vo_update(id, st.getNick(), st.getLv(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
 				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
 				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
-		if (hp>0) {
+		if (hp > 0) {
 			fc.Face_Normal(id);
 		}
 	}
@@ -196,6 +196,7 @@ public class Battle {
 
 		int[] user_dmgList = { user_dmg - 5, user_dmg - 4, user_dmg - 3, user_dmg - 2, user_dmg - 1, user_dmg,
 				user_dmg + 1, user_dmg + 2, user_dmg + 3, user_dmg + 4, user_dmg + 5 };
+		System.out.println(user_dmgList[10]);
 		int user_dmgDev = rd.nextInt(10);
 		int user_dmgR = user_dmgList[user_dmgDev];
 		int[] En_dmgList = { En_dmg - 5, En_dmg - 4, En_dmg - 3, En_dmg - 2, En_dmg - 1, En_dmg, En_dmg + 1, En_dmg + 2,
@@ -204,13 +205,14 @@ public class Battle {
 		int En_dmgR = En_dmgList[En_dmgDev];
 
 		int basePro = 50;
-		int user_EsPro = (basePro - 20) + (spd - En_spd);
-		int user_HitPro = (basePro + 30) + (dex - En_dex);
-		int user_CriPro = (basePro - 40) + (luk - En_luk);
+		user_EsPro = (basePro - 20) + (spd - En_spd);
+		user_HitPro = (basePro + 30) + (dex - En_dex);
+		user_CriPro = (basePro - 40) + (luk - En_luk);
 
+		System.out.println(user_dmgList[10]);
 		while (true) {
 
-			System.out.println("[1] 공격한다 [2] 스킬 [3] 도망친다");
+			System.out.println("[1] 공격한다 [2] 스킬 [3] 스탯 비교 [4] 도망친다");
 			System.out.println(" ");
 			int choice = sc.nextInt();
 			if (choice == 1) {
@@ -319,9 +321,11 @@ public class Battle {
 					}
 				}
 
+			} else if (choice == 3) {
+				StatusShow();
 			}
 
-			else if (choice == 3) {
+			else if (choice == 4) {
 				System.out.println("도망치시겠습니까? 탈출확률 : " + user_EsPro + "%");
 				System.out.println("[1] 예 [2] 아니오");
 				int choice_Escape = sc.nextInt();
@@ -497,5 +501,24 @@ public class Battle {
 		System.out.println("적탈출확률" + En_EsPro);
 		System.out.println("적명중률" + En_HitPro);
 		System.out.println("적치명율" + En_CriPro);
+	}
+
+	public void StatusShow() {
+		System.out.println(st.getId() + "                        " + t.getEn_name());
+		System.out.println("체력 : " + hp + "/" + maxhp + "                   " + En_hp + "/" + t.getEn_hp());
+		System.out.println("에너지 : " + ene + "/" + maxene+"                 ");
+		System.out.println("음식 : " + food+"                       ");
+		System.out.println("약초 : " + hurbs+"                       ");
+
+		System.out.println("공격력 : " + atk + "                        " + En_atk);
+		System.out.println("속도 : " + spd + "                         " + En_spd);
+		System.out.println("방어력 : " + shd + "                         " + En_def);
+		System.out.println("힘 : " + str + "                           " + En_str);
+		System.out.println("민 : " + dex + "                           " + En_dex);
+		System.out.println("지 : " + wis +"                           " + En_wis);
+		System.out.println("운 : " + luk + "                           " + En_luk);
+		System.out.println("탈출확률 : " + user_EsPro + "%                     " + En_EsPro+"%");
+		System.out.println("치명율 : " + user_CriPro + "%                       " + En_CriPro+"%");
+		System.out.println("명중률 : " + user_HitPro + "%                      " + En_HitPro+"%");
 	}
 }
