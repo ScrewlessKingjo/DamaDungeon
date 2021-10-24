@@ -14,28 +14,37 @@ public class Eat {
 	private int bob;
 	private int hp;
 	private int ene;
-
+    private int MaxHp;
+    private int MaxEne;
+    
 	public void Eat_menu(String id) {
 		st = dama.vo_loding(id);
 		her = st.getHurbs();
 		bob = st.getFood();
 		hp = st.getHp();
 		ene = st.getEne();
+		MaxHp = st.getMaxhp();
+		MaxEne = st.getMaxene();
 		System.out.println("1. 밥" + "(" + st.getFood() + "개)" + " 2. 약초" + "(" + st.getHurbs() + "개)" + " 3. 뒤로가기");
 		int eat_choice = sc.nextInt();
 
 		if (eat_choice == 1) {
 
 			if (bob > 0) {
+				if(MaxEne>ene) {
 				System.out.println("밥을 먹는다.");
 				bob--;
 				ene += 50;
 //				System.out.println(bob);
 				st.setFood(bob);
+				if (ene>MaxEne) {ene=MaxEne;}
 				st.setEne(ene);
-
 				st.Alldate(id);
 				fa.Face_Eat_Fish(id);
+				}else {
+					System.out.println("아이 배불띠~!");
+					
+				}
 			} else {
 				System.out.println("밥이 없다.");
 			}
@@ -43,14 +52,18 @@ public class Eat {
 		} else if (eat_choice == 2) {
 
 			if (her > 0) {
+				if(MaxHp>hp) {
 				System.out.println("약초를 먹는다.");
 				her--;
 				hp += 50;
 				st.setHurbs(her);
+				if (hp>MaxHp) {hp=MaxHp;}
 				st.setHp(hp);
-
 				st.Alldate(id);
 				fa.Face_Eat_Medi(id);
+				}else {
+					System.out.println("약초 너무 배불렁");
+				}
 			} else {
 				System.out.println("약초가 없다.");
 			}
