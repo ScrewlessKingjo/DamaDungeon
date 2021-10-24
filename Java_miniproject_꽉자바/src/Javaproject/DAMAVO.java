@@ -28,19 +28,23 @@ public class DAMAVO {
 	private int select_st;
 	Scanner sc= new Scanner(System.in);
 	
+	
 	public void VO_deadly(String main_id) {
 		testMain main_vlu = new testMain();
-		main_vlu.setcoin(0);
+		System.out.println("체력 ="+hp);
 		if (hp < 1) {
-			System.out.println(" 사망하셨습니다. 당신의 기롣은 기록될 것입니다.");
+			System.out.println(" 사망하셨습니다. 당신의 발자취는 기록될 것입니다.");
 			hp=0;
 			main_vlu.setcoin(0);
-			Alldate(main_id);
 		}
 		
 	}
 	
-	public void VO_sleeptry() {
+	public void VO_sleeptry(String main_id,int rehp,int reene) {
+		hp +=rehp;
+		if (hp>maxhp) {hp=maxhp;}
+		ene +=reene;
+		if (ene>maxene) {ene=maxene;}
 		
 	}
 	

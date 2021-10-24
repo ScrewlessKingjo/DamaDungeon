@@ -19,9 +19,9 @@ public class testMain {
 		int select_menu = 0;		// 선택 메뉴 변수
 		coin=0;
 		String main_id = null;
+		fc.face_main();
 		while (true) {
 			if (title_menu == 0) {
-				fc.face_main();
 				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
 				title_menu = sc.nextInt();
 			} else if (title_menu == 1) {
@@ -103,7 +103,9 @@ public class testMain {
 			} else if (game_menu == 1) {
 				System.out.println("모험을 떠난다.");
 				ad.select_Adven(main_id);
+				st=dama.vo_loding(main_id);
 				st.VO_deadly(main_id);
+				st.Alldate(main_id);
 				game_menu = 0;
 				
 				
@@ -124,21 +126,19 @@ public class testMain {
 				
 			} else if (game_menu == 4) {
 				System.out.println("취침을 한다.");
+				st=dama.vo_loding(main_id);
+				st.VO_sleeptry(main_id, 80, 80);
 				fc.Face_Sleep(main_id);
-				int cnt = sp.sleep(main_id);
-				
-				if(cnt > 0) {
-					System.out.println("회복 성공");
-				}else {
-					System.out.println("회복 실패..");
-				}
-				
+				st.Alldate(main_id);
 				game_menu = 0;
 				
 			} else if (game_menu == 5) {
+				st=dama.vo_loding(main_id);
 				fc.Face_Escape(main_id);
 				coin=0;
 				System.out.println(" 게임 종료 ");
+				
+				st.Alldate(main_id);
 			}
 
 		}
