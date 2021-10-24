@@ -11,7 +11,7 @@ public class Music {
               AudioInputStream stream;
               AudioFormat format;
               DataLine.Info info;
-              bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\ASingularStrike.wav"); // 사용시에는 개별 폴더로 변경할 것
+              bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\miniStrike.wav"); // 사용시에는 개별 폴더로 변경할 것
               Clip clip;
               try {
                      stream = AudioSystem.getAudioInputStream(bgm);
@@ -19,7 +19,7 @@ public class Music {
                      info = new DataLine.Info(Clip.class, format);
                      clip = (Clip)AudioSystem.getLine(info);
                      clip.open(stream);
-                     clip.start();      
+                     clip.start();     
               } catch (Exception e) {
                      System.out.println("err : " + e);
                      }    
@@ -83,7 +83,61 @@ public class Music {
            AudioInputStream stream;
            AudioFormat format;
            DataLine.Info info;
-           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\ASingularStrike.wav"); // 사용시에는 개별 폴더로 변경할 것
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\fireBall.wav"); // 사용시에는 개별 폴더로 변경할 것
+           Clip clip;
+           try {
+                  stream = AudioSystem.getAudioInputStream(bgm);
+                  format = stream.getFormat();
+                  info = new DataLine.Info(Clip.class, format);
+                  clip = (Clip)AudioSystem.getLine(info);
+                  clip.open(stream);
+                  clip.start();      
+           } catch (Exception e) {
+                  System.out.println("err : " + e);
+                  }    
+    }
+       public void Determination() {
+           File bgm;
+           AudioInputStream stream;
+           AudioFormat format;
+           DataLine.Info info;
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\shrineofenirhs.wav"); // 사용시에는 개별 폴더로 변경할 것
+           Clip clip;
+           try {
+                  stream = AudioSystem.getAudioInputStream(bgm);
+                  format = stream.getFormat();
+                  info = new DataLine.Info(Clip.class, format);
+                  clip = (Clip)AudioSystem.getLine(info);
+                  clip.open(stream);
+                  clip.start();      
+           } catch (Exception e) {
+                  System.out.println("err : " + e);
+                  }    
+    }
+       public void gunshot1() {
+           File bgm;
+           AudioInputStream stream;
+           AudioFormat format;
+           DataLine.Info info;
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\gunshot.wav"); // 사용시에는 개별 폴더로 변경할 것
+           Clip clip;
+           try {
+                  stream = AudioSystem.getAudioInputStream(bgm);
+                  format = stream.getFormat();
+                  info = new DataLine.Info(Clip.class, format);
+                  clip = (Clip)AudioSystem.getLine(info);
+                  clip.open(stream);
+                  clip.start();      
+           } catch (Exception e) {
+                  System.out.println("err : " + e);
+                  }    
+    }
+       public void gunshot2() {
+           File bgm;
+           AudioInputStream stream;
+           AudioFormat format;
+           DataLine.Info info;
+           bgm = new File("C:\\Users\\sang0\\git\\Javaminiproject1\\Java_miniproject_꽉자바\\music\\524912__andrest2003__gunshot-pitch-a.wav"); // 사용시에는 개별 폴더로 변경할 것
            Clip clip;
            try {
                   stream = AudioSystem.getAudioInputStream(bgm);

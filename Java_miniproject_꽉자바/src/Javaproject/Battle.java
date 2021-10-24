@@ -279,6 +279,7 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은(는) 결의를 다질 수 없었다!");
 						System.out.println("");
 					} else {
+						mu.Determination();
 						ene -= 30;
 						shd += 1;
 						str += 1;

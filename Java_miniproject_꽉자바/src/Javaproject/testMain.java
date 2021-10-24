@@ -20,6 +20,7 @@ public class testMain {
 		coin=0;
 		String main_id = null;
 		fc.face_main();
+		mu.BattleBrothers();
 		while (true) {
 			if (title_menu == 0) {
 				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
