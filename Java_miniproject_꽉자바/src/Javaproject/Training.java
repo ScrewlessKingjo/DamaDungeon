@@ -19,6 +19,7 @@ public class Training {
 	}
 	
 	public void training_base(String id) {
+		
 		if(menu == 1) {
 			st=dama.vo_loding(id);
 			st.VO_experience(50,id);
@@ -93,9 +94,19 @@ public class Training {
 				}
 		}
 		
+	}
+	
+	public void Health(String id) {
+		System.out.println("무게를 입력하세요");
+		int kg = sc.nextInt();
+		
+		if(kg >= st.getStr()) {
+			
+		}
 		
 	}
-
+	
+	
 	
 	
 }
