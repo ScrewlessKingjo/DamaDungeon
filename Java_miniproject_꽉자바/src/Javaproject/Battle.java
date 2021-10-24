@@ -152,6 +152,7 @@ public class Battle {
 		// 보스 불러오는 메소드
 		// t = ge.getEnemyBoss(id);
 
+		
 		Anything();
 
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
@@ -173,6 +174,7 @@ public class Battle {
 					+ " 속도 : " + En_spd);
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
 			System.out.println("");
+			//직업별로 전투 메소드 다름.
 			if (st.getJobid() == 1) {
 				TurnWar();
 			} else if (st.getJobid() == 2) {
