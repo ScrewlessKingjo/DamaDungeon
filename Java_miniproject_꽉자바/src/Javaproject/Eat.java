@@ -4,88 +4,86 @@ import java.util.Scanner;
 
 public class Eat {
 	// ¿ΩΩƒ¿ª ∏‘¥¬ ≈¨∑πΩ∫¿‘¥œ¥Ÿ.
-	
+
 	Scanner sc = new Scanner(System.in);
 	DAMADAO dama = new DAMADAO();
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
 
-	
 	private int her;
 	private int bob;
 	private int hp;
 	private int ene;
-	
+
 	public void Eat_menu(String id) {
-		st=dama.vo_loding(id);
-		 her = st.getHurbs();
-		 bob = st.getFood();
-		 hp = st.getHp();
-		 ene = st.getEne();
-		System.out.println("1. π‰ " + st.getFood() + " 2. æ‡√  " + st.getHurbs());
+		st = dama.vo_loding(id);
+		her = st.getHurbs();
+		bob = st.getFood();
+		hp = st.getHp();
+		ene = st.getEne();
+		System.out.println("1. π‰" + "(" + st.getFood() + "∞≥)" + " 2. æ‡√ " + "(" + st.getHurbs() + "∞≥)" + " 3. µ⁄∑Œ∞°±‚");
 		int eat_choice = sc.nextInt();
 
 		if (eat_choice == 1) {
-			
-			System.out.println("π‰¿ª ∏‘¥¬¥Ÿ.");
+
 			if (bob > 0) {
+				System.out.println("π‰¿ª ∏‘¥¬¥Ÿ.");
 				bob--;
-				ene+=10;
+				ene += 10;
 //				System.out.println(bob);
 				st.setFood(bob);
 				st.setEne(ene);
-				
-				fa.Face_Fishing(id);
+
+				fa.Face_Eat_Fish(id);
 				st.Alldate(id);
-			}else {
+			} else {
 				System.out.println("π‰¿Ã æ¯¥Ÿ.");
 			}
 
 		} else if (eat_choice == 2) {
-			
-			System.out.println("æ‡√ ∏¶ ∏‘¥¬¥Ÿ.");
+
 			if (her > 0) {
+				System.out.println("æ‡√ ∏¶ ∏‘¥¬¥Ÿ.");
 				her--;
-				hp+=10;
+				hp += 10;
 				st.setHurbs(her);
 				st.setHp(hp);
-				
-				fa.Face_Eat_Fish(id);
+
+				fa.Face_Eat_Medi(id);
 				st.Alldate(id);
-				}
-			else {
+			} else {
 				System.out.println("æ‡√ ∞° æ¯¥Ÿ.");
 			}
-				
+
 		}
-		
+
 	}
-	
-	public void Eat_save(String id) {
-		
-		st=dama.vo_loding(id);
+
+	public void Bob_save(String id) {
+
+		st = dama.vo_loding(id);
+		bob = st.getFood();
+
+		if (bob >= 0) {
+			System.out.println("π‰¿ª ±∏«—¥Ÿ.");
+			bob++;
+			st.setFood(bob);
+			fa.Face_Fishing(id);
+			st.Alldate(id);
+			System.out.println("π‰¿ª "+st.getFood()+"»πµÊ«ﬂ¥Ÿ!");
+		}
+	}
+
+	public void Herb_save(String id) {
+		st = dama.vo_loding(id);
 		her = st.getHurbs();
-		 bob = st.getFood();
-		 hp = st.getHp();
-		 ene = st.getEne();
-		 
-		 System.out.println("1. π‰ " + st.getFood() + " 2. æ‡√  " + st.getHurbs());
-		 int s = sc.nextInt();
-		 if(s == 1) {
-			 if(bob >=0) {
-				 System.out.println("π‰¿ª ±∏«—¥Ÿ.");
-				 bob++;
-				 st.setFood(bob);
-				 st.Alldate(id);
-			 }
-		 }else if(s == 2) {
-			 if(her>=0) {
-				 System.out.println("æ‡√ ∏¶ ±∏«—¥Ÿ.");
-				her++; 
-				st.setHurbs(her);
-				st.Alldate(id);
-			 }
-		 }
-		
+		if (her >= 0) {
+			System.out.println("æ‡√ ∏¶ ±∏«—¥Ÿ.");
+			her++;
+			st.setHurbs(her);
+			fa.Face_Get_Medi(id);
+			st.Alldate(id);
+			System.out.println("æ‡¿ª "+st.getHurbs()+"»πµÊ«ﬂ¥Ÿ!");
+		}
 	}
 }

@@ -90,7 +90,7 @@ public class Face {
 	}
 	public void Face_Fishing(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick() + "낚시를 하지 (언제 잡히냐...)");
 		System.out.println("              ∧__∧    ");
 		System.out.println("            　(ºωº )   ");
 		System.out.println("          〃⌒∠(__u__)┐ ");

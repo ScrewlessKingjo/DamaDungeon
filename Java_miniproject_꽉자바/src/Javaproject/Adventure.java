@@ -22,11 +22,11 @@ public class Adventure {
 				break;
 				
 			}else if(select_admenu==2) {
-				ea.Eat_save(main_id);
+				ea.Bob_save(main_id);
 				break;
 				
 			}else if(select_admenu==3) {
-				ea.Eat_save(main_id);
+				ea.Herb_save(main_id);
 				break;
 				
 			}else {
