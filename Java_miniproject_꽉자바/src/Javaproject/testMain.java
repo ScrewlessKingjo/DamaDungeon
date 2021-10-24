@@ -13,7 +13,6 @@ public class testMain {
 		Face fc = new Face();
 		Eat eat = new Eat();
 		Scanner sc = new Scanner(System.in);
-		Sleep sp = new Sleep();
 		Training tr = new Training();
 		Music mu = new Music();
 		Adventure ad = new Adventure();
