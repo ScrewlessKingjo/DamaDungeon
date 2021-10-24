@@ -78,6 +78,11 @@ public class testMain {
 				title_menu = 0;
 			}
 		}
+		st=dama.vo_loding(main_id);
+		if (st.getHp() < 1) {
+			coin = 0;
+			System.out.println("이미 죽은 캐릭터 입니다.");
+		}
 		
 		 
 		while (coin == 5) {
