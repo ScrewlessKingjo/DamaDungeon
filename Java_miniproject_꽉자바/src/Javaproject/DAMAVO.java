@@ -82,6 +82,10 @@ public class DAMAVO {
 		this.shd += shd;
 	}
 	
+	public void VO_trLuk(int luk, String main_id) {
+		this.luk += luk;
+	}
+	
 	public void VO_trRun(int spd, String main_id) {
 		this.spd += spd;
 	}

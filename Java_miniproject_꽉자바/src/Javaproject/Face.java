@@ -69,11 +69,22 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	
+	public void Face_HealthHd(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("                    ");
+		System.out.println("              ∧ _ ∧        ");
+		System.out.println("           　 (ㅜωㅜ;)     ");
+		System.out.println("            (  ─┬─   )     ");
+		System.out.println("            (u ─┼─ u )     ");
+		System.out.println("            (  ─┴─   )∽    ");
+		System.out.println("            O-------O      ");
+	}
+	
 	public void Face_HealthTwo(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("                    ");
 		System.out.println("          O---∧ _ ∧ ---O      ");
-		System.out.println("           　∩( •̀ᴗ•́ )∩     ");
+		System.out.println("           　∩( >^< )∩     ");
 		System.out.println("            (  ─┬─   )     ");
 		System.out.println("            (  ─┼─   )     ");
 		System.out.println("            (  ─┴─   )∽    ");
@@ -109,6 +120,20 @@ public class Face {
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+	}
+	public void Face_runOne(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("           ∧ _ ∧   ");
+		System.out.println("       　  (● ω●)  ");
+		System.out.println("        ┌(     )┘   ");
+		System.out.println("         @@@@@@     ");
+	}
+	public void Face_runTwo(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("           ∧ _ ∧   ");
+		System.out.println("       　  (● ω●)  ");
+		System.out.println("         (┘    )┐   ");
+		System.out.println("         @@@@@@     ");
 	}
 	public void Face_Fishing(String id) {
 		st=dama.vo_loding(id);

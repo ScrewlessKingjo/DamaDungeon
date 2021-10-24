@@ -36,6 +36,7 @@ public class Training {
 	}
 	
 	public void Quiz(String id) {
+		st=dama.vo_loding(id);
 		int num1 = rd.nextInt(99)+1;
 		int num2 = rd.nextInt(99)+1;
 		int rdnum = rd.nextInt(4);
@@ -82,6 +83,7 @@ public class Training {
 					System.out.println("틀렸습니다.. 다시 도전해보세요");
 			}
 		}
+		st.Alldate(id);
 	}
 	
 	public void Health(String id) {
@@ -90,6 +92,7 @@ public class Training {
 		int kg = sc.nextInt();
 		
 		if(kg > st.getStr()+10) {
+			fa.Face_HealthHd(id);
 			System.out.println("끙...");
 			System.out.println("너무 무거워서 들 수 없어용 T^T");
 		}else if(kg >= st.getStr()-10 && kg <= st.getStr()+10) {
@@ -107,9 +110,26 @@ public class Training {
 	}
 	
 	public void Shield(String id) {
-		System.out.println();
+		int rdnum = rd.nextInt(5);
+		st=dama.vo_loding(id);
+		// 맞는 고양이
+		System.out.println("퍽퍽퍽퍽... shd + 1..");
+		st.VO_trShield(1, id);
+		if(rdnum == 0) {
+			// 피한 고양이
+			System.out.println("앗 피했다! luk + 1!");
+			st.VO_trLuk(1, id);
+		}
+		st.Alldate(id);
 	}
 		
+	public void Run(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("D 키를 눌러 달려주세요!! =33");
+		int cnt = sc.nextInt();
+		
+		st.Alldate(id);
+	}
 	
 	
 	
