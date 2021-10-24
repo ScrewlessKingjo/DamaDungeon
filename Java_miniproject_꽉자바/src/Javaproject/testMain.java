@@ -138,7 +138,6 @@ public class testMain {
 			} else if (game_menu == 2) {
 				System.out.println("훈련을 떠난다.");
 				tr.tr_Select(main_id);
-				tr.Quiz(main_id);
 				tr.training_base(main_id);
 				game_menu = 0;
 
