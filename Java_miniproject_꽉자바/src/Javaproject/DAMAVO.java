@@ -88,6 +88,8 @@ public class DAMAVO {
 			}else if(select_st==3) {
 			wis++;
 			dummi --;
+			maxene+=10;
+			ene+=10;
 			shd+=1;	
 			}else if(select_st==4) {
 			luk++;
