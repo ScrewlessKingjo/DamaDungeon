@@ -63,7 +63,7 @@ public class testMain {
 					System.out.println("지혜는 마법사의 최대 장점이며, 마법사는 자신의 지혜를 가지고 여러가지 마법을 사용합니다.");
 				}  else if (job_choice ==4 ) {
 					System.out.println("거지는 이곳에 있어서는 안되는 불우한 자입니다.");
-					System.out.println("다른 직업에 비해서 빼어난 특기는 없지만, 아무것도 가지지 않은 자는 다른 사람보다 무서운 법입니다....");
+					System.out.println("다른 직업에 비해서 빼어난 특기는 없지만, 아무것도 가지지 못한 자는 다른 사람보다 무서운 법입니다....");
 				} 
 				coin = dama.join(ID, PW);
 				title_menu = 0;
