@@ -8,10 +8,10 @@ public class testMain {
 		Face fc = new Face();
 	    Eat eat = new Eat();
 		Scanner sc = new Scanner(System.in);
-		Battle bt = new Battle();
 		Sleep sp = new Sleep();
 		Training tr = new Training();
 		Music mu = new Music();
+		Adventure ad =new Adventure();
 		
 		int coin = 0;				// 게임 시작 여부 확인 변수
 		int title_menu = 0;			// 메인페이지 메뉴 변수
@@ -103,9 +103,7 @@ public class testMain {
 
 			} else if (game_menu == 1) {
 				System.out.println("모험을 떠난다.");
-				System.out.println("[1]핓빛숲 [2]심해 [3]폭풍정원");
-				int a=sc.nextInt();
-				bt.Phase(main_id, a);
+				ad.select_Adven(main_id);
 				game_menu = 0;
 				
 				
