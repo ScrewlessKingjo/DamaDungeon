@@ -145,7 +145,7 @@ public class testMain {
 				System.out.println("취침을 한다.");
 				st=dama.vo_loding(main_id);
 				st.VO_sleeptry(main_id, 80, 80);
-				st.Alldate(main_id);
+				st.dama.vo_loding(main_id);
 				fc.Face_Sleep(main_id);
 				game_menu = 0;
 				

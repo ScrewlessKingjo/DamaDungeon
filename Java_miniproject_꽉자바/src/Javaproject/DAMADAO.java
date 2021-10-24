@@ -392,11 +392,14 @@ public class DAMADAO {
 
 	public void day_update(String id, int upday) {
 		String sql;
+		DAMAVO st = new DAMAVO();
+		st=vo_loding(id);
+		int plusday=st.getStartday()+upday;
 		getConn();
 		try {
 			sql = "update DAMA_INFO set STARTDAY=? where user_id =?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, upday);
+			psmt.setInt(1, plusday);
 			psmt.setString(2, id);
 			result = psmt.executeUpdate();
 		} catch (SQLException e) {

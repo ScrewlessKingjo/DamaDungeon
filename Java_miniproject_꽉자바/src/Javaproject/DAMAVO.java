@@ -39,16 +39,19 @@ public class DAMAVO {
 		}
 		
 	}
-	
 	public void VO_sleeptry(String main_id,int rehp,int reene) {
+		dama.vo_loding(main_id);
 		hp +=rehp;
 		if (hp>maxhp) {hp=maxhp;}
 		ene +=reene;
 		if (ene>maxene) {ene=maxene;}
 		startday+=5;
-		dama.day_update(main_id,startday);
-		
+		Alldate(main_id);
 	}
+	public void VO_day(String main_id,int day) {
+		startday+=day;
+	}
+	
 	
 	
 	public void VO_experience(int exe,String main_id) {
