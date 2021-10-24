@@ -29,13 +29,13 @@ public class Eat {
 			if (bob > 0) {
 				System.out.println("밥을 먹는다.");
 				bob--;
-				ene += 10;
+				ene += 50;
 //				System.out.println(bob);
 				st.setFood(bob);
 				st.setEne(ene);
 
-				fa.Face_Eat_Fish(id);
 				st.Alldate(id);
+				fa.Face_Eat_Fish(id);
 			} else {
 				System.out.println("밥이 없다.");
 			}
@@ -45,12 +45,12 @@ public class Eat {
 			if (her > 0) {
 				System.out.println("약초를 먹는다.");
 				her--;
-				hp += 10;
+				hp += 50;
 				st.setHurbs(her);
 				st.setHp(hp);
 
-				fa.Face_Eat_Medi(id);
 				st.Alldate(id);
+				fa.Face_Eat_Medi(id);
 			} else {
 				System.out.println("약초가 없다.");
 			}
