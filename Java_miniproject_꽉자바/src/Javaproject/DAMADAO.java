@@ -345,6 +345,21 @@ public class DAMADAO {
            e.printStackTrace();
         } finally {
            endClose();
+        }   
+     }
+	public void day_update(String id,int upday) {
+		String sql;
+		getConn();
+        try {
+        	sql = "update DAMA_INFO set STARTDAY=? where user_id =?";
+            psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, upday);
+            psmt.setString(2, id);
+            result = psmt.executeUpdate();
+        } catch (SQLException e) {
+           e.printStackTrace();
+        } finally {
+           endClose();
         }    
         
      }

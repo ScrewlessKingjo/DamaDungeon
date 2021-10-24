@@ -9,7 +9,6 @@ public class Training {
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
 	public void training_base(String id) {
-		
 		st=dama.vo_loding(id);
 		st.VO_experience(50,id);
 		st.Alldate(id);

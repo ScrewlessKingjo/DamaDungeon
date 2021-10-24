@@ -10,7 +10,7 @@ public class Face {
 	public void Face_Normal(String id) {
 		st=dama.vo_loding(id);
 		
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (O ω O)");
 		System.out.println("           .c(__ｕｕ_)");
@@ -21,7 +21,7 @@ public class Face {
 
 	public void Face_Sleep(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("                ∧__∧  ");
 		System.out.println("      Zzz     _( ˘ω˘)  ");
 		System.out.println("           ∽c(____⊃⊂ ) ");
@@ -32,7 +32,7 @@ public class Face {
 	
 	public void Face_Eat_Fish(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick()+ " 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday()+ " 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
 		System.out.println("           ∧__∧    ");
 		System.out.println("         　(☆o☆ )_ ! ");
 		System.out.println(" ><)))˚>  ( __ _  )   ");
@@ -43,7 +43,7 @@ public class Face {
 	}
 	public void Face_Eat_Medi(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick()+ " 약초를 먹지 우웩 쓰다 써 인생");
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday()+ " 약초를 먹지 우웩 쓰다 써 인생");
 		System.out.println("            ∧__∧    ");
 		System.out.println("   _____  　(＊＾＊ )_ & ");
 		System.out.println("  (_약초_)   ( __ _  )   ");
@@ -55,7 +55,7 @@ public class Face {
 	
 	public void Face_Health(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("                    ");
 		System.out.println("          O---∧ _ ∧ ---O      ");
 		System.out.println("           　∩(ㅜωㅜ;)∩     ");
@@ -69,7 +69,7 @@ public class Face {
 	
 	public void Face_맷집(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (> ㅠ<)  ");
 		System.out.println("           .c(__uu_)  "); 
@@ -79,7 +79,7 @@ public class Face {
 	}
 	public void Face_run(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("           ∧ _ ∧   ");
 		System.out.println("       　  (● ω●)  ");
 		System.out.println("        ┌(     )┘   ");
@@ -90,7 +90,7 @@ public class Face {
 	}
 	public void Face_Fishing(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick() + "낚시를 하지 (언제 잡히냐...)");
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday() + "낚시를 하지 (언제 잡히냐...)");
 		System.out.println("              ∧__∧    ");
 		System.out.println("            　(ºωº )   ");
 		System.out.println("          〃⌒∠(__u__)┐ ");
@@ -103,7 +103,7 @@ public class Face {
 	}
 	public void Face_Get_Medi(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("              ∧__∧     ");
 		System.out.println("             (ºωº )    ");
 		System.out.println("            ∠(__u__)┐  ");
@@ -145,7 +145,7 @@ public class Face {
 	
 	public void Face_Sick(String id) {
 		st=dama.vo_loding(id);
-		System.out.println("    내 이름은 " + st.getNick());
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜"+st.getStartday());
 		System.out.println("       ∧ _ ∧        ");
 		System.out.println("      (＠ △＠)       ");
 		System.out.println("     ┌───────┐      "); 

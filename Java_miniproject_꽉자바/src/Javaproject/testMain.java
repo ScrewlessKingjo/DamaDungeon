@@ -52,7 +52,7 @@ public class testMain {
 					main_id = ID;
 					break;
 				}else {
-					System.out.println("회원가입 실패.. 다시 시도해주세요");
+					System.out.println("회원가입 실패.. 다시 시도해주세요//");
 				}
 			} else if (title_menu == 3) {
 				dama.ranksys();

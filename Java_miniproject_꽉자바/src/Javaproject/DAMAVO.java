@@ -27,6 +27,7 @@ public class DAMAVO {
 	private int[] LVtable = {0,100,200,300,400,500,600,700,800,900,1000};
 	private int select_st;
 	Scanner sc= new Scanner(System.in);
+	DAMADAO dama = new DAMADAO();
 	
 	
 	public void VO_deadly(String main_id) {
@@ -44,6 +45,8 @@ public class DAMAVO {
 		if (hp>maxhp) {hp=maxhp;}
 		ene +=reene;
 		if (ene>maxene) {ene=maxene;}
+		startday+=5;
+		dama.day_update(main_id,startday);
 		
 	}
 	
