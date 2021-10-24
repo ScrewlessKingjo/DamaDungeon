@@ -31,7 +31,6 @@ public class DAMAVO {
 	
 	public void VO_deadly(String main_id) {
 		testMain main_vlu = new testMain();
-		System.out.println("체력 ="+hp);
 		if (hp < 1) {
 			System.out.println(" 사망하셨습니다. 당신의 발자취는 기록될 것입니다.");
 			hp=0;

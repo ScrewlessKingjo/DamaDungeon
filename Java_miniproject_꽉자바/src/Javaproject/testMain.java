@@ -121,20 +121,16 @@ public class testMain {
 				
 				
 			} else if (game_menu == 3) {
-				
 				System.out.println("먹어보자!!");
 				eat.Eat_menu(main_id);
 				game_menu = 0;
-				
-				
-				
-				
+
 			} else if (game_menu == 4) {
 				System.out.println("취침을 한다.");
 				st=dama.vo_loding(main_id);
 				st.VO_sleeptry(main_id, 80, 80);
-				fc.Face_Sleep(main_id);
 				st.Alldate(main_id);
+				fc.Face_Sleep(main_id);
 				game_menu = 0;
 				
 			} else if (game_menu == 5) {
