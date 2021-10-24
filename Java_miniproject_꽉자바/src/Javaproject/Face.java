@@ -103,6 +103,19 @@ public class Face {
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
+	public void Face_FishingMiss(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday() + "낚시를 하지 (언제 잡히냐...)");
+		System.out.println("               ∧__∧    ");
+		System.out.println("            　(ㅠωㅠ )   ");
+		System.out.println("          〃⌒∠(__u__)┐ ");
+		System.out.println("          /           ");
+		System.out.println("                ><)))˚>  ");
+		System.out.println();
+		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+	}
 	public void Face_Get_Medi(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
@@ -155,6 +168,42 @@ public class Face {
 		System.out.println("      │         │     ");
 		System.out.println("      │         │     ");
 		System.out.println("    ──┴──     ──┴──   ");
+	}
+	
+	public void Face_Four(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("        ∧_____∧       ");
+		System.out.println("       ( ● ω ● )     ");
+		System.out.println("      ⊂(       )⊃    ");
+		System.out.println("         u   u       ");
+
+	}
+	
+	public void Face_접기1(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("        ∧_____∧       ");
+		System.out.println("       ( = ω = )     ");
+		System.out.println("       ( ⊃n n⊂ )    ");
+
+	}
+	
+	public void Face_접기2(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("        ∧_____∧       ");
+		System.out.println("       ( = ω = )     ");
+		System.out.println("       ( ⊃   ⊂ )    ");
+		System.out.println("         ˘   ˘      ");
+	}
+	
+	public void Face_Talk(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("             ");
+		System.out.println(" ┌───────┐             ");
+		System.out.println(" │       │      ");
+		System.out.println(" └───────┘           ");
+		System.out.println("            ˚ · . ∧____∧       ");
+		System.out.println("                 ( -ω - )__    ");
+		System.out.println("                   (⊃⊂     )～    ");
 	}
 	
 	public void Face_Sick(String id) {
