@@ -64,9 +64,26 @@ public class DAMAVO {
 			System.out.println("     弛     LEVEL UP     弛");
 			System.out.println("     戌式式式式式式式式式式式式式式式式式式戎");
 			VO_Stators(5,main_id);
-		}}
-		
+			}
+		}
 	}
+	
+	public void VO_trStudy(int wis, String main_id) {
+		this.wis += wis;
+	}
+	
+	public void VO_trHealth(int str, String main_id) {
+		this.str += str;
+	}
+	
+	public void VO_trShield(int shd, String main_id) {
+		this.shd += shd;
+	}
+	
+	public void VO_trRun(int spd, String main_id) {
+		this.spd += spd;
+	}
+	
 	public void VO_Stators(int stat,String main_id) {
 		select_st=0;
 		System.out.println(id);
