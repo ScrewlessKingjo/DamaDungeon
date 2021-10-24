@@ -134,6 +134,7 @@ public class Battle {
 
 	// 전투 기본 메소드
 	public void Phase(String id, int a) {
+		turnCount = 1;
 		Enemy ge = new Enemy();
 		st = dama.vo_loding(id);
 		if (a == 1) {
