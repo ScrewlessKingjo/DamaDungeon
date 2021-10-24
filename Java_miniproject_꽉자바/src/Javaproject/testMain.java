@@ -2,6 +2,8 @@ package Javaproject;
 
 import java.util.Scanner;
 
+import javax.sound.sampled.Clip;
+
 public class testMain {
 	static int coin;	// 게임 시작 여부 확인 변수
 	public static void main(String[] args) {
@@ -13,14 +15,14 @@ public class testMain {
 		Sleep sp = new Sleep();
 		Training tr = new Training();
 		Music mu = new Music();
-		Adventure ad =new Adventure();			
+		Adventure ad =new Adventure();		
 		int title_menu = 0;			// 메인페이지 메뉴 변수
 		int game_menu = -1;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
 		coin=0;
 		String main_id = null;
 		fc.face_main();
-		mu.BattleBrothers();
+		Clip bgm = mu.BattleBrothers();
 		while (true) {
 			if (title_menu == 0) {
 				System.out.print("1. 로그인 2. 회원가입 3. 랭킹확인 4. 종료 >> ");
@@ -90,7 +92,7 @@ public class testMain {
 				title_menu = 0;
 			} else if (title_menu == 6) {
 				// 아이디 비번 확인하는 메소드
-				dama.select();
+				bgm.stop();
 				title_menu = 0;
 			} else if (title_menu == 7) {
 				// 아이디 비번 확인하는 메소드

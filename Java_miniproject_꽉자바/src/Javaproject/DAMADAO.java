@@ -209,6 +209,7 @@ public class DAMADAO {
 
 	public void ranksys() {
 		getConn();
+		
 		int i = 0;
 		String sql = "select * from dama_info order by LV desc";
 		try {

@@ -459,7 +459,7 @@ public class Battle {
 					System.out.println("");
 					En_hp -= shoot_dmg;
 					skill_var = 1;
-
+					mu.gunshot1();
 					break;
 
 				} else if (choice_skill == 3) {
@@ -603,6 +603,7 @@ public class Battle {
 						System.out.println("");
 						En_hp -= fire_dmg;
 						skill_var = 1;
+						mu.fireball();
 						break;
 					}
 				} else if (choice_skill == 2) {
@@ -618,6 +619,7 @@ public class Battle {
 						System.out.println(st.getNick() + "의 아이스 스피어! " + En_name + "은(는) " + ice_dmg + "의 데미지를 받았다!");
 						System.out.println("");
 						En_hp -= ice_dmg;
+						mu.ice();
 						break;
 					}
 				} else if (choice_skill == 3) {
