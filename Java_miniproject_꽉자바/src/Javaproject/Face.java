@@ -145,6 +145,18 @@ public class Face {
 
 	}
 	
+	public void Face_Die(String id) {
+		st=dama.vo_loding(id);
+		System.out.println("      ┌─────────┐     ");
+		System.out.println("      │ D A M A │     ");
+		System.out.println("      │  D I E  │     ");
+		System.out.println("      │         │     ");
+		System.out.println("      │         │     ");
+		System.out.println("      │         │     ");
+		System.out.println("      │         │     ");
+		System.out.println("    ──┴──     ──┴──   ");
+	}
+	
 	public void Face_Sick(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
