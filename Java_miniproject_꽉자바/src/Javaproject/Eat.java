@@ -10,12 +10,18 @@ public class Eat {
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
 
+	
+	private int her;
+	private int bob;
+	private int hp;
+	private int ene;
+	
 	public void Eat_menu(String id) {
 		st=dama.vo_loding(id);
-		int her = st.getHurbs();
-		int bob = st.getFood();
-		int hp = st.getHp();
-		int ene = st.getEne();
+		 her = st.getHurbs();
+		 bob = st.getFood();
+		 hp = st.getHp();
+		 ene = st.getEne();
 		System.out.println("1. 밥 " + st.getFood() + " 2. 약초 " + st.getHurbs());
 		int eat_choice = sc.nextInt();
 
@@ -52,6 +58,34 @@ public class Eat {
 			}
 				
 		}
+		
+	}
+	
+	public void Eat_save(String id) {
+		
+		st=dama.vo_loding(id);
+		her = st.getHurbs();
+		 bob = st.getFood();
+		 hp = st.getHp();
+		 ene = st.getEne();
+		 
+		 System.out.println("1. 밥 " + st.getFood() + " 2. 약초 " + st.getHurbs());
+		 int s = sc.nextInt();
+		 if(s == 1) {
+			 if(bob >=0) {
+				 System.out.println("밥을 구한다.");
+				 bob++;
+				 st.setFood(bob);
+				 st.Alldate(id);
+			 }
+		 }else if(s == 2) {
+			 if(her>=0) {
+				 System.out.println("약초를 구한다.");
+				her++; 
+				st.setHurbs(her);
+				st.Alldate(id);
+			 }
+		 }
 		
 	}
 }
