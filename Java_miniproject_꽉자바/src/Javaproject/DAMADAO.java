@@ -210,7 +210,7 @@ public class DAMADAO {
 	public void ranksys() {
 		getConn();
 		int i = 0;
-		String sql = "select * from dama_info order by LV desc";
+		String sql = "select * from dama_info order by ES,LV asc";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -221,7 +221,7 @@ public class DAMADAO {
 				int getLv = rs.getInt(4);
 				int getExpe = rs.getInt(3);
 				int getturn = rs.getInt(9);
-				System.out.println(i + "위  아이디 : " + getID + "\t  닉네임 : " + getnick + "\t  레벨 : " + getLv + "\t  경험치 : "
+				System.out.println(i + "위  아이디 : " + getID + "\t\t닉네임 : " + getnick + "\t\t레벨 : " + getLv + "\t  경험치 : "
 						+ getExpe + "\t  턴수 : " + getturn);
 			}
 		} catch (SQLException e) {
