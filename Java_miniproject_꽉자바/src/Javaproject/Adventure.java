@@ -8,6 +8,7 @@ public class Adventure {
 	Battle bt = new Battle();
 	Eat ea = new Eat();
 	DAMAVO st=new DAMAVO();
+	Face fc = new Face();
 	int select_admenu;
 	
 	public void select_Adven(String main_id) {

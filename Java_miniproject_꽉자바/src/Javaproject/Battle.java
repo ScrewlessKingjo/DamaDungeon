@@ -159,7 +159,7 @@ public class Battle {
 		}
 		while (true) {
 			if (turnCount == 2 || EN_turnCount == 2) {
-				System.out.println("도망 성공");
+
 				break;
 			}
 			System.out.println(t.getEn_name() + " 정보// 체력 :" + En_hp + " 공격력 : " + En_atk + " 방어력 : " + En_def
@@ -167,7 +167,9 @@ public class Battle {
 			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
 			System.out.println("");
 			Turn();
-			En_Turn();
+			if ( En_hp>0&&turnCount==1) {
+				En_Turn();
+			}
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
 				break;
@@ -182,6 +184,9 @@ public class Battle {
 		dama.vo_update(id, st.getNick(), st.getLv(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
 				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
 				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
+		if (hp>0) {
+			fc.Face_Normal(id);
+		}
 	}
 
 	// 유저 턴 메소드
