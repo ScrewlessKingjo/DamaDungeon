@@ -18,7 +18,7 @@ public class Adventure {
 			System.out.println("[1]»ç³ÉÇÏ±â [2]À½½Ä±¸ÇÏ±â [3]¾à±¸ÇÏ±â [4]µÚ·Î°¡±â");
 			select_admenu=sc.nextInt();
 			}else if(select_admenu==1) {
-				System.out.println("[1]À”ºû½£ [2]½ÉÇØ [3]ÆøÇ³Á¤¿ø");
+				System.out.println("[1]ÇÍºû½£ [2]½ÉÇØ [3]ÆøÇ³Á¤¿ø");
 				int a=sc.nextInt();
 				bt.Phase(main_id, a);
 				break;

@@ -38,7 +38,7 @@ public class Battle {
 	private int wis;
 	private int luk;
 	private int turnCount = 0;
-	int skill_var = 0;
+	private int skill_var = 0;
 	private String En_name;
 	private int En_atk;
 	private int En_def;
