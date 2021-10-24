@@ -33,6 +33,11 @@ public class testMain {
 				title_menu = 0;
 				if (coin == 5) {
 					main_id = ID;
+					st=dama.vo_loding(main_id);
+					if (st.getHp()==0) {
+						coin = 0;
+						System.out.println("이미 죽은 캐릭터 입니다.");
+					}
 					break;
 				}else {
 					System.out.println("아이디와 비밀번호를 확인해주세요.");
@@ -77,11 +82,6 @@ public class testMain {
 			}else {
 				title_menu = 0;
 			}
-		}
-		st=dama.vo_loding(main_id);
-		if (st.getHp() < 1) {
-			coin = 0;
-			System.out.println("이미 죽은 캐릭터 입니다.");
 		}
 		
 		 
