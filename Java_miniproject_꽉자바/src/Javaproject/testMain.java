@@ -3,20 +3,21 @@ package Javaproject;
 import java.util.Scanner;
 
 public class testMain {
+	static int coin;	// 게임 시작 여부 확인 변수
 	public static void main(String[] args) {
 		DAMADAO dama = new DAMADAO();
+		DAMAVO st = new DAMAVO();
 		Face fc = new Face();
 	    Eat eat = new Eat();
 		Scanner sc = new Scanner(System.in);
 		Sleep sp = new Sleep();
 		Training tr = new Training();
 		Music mu = new Music();
-		Adventure ad =new Adventure();
-		
-		int coin = 0;				// 게임 시작 여부 확인 변수
+		Adventure ad =new Adventure();			
 		int title_menu = 0;			// 메인페이지 메뉴 변수
 		int game_menu = -1;			// 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 		int select_menu = 0;		// 선택 메뉴 변수
+		coin=0;
 		String main_id = null;
 		while (true) {
 			if (title_menu == 0) {
@@ -28,10 +29,8 @@ public class testMain {
 				String ID = sc.next();
 				System.out.print("비밀번호 입력하세요 >> ");
 				String PW = sc.next();
-				
 				coin = dama.login(ID, PW);
 				title_menu = 0;
-				
 				if (coin == 5) {
 					main_id = ID;
 					break;
@@ -104,6 +103,7 @@ public class testMain {
 			} else if (game_menu == 1) {
 				System.out.println("모험을 떠난다.");
 				ad.select_Adven(main_id);
+				st.VO_deadly(main_id);
 				game_menu = 0;
 				
 				
@@ -137,10 +137,16 @@ public class testMain {
 				
 			} else if (game_menu == 5) {
 				fc.Face_Escape(main_id);
+				coin=0;
 				System.out.println(" 게임 종료 ");
-				break;
 			}
 
 		}
+		
+	}	
+	public void setcoin(int set){
+		coin = set;
 	}
+	
+
 }
