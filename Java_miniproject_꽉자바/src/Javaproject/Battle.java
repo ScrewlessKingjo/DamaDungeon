@@ -149,10 +149,11 @@ public class Battle {
 			t = ge.getEnemyAir(id);
 		}
 
+		// 보스 불러오는 메소드
+		// t = ge.getEnemyBoss(id);
+
 		Anything();
 
-		
-		
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
 		System.out.println("");
@@ -381,7 +382,6 @@ public class Battle {
 
 		int basePro = 50;
 
-
 		while (true) {
 
 			System.out.println("[1] 공격한다 [2] 스킬 [3] 스탯 비교 [4] 도망친다");
@@ -444,7 +444,7 @@ public class Battle {
 						System.out.println("");
 					}
 					mu.Determination();
-					user_EsPro +=5;
+					user_EsPro += 5;
 					user_HitPro += 5;
 					user_CriPro += 5;
 					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 명중률, 치명율, 탈출확률이 5씩 상승했다.");
@@ -798,7 +798,7 @@ public class Battle {
 					mu.Determination();
 					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 회피율과 명중률이 5씩 상승했다.");
 					break;
-					
+
 				} else if (choice_skill == 4) {
 					int a = 30;
 					if (ene <= 30) {
