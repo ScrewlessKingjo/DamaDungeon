@@ -102,6 +102,13 @@ public class Face {
 		System.out.println("           　 (> ㅠ<)  ");
 		System.out.println("           .c(__uu_)  "); 
 	}
+	
+	public void Face_Hard(String id) {
+		System.out.println("              ∧ _ ∧  ");
+		System.out.println("           　;(X ㅠX);  ");
+		System.out.println("           .c(__uu_)  "); 
+	}
+	
 	public void Face_run(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
