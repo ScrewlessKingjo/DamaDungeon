@@ -27,6 +27,9 @@ public class Sick {
 				st.setSpd(st.getSpd()-i);
 				st.setHp(st.getHp()-i*10);
 				st.setEne(st.getEne()-i*10);
+				if(st.getHp() < 1) {
+					st.VO_deadly(id);
+				}
 				st.setSickday(i);
 				st.Alldate(id);
 				fa.Face_Sick(id);
