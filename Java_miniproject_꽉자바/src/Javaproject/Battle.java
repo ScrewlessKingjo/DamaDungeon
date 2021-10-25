@@ -905,7 +905,7 @@ public class Battle {
 						break;
 					}
 				} else if (choice_skill == 6) {
-					if (ene <= 30) {
+					if (ene <= 10) {
 						System.out.println("에너지가 없다! 지금 아이스 스피어를 쓰는 건 위험하다!");
 						System.out.println("");
 					} else {
