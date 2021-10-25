@@ -58,7 +58,6 @@ public class Sick {
 				st.setSickday(sickday);
 				System.out.println("질병에 걸렸습니다. 모든 스텟이 " +sickday+"만큼 하락합니다.");
 				st.Alldate(id);
-				fa.Face_Sick(id);
 			
 		}
 }
