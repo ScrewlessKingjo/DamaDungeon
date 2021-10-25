@@ -11,23 +11,25 @@ public class Sick {
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
 	
-	private int status;
+	private int sickday;
 	
 	public void Sick(String id){
-		while(true) {
-			if(status == 0) {
-				st=dama.vo_loding(id);
-				System.out.println("질병에 걸렸습니다. 모든 스텟이 1씩 하락합니다.");
-				st.setStr(st.getStr()-1);
-				st.setDex(st.getDex()-1);
-				st.setWis(st.getWis()-1);
-				st.setLuk(st.getLuk()-1);
-				st.setAtk(st.getAtk()-1);
-				st.setShd(st.getShd()-1);
-				st.setSpd(st.getSpd()-1);
-				st.setHp(st.getHp()-10);
-				st.setHp(st.getHp()-10);
-				}
+		st=dama.vo_loding(id);
+		sickday = st.getSickday()+1;
+		for (int i =1; i<sickday ;i++) {
+				System.out.println("질병에 걸렸습니다. 모든 스텟이 " +i+"만큼 하락합니다.");
+				st.setStr(st.getStr()-i);
+				st.setDex(st.getDex()-i);
+				st.setWis(st.getWis()-i);
+				st.setLuk(st.getLuk()-i);
+				st.setAtk(st.getAtk()-i);
+				st.setShd(st.getShd()-i);
+				st.setSpd(st.getSpd()-i);
+				st.setHp(st.getHp()-i*10);
+				st.setEne(st.getEne()-i*10);
+				st.setSickday(i);
+				st.Alldate(id);
+				fa.Face_Sick(id);
 			}
 		}
 }
