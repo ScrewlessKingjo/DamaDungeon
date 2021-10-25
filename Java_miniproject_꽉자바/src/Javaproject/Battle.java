@@ -211,6 +211,7 @@ public class Battle {
 				System.out.println("이겼다!" + t.getEn_name() + "을 해치웠다!");
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
+				st.VO_day(id, 1);
 				if (a==4 ) {
 					System.out.println();
 					System.out.println();
