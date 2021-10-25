@@ -10,8 +10,8 @@ public class Training {
 	DAMADAO dama = new DAMADAO();
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
+	private int menu;		
 	Event et = new Event();
-	int menu ;		
 	
 	public void tr_Select(String id) {
 		while(true) {
