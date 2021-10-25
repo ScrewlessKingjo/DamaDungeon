@@ -11,6 +11,7 @@ public class Eat {
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
     Random rd = new Random();
+    Event et = new Event();
     
 	private int her;
 	private int bob;
@@ -43,8 +44,10 @@ public class Eat {
 				st.setEne(ene);
 				st.Alldate(id);
 				fa.Face_Eat_Fish(id);
+				et.Eventset(id);
 				}else {
-					System.out.println("그만 먹을랭...");
+					fa.Face_No_Eat(id);
+					
 					
 				}
 			} else {
@@ -54,20 +57,24 @@ public class Eat {
 		} else if (eat_choice == 2) {
 
 			if (her > 0) {
-				if(MaxHp>hp || st.getSickday()>0) {
+				if(MaxHp>hp) {
+					
 				System.out.println("약초를 먹는다.");
 				her--;
 				hp += 50;
 				st.setHurbs(her);
 				if (hp>MaxHp) {hp=MaxHp;}
 				st.setHp(hp);
-				st.setSickday(0);
 				st.Alldate(id);
 				fa.Face_Eat_Medi(id);
+				et.Eventset(id);
 				}else {
-					System.out.println("나 안아푼뎅??");
+					fa.Face_No_Medi(id);
+					
+					
 				}
 			} else {
+				
 				System.out.println("약초가 없다.");
 			}
 
@@ -91,12 +98,14 @@ public class Eat {
 				fa.Face_Fishing(id);
 				System.out.println("밥을 "+"1 획득했다!");
 				System.out.println("내 밥 : "+ st.getFood());
+				et.Eventset(id);
 			}else {
 				System.out.println("밥을 구하지 못했다.");
 				st.VO_day(id,1);
 				st.Alldate(id);
 				fa.Face_FishingMiss(id);
 				System.out.println("내 밥 : "+ st.getFood());
+				et.Eventset(id);
 			}
 			}
 	}
@@ -115,12 +124,14 @@ public class Eat {
 				fa.Face_Get_Medi(id);
 				System.out.println("약을 "+"1 획득했다!");
 				System.out.println("내 약초 : "+st.getHurbs());
-				
+				et.Eventset(id);
 			}else {
 				System.out.println("약초를 구하지 못했다.");
 				st.VO_day(id,1);
 				st.Alldate(id);
+				fa.Face_Miss_Medi(id);
 				System.out.println("내 약초 : "+st.getHurbs());
+				et.Eventset(id);
 			}
 		}
 	}
