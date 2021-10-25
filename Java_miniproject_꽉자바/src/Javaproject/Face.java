@@ -97,7 +97,7 @@ public class Face {
 		System.out.println("            (  ─┴─   )∽    ");
 	}
 	
-	public void Face_맷집(String id) {
+	public void Face_Matzib(String id) {
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (> ㅠ<)  ");
 		System.out.println("           .c(__uu_)  "); 
@@ -207,36 +207,14 @@ public class Face {
 		System.out.println("    ──┴──     ──┴──   ");
 	}
 	
-	public void Face_Four(String id) {
-		System.out.println("        ∧_____∧       ");
-		System.out.println("       ( ● ω ● )     ");
-		System.out.println("      ⊂(       )⊃    ");
-		System.out.println("         u   u       ");
-
-	}
-	
-	public void Face_접기1(String id) {
-		System.out.println("        ∧_____∧       ");
-		System.out.println("       ( = ω = )     ");
-		System.out.println("       ( ⊃n n⊂ )    ");
-
-	}
-	
-	public void Face_접기2(String id) {
-		System.out.println("        ∧_____∧       ");
-		System.out.println("       ( = ω = )     ");
-		System.out.println("       ( ⊃   ⊂ )    ");
-		System.out.println("         ˘   ˘      ");
-	}
-	
 	public void Face_Talk(String id) {
-		System.out.println("             ");
-		System.out.println(" ┌───────┐             ");
-		System.out.println(" │       │      ");
-		System.out.println(" └───────┘           ");
+		System.out.println("            			  	");
+		System.out.println(" ┌───────┐    		         ");
+		System.out.println(" │       │    				  ");
+		System.out.println(" └───────┘     			      ");
 		System.out.println("            ˚ · . ∧____∧       ");
 		System.out.println("                 ( -ω - )__    ");
-		System.out.println("                   (⊃⊂     )～    ");
+		System.out.println("                   (⊃⊂     )～  ");
 	}
 	
 	public void Face_Sick(String id) {
@@ -252,6 +230,20 @@ public class Face {
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+	}
+	public void Face_Boss(String id) {
+		System.out.println("               			    		⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥			");
+		System.out.println("               		＼＼	    		┌──────────┐		 	");
+		System.out.println("               		  ＼＼     		│ ■	     ■ │	 			");
+		System.out.println("               			＼＼    		│PRINTLN();│	 			");
+		System.out.println("               			  ＼＼  		└──────────┘	 				");
+		System.out.println("             ∧ _ ∧   /  	＼＼	  @@@@@@@@@@@@@@@@@			");
+		System.out.println("           　( ◑△◑) /  	 	  ＼＼@@    @@JAVA@@	  @@				");
+		System.out.println("            ( ≥   )≥   	  	   @@		@@@@@	   @@			");	
+		System.out.println("              ˇ  ˇ        				 @@@					 ");
+		System.out.println("                        			   @@   @@					");
+		System.out.println("                        			 @@ 	  @@				");
+		System.out.println("                        		   @@ 		    @@		");
 	}
 	public void face_main() {
 		System.out.println("\r\n"
