@@ -12,7 +12,7 @@ public class Event {
 	Battle bt = new Battle();
 	Sick si = new Sick();
 
-	public void Eventset(String id) {
+	public void Eventset(String id) { 
 		int event_menu = rd.nextInt(100);
 		st = t.vo_loding(id);
 

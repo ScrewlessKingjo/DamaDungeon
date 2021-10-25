@@ -17,6 +17,8 @@ public class Battle {
 	Random rd = new Random();
 	Scanner sc = new Scanner(System.in);
 	Music mu = new Music();
+	testMain test = new testMain();
+	
 	// 외부 변수 선언. DAMADAO와 DAMAVO에서 가져올 변수를 미리 선언함.
 	private String id;
 	private String nick;
@@ -139,7 +141,7 @@ public class Battle {
 		int basePro = 50;
 		user_EsPro = (basePro - 20) + (spd - En_spd);
 		user_HitPro = (basePro + 30) + (dex - En_dex);
-		user_CriPro = (basePro - 40) + (luk - En_luk);
+		user_CriPro = (basePro - 30) + (luk - En_luk);
 		En_EsPro = basePro + (En_spd - spd);
 		En_HitPro = (basePro + 20) + (En_spd - spd);
 		En_CriPro = (basePro - 40) + (En_luk - luk);
@@ -209,6 +211,14 @@ public class Battle {
 				System.out.println("이겼다!" + t.getEn_name() + "을 해치웠다!");
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
+				if (a==4 ) {
+					System.out.println("보스를 잡았다.");
+					st = dama.vo_loding(id);
+					fc.Face_Escape(id);
+					test.setcoin(1);
+					System.out.println("메인화면으로");
+					st.Alldate(id);
+				}
 				break;
 			}
 
