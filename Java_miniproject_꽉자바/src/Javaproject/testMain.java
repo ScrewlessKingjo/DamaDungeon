@@ -124,7 +124,9 @@ public class testMain {
 						game_menu = 4;
 					} else if (select_menu == 5) {
 						game_menu = 5;
-					} else {
+					} else if (select_menu == 6) {
+						game_menu = 6;
+					}else {
 						game_menu = 0;
 					}
 
@@ -160,6 +162,13 @@ public class testMain {
 					fc.Face_Escape(main_id);
 					coin = 0;
 					System.out.println(" 게임 종료 ");
+					st.Alldate(main_id);
+				}
+				else if (game_menu == 6) {
+					st = dama.vo_loding(main_id);
+					fc.Face_Escape(main_id);
+					coin = 1;
+					System.out.println("메인화면으로");
 					st.Alldate(main_id);
 				}
 			}
