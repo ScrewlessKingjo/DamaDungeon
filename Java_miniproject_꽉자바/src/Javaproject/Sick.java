@@ -13,7 +13,7 @@ public class Sick {
 	
 	private int sickday;
 	
-	public void Sick(String id){
+	public void SSick(String id){
 		st=dama.vo_loding(id);
 		sickday = st.getSickday()+1;
 		for (int i =1; i<sickday ;i++) {
