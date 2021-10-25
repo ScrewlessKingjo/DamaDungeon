@@ -213,9 +213,9 @@ public class Face {
 
 	}
 	public void Face_De(String id) {
-		System.out.println("                   ∧____∧      ");
-		System.out.println("                  (   !∇!)       ");
-		System.out.println("                 ∽(⊂     )⊃      ");
+		System.out.println("                    ∧____∧      ");
+		System.out.println("                   (   !∇!)       ");
+		System.out.println("                  ∽(⊂     )⊃      ");
 	}
 	
 	public void Face_Fire(String id) {
