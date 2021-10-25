@@ -7,7 +7,7 @@ public class Enemy {
 	
 	DAMADAO dama = new DAMADAO();
 	DAMAVO st = new DAMAVO();
-	
+	Face fc = new Face();
 
 	private String id;
 	private int maxhp;
@@ -130,6 +130,7 @@ public class Enemy {
 		int z = (st.getStartday()*10);
 		ArrayList<Enemy> eList = new ArrayList<>();
 
+		//eList.add(new Enemy("토끼", 1, 1, 1, 1, 1,1,1,1));
 		eList.add(new Enemy("토끼", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("사슴", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("고양이", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(st.getStr(), e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
@@ -251,6 +252,10 @@ public class Enemy {
 	
 	public Enemy getEnemyBoss(String id) {
 		
+		
+		int t = 20+st.getStartday();
+		int z = 20+(st.getStartday()*10);
+		
 		st = dama.vo_loding(id);
 		UserInfo();
 
@@ -259,6 +264,8 @@ public class Enemy {
 		System.out.println(st.getNick()+" : '모든 길은 끝나기 마련이지. 가보기 전에는 그 끝을 알 수 없을 뿐.'");
 		System.out.println(st.getNick()+"은(는) 마지막 전투를 준비했다.");
 		System.out.println("");
+		
+		fc.Face_Boss(id);
 		
 		return new Enemy("자바", 1000, 100,100,100, 100, 100, 100,100);
 	}
