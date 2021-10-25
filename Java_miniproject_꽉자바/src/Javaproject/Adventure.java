@@ -27,6 +27,7 @@ public class Adventure {
 				}
 				int a = sc.nextInt();
 				bt.Phase(main_id, a);
+				fc.Face_Normal(main_id);
 				break;
 
 			} else if (select_admenu == 2) {
