@@ -11,7 +11,7 @@ public class Training {
 	DAMADAO dama = new DAMADAO();
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
-	int menu ;		
+	private int menu ;		
 	
 	public void tr_Select(String id) {
 		while(true) {
