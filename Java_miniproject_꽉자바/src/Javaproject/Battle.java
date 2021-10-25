@@ -326,7 +326,7 @@ public class Battle {
 
 			else if (choice == 2) {
 
-				System.out.println("[1] 결의 [2] 돌진  [3] 힐 [4] 뒤로가기");
+				System.out.println("[1] 결의 [2] 돌진  [3] 약초먹기 [4] 뒤로가기");
 				System.out.println("");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
@@ -486,7 +486,7 @@ public class Battle {
 
 			else if (choice == 2) {
 
-				System.out.println("[1] 도적의 감 [2] 권총 사격  [3] 힐 [4] 뒤로가기");
+				System.out.println("[1] 도적의 감 [2] 권총 사격  [3] 약초먹기 [4] 뒤로가기");
 				System.out.println("");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
@@ -655,7 +655,7 @@ public class Battle {
 
 			else if (choice == 2) {
 
-				System.out.println("[1] 파이어볼 [2] 아이스 스피어  [3] 힐 [4] 뒤로가기");
+				System.out.println("[1] 파이어볼 [2] 아이스 스피어  [3] 약초먹기 [4] 뒤로가기");
 				System.out.println("");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
@@ -814,7 +814,7 @@ public class Battle {
 
 			else if (choice == 2) {
 
-				System.out.println("[1] 결의 [2] 돌진  [3] 도적의 감 [4] 권총 사격 [5] 파이어볼 [6] 아이스 스피어 [7] 힐 [8] 뒤로가기");
+				System.out.println("[1] 결의 [2] 돌진  [3] 도적의 감 [4] 권총 사격 [5] 파이어볼 [6] 아이스 스피어 [7] 약초먹기 [8] 뒤로가기");
 				System.out.println("");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
