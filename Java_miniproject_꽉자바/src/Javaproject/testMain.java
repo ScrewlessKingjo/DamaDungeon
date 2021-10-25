@@ -155,8 +155,8 @@ public class testMain {
 				} else if (game_menu == 4) {
 					System.out.println("취침을 한다.");
 					st.VO_sleeptry(main_id, 999, 999);
-					et.Eventset(main_id);
 					fc.Face_Sleep(main_id);
+					et.Eventset(main_id);
 					game_menu = 0;
 
 				} else if (game_menu == 5) {
