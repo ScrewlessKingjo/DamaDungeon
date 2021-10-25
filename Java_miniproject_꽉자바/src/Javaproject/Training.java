@@ -15,7 +15,7 @@ public class Training {
 	
 	public void tr_Select(String id) {
 		while(true) {
-		System.out.println("1. 다마스터디(+wis) 2. 3대운동(+str) 3. 맷집(+shd) 4. 달리기(+spd) 5. 뒤로가기");
+		System.out.println("[1] 다마스터디(+wis) [2] 3대운동(+str) [3] 맷집(+shd) [4] 달리기(+spd) [5] 뒤로가기");
 		menu = sc.nextInt();
 		if(menu == 1) {
 			System.out.println("문제를 풀어보아용!");

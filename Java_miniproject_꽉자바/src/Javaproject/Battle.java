@@ -301,6 +301,7 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은(는) 결의를 다질 수 없었다!");
 						System.out.println("");
 					} else {
+						fc.Face_De(id);
 						mu.Determination();
 						ene -= 30;
 						shd += 5;
@@ -461,6 +462,7 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
+					fc.Face_De(id);
 					mu.Determination();
 					user_EsPro += 5;
 					user_HitPro += 5;
@@ -479,6 +481,7 @@ public class Battle {
 					if (shoot_dmg == 1) {
 						shoot_dmg = (atk * dex + 1) / 3;
 					}
+					fc.Face_Gun(id);
 					ene -= 30;
 					System.out.println(st.getNick() + "의 권총 사격! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
 					System.out.println(st.getNick() + " : '날아오는걸 못봤구나. 그렇지?'");
@@ -629,6 +632,7 @@ public class Battle {
 							fire_dmg = (atk * wis + 1) / 2;
 						}
 						ene -= 30;
+						fc.Face_Fire(id);
 						System.out.println(
 								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + fire_dmg + "의 데미지를 받았다!");
 						System.out.println("");
@@ -647,6 +651,7 @@ public class Battle {
 							ice_dmg = (atk * wis + 1) / 2;
 						}
 						ene -= 10;
+						fc.Face_Fire(id);
 						System.out.println(st.getNick() + "의 아이스 스피어! " + En_name + "은(는) " + ice_dmg + "의 데미지를 받았다!");
 						System.out.println("");
 						En_hp -= ice_dmg;

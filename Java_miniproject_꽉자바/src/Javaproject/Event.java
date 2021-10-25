@@ -14,7 +14,7 @@ public class Event {
 	
 	public void Eventset(String id) {
 		int event_menu = rd.nextInt(100);
-		if (event_menu<20) {
+		if (event_menu<50) {
 			int select=0;
 			st=t.vo_loding(id);
 			System.out.println("    ==랜덤 질병 발생== ");
@@ -38,7 +38,7 @@ public class Event {
 				}
 			}
 			
-		}else if(event_menu>10) {
+		}else if(event_menu>99) {
 			int select=0;
 			System.out.println("  ==랜덤 전투 발생==");
 			System.out.println("   [1] 전투 돌입  ");
