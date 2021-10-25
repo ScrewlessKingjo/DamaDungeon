@@ -26,7 +26,7 @@ public class Training {
 			Health(id);
 			break;
 		}else if(menu == 3) {
-			
+			Shield(id);
 			break;
 		}else if(menu == 4) {
 			Run(id);
@@ -81,11 +81,13 @@ public class Training {
 			ans = sc.nextInt();
 			if(ans == num1 * num2) {
 				System.out.println("정답입니다! wis + 1!");
+				System.out.println();
 				st.VO_trStudy(1, id);
 				st.VO_experience(50,id);
 				st.VO_day(id, 1);
 			}else {
 				System.out.println("틀렸습니다.. 다시 도전해보세요");
+				System.out.println();
 				st.VO_day(id, 1);
 				}
 		}else if (rdnum == 3) {
@@ -98,11 +100,13 @@ public class Training {
 			ans = sc.nextInt();
 				if(ans == num1 / num2) {
 					System.out.println("정답입니다! wis + 1!");
+					System.out.println();
 					st.VO_trStudy(1, id);
 					st.VO_experience(50,id);
 					st.VO_day(id, 1);
 				}else {
 					System.out.println("틀렸습니다.. 다시 도전해보세요");
+					System.out.println();
 					st.VO_day(id, 1);
 			}
 		}
@@ -118,6 +122,7 @@ public class Training {
 			fa.Face_HealthHd(id);
 			System.out.println("끙...");
 			System.out.println("너무 무거워서 들 수 없어용 T^T");
+			System.out.println();
 			st.VO_day(id, 1);
 		}else if(kg >= st.getStr()-10 && kg <= st.getStr()+10) {
 			fa.Face_HealthTwo(id);
@@ -131,6 +136,7 @@ public class Training {
 			fa.Face_HealthTwo(id);
 			System.out.println("이게 뭐야 ... 너무 가볍다 ...");
 			System.out.println("운동한 효과가 없네.. str + 0..");
+			System.out.println();
 			st.VO_day(id, 1);
 		}
 		st.Alldate(id);
@@ -139,14 +145,16 @@ public class Training {
 	public void Shield(String id) {
 		int rdnum = rd.nextInt(5);
 		st=dama.vo_loding(id);
-		fa.Face_맷집(id);
+		fa.Face_Matzib(id);
 		System.out.println("퍽퍽퍽퍽... shd + 1..");
+		System.out.println();
 		st.VO_trShield(1, id);
 		st.VO_experience(50,id);
 		st.VO_day(id, 1);
 		if(rdnum == 0) {
 			fa.Face_Miss(id);
 			System.out.println("앗 피했다! luk + 1!");
+			System.out.println();
 			st.VO_trLuk(1, id);
 		}
 		st.Alldate(id);
