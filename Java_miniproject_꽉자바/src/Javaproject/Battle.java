@@ -49,6 +49,8 @@ public class Battle {
 	private int En_wis;
 	private int En_luk;
 	private int EN_turnCount = 0;
+	private int dmgF;
+	private int En_dmgF;
 
 	// 적 공격력 선언. 적의 속도가 빠를 경우 턴 메소드 실행 이전에 선공을 진행하므로 미리 선언함
 	int En_dmg;
@@ -65,6 +67,7 @@ public class Battle {
 	int En_HitPro;
 	int En_CriPro;
 	int En_dmgR;
+	
 	private int user_dmg = 0;
 
 	// DAMAVO와 Enemy에서 각각 유저 스탯, 적 스탯을 불러옴.
@@ -100,11 +103,19 @@ public class Battle {
 		En_luk = t.getEn_luk();
 		// 유저 데미지 기본값
 
-		user_dmg = (str + atk - En_def);
+		dmgF = str+atk+(dex/2);
+		if (dmgF%2 == 1) {
+			dmgF = str+atk+((dex+1)/2);
+		}
+		user_dmg = (dmgF - En_def);
 		// 유저 데미지 분산값
 
 		// 적 데미지 기본값
-		En_dmg = (En_str + En_atk - shd);
+		En_dmgF = En_str+En_atk+(En_dex/2);
+		if (En_dmgF%2 == 1) {
+			En_dmgF = En_str+En_atk+((En_dex+1)/2);
+		}
+		En_dmg = (En_dmgF - shd);
 
 		// 적 데미지 분산값
 
@@ -138,6 +149,7 @@ public class Battle {
 	// 전투 기본 메소드
 	public void Phase(String id, int a) {
 
+		EN_turnCount = 1;
 		turnCount = 1;
 		Enemy ge = new Enemy();
 		st = dama.vo_loding(id);
@@ -147,10 +159,9 @@ public class Battle {
 			t = ge.getEnemySea(id);
 		} else if (a == 3) {
 			t = ge.getEnemyAir(id);
+		} else if (a ==4 ) {
+			t = ge.getEnemyBoss(id);
 		}
-
-		// 보스 불러오는 메소드
-		// t = ge.getEnemyBoss(id);
 
 		
 		Anything();
@@ -193,14 +204,15 @@ public class Battle {
 				break;
 			} else if (En_hp < 1) {
 				mu.enemyDeath();
+				int y = (t.getEn_hp()+t.getEn_atk()+t.getEn_def())-(t.getEn_hp()+t.getEn_atk()+t.getEn_def())%2;
 				System.out.println("이겼다!" + t.getEn_name() + "을 해치웠다!");
-				System.out.println(st.getNick() + "은(는) " + t.getEn_hp() + "만큼의 경험치를 얻었다!");
-				st.VO_experience(t.getEn_hp(), id);
+				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
+				st.VO_experience(y, id);
 				break;
 			}
 
 		}
-		dama.vo_update(id, st.getNick(), st.getLv(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+		dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
 				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
 				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 		if (hp > 0) {
@@ -235,6 +247,9 @@ public class Battle {
 				if (user_dmgList[0] < 0) {
 					user_dmgList[0] = 0;
 				}
+				if (user_dmgList[10] < 0) {
+					user_dmgList[10] = 0;
+				}
 				System.out.println(
 						"공격하시겠습니까? 명중확률 : " + user_HitPro + "%   예상 데미지 : " + user_dmgList[0] + "~" + user_dmgList[10]);
 				System.out.println("[1] 공격한다 [2] 뒤로가기");
@@ -244,7 +259,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = atk;
+							user_dmgR = dmgF;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
@@ -393,6 +408,9 @@ public class Battle {
 				if (user_dmgList[0] < 0) {
 					user_dmgList[0] = 0;
 				}
+				if (user_dmgList[10] < 0) {
+					user_dmgList[10] = 0;
+				}
 				System.out.println(
 						"공격하시겠습니까? 명중확률 : " + user_HitPro + "%   예상 데미지 : " + user_dmgList[0] + "~" + user_dmgList[10]);
 				System.out.println("[1] 공격한다 [2] 뒤로가기");
@@ -402,7 +420,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = atk;
+							user_dmgR = dmgF;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
@@ -552,6 +570,9 @@ public class Battle {
 				if (user_dmgList[0] < 0) {
 					user_dmgList[0] = 0;
 				}
+				if (user_dmgList[10] < 0) {
+					user_dmgList[10] = 0;
+				}
 				System.out.println(
 						"공격하시겠습니까? 명중확률 : " + user_HitPro + "%   예상 데미지 : " + user_dmgList[0] + "~" + user_dmgList[10]);
 				System.out.println("[1] 공격한다 [2] 뒤로가기");
@@ -561,7 +582,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = atk;
+							user_dmgR = dmgF;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
@@ -720,7 +741,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = atk;
+							user_dmgR = dmgF;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
@@ -991,7 +1012,7 @@ public class Battle {
 
 		if (WeightsPro(En_HitPro)) {
 			if (WeightsPro(En_CriPro)) {
-				En_dmgR = En_atk;
+				En_dmgR = En_dmgF;
 				fc.Face_Cri(id);
 				System.out.println(En_name + "의 치명적인 공격! " + st.getNick() + "은(는)" + En_dmgR + "의 데미지를 받았다!");
 				System.out.println("");
