@@ -211,17 +211,17 @@ public class Face {
 	}
 	
 	public void Face_Fire(String id) {
-		System.out.println("                      *      ");
-		System.out.println("        ∧___∧       * * *    ");
-		System.out.println("       ( ● 0●)    *******   ");
-		System.out.println("     ∽(    ⊃ )⊃ * *   * *     ");
+		System.out.println("                      *˚*。*˚*˚*      ");
+		System.out.println("        ∧___∧       ˚*。*˚*。*˚**˚    ");
+		System.out.println("       ( ● 3●)    ˚*。*˚*。˚*˚*。*˚   ");
+		System.out.println("     ∽(    ⊃ )⊃  。˚*。*˚*。˚**˚*。˚     ");
 
 	}
 	public void Face_Gun(String id) {
-		System.out.println("                    ");
-		System.out.println("         ∧__∧       ");
-		System.out.println("        ( ⊙ω⊙)┌─       ");
-		System.out.println("      <(     )⊃     ");
+		System.out.println("                    		  !!!   ");
+		System.out.println("         ∧__∧     	 		 ∩__∩	");
+		System.out.println("        ( ○ω○)              (x∧x )   ");
+		System.out.println("      <( ⊃┌─  )⊃     	⇒  (⊂   ⊂)	");
 
 	}
 	
