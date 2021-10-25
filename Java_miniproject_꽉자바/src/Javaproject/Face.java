@@ -289,7 +289,8 @@ public class Face {
 				+ "                                                      *@$$@                                                                     \r\n"
 				+ "                                                       !@@,                                                                     \r\n"
 				+ "                                                        :~                                                                      \r\n"
-				+ "                                                 DAMA   ∀   DUNGEON                                                          ");
+				+ "                                                 DAMA   ∀   DUNGEON                                                          "
+				+ "                                                                                                                             ");
 	}
 	
 }
