@@ -27,8 +27,11 @@ public class testMain {
 			fc.face_main();
 			while (true) {
 				if (title_menu == 0) {
-					System.out.print("                               1. 로그인       2. 회원가입       3. 랭킹확인       4. 종료 ");
-					title_menu = sc.nextInt();
+					System.out.println();
+					System.out.println("                             1. 로그인       2. 회원가입        3. 랭킹확인       4. 종료 ");
+					System.out.print("                             >> ");
+					title_menu = sc.nextInt(); 
+					System.out.println();
 				} else if (title_menu == 1) {
 					System.out.print("아이디를 입력하세요 >> ");
 					String ID = sc.next();
