@@ -212,12 +212,35 @@ public class Battle {
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
 				if (a==4 ) {
-					System.out.println("보스를 잡았다.");
-					st = dama.vo_loding(id);
-					fc.Face_Escape(id);
-					test.setcoin(1);
-					System.out.println("메인화면으로");
-					st.Alldate(id);
+					System.out.println("                     ★ 보스를 잡았다!! ★");
+					System.out.println();
+					System.out.println("                     == 피카츄 == ");
+					System.out.println("                        김태현 ");
+					System.out.println();
+					System.out.println("                  == 메인 아트 디렉터 == ");
+					System.out.println("                        박소이   ");
+					System.out.println();
+					System.out.println("              == 메인 레벨 디자인 디렉터 ==");
+					System.out.println("                        윤상운 ");
+					System.out.println();
+					System.out.println("             == 메인 시스템 개발 및 디자이너 ==");
+					System.out.println("                        김현식 ");
+					System.out.println();
+					System.out.println("               == 다마고치 체육관 트레이너 ==");
+					System.out.println("                  1. 김예린 2. 김현중 ");
+					System.out.println();
+					System.out.println("               Thank you for your Play");
+					System.out.println("");
+					System.out.println("");
+					System.out.println("Title로 돌아가시겠습니까?");
+					System.out.println("[1] 예 [2] 아니오");
+					int b = sc.nextInt();
+					if (b==1) {
+						test.setcoin(1);
+					} else if (b==2) {
+						test.setcoin(0);
+					}
+
 				}
 				break;
 			}
