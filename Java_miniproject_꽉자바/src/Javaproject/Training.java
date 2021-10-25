@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class Training {
 	Scanner sc = new Scanner(System.in);
 	Random rd = new Random();
-	
 	DAMADAO dama = new DAMADAO();
 	Face fa = new Face();
 	DAMAVO st = new DAMAVO();
+	Event et = new Event();
 	int menu ;		
 	
 	public void tr_Select(String id) {
@@ -21,18 +21,21 @@ public class Training {
 			System.out.println("문제를 풀어보아용!");
 			fa.Face_Talk(id);
 			Quiz(id);
+			et.Eventset(id);
 			break;
 		}else if(menu == 2) {
 			Health(id);
+			et.Eventset(id);
 			break;
 		}else if(menu == 3) {
 			Shield(id);
+			et.Eventset(id);
 			break;
 		}else if(menu == 4) {
 			Run(id);
+			et.Eventset(id);
 			break;
 		}else if(menu == 5) {
-			
 			break;
 		}else {
 			System.out.println("정확한 값을 입력해주세요.");
