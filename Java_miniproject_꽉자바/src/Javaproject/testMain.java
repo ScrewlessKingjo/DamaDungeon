@@ -16,13 +16,13 @@ public class testMain {
 		Training tr = new Training();
 		Music mu = new Music();
 		Adventure ad = new Adventure();
-		int title_menu = 0; // 메인페이지 메뉴 변수
-		int game_menu = -1; // 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
-		int select_menu = 0; // 선택 메뉴 변수
-
-		coin = 1;
 		String main_id = null;
+		coin = 1;
+		
 		while (coin == 1) {
+			int title_menu = 0; // 메인페이지 메뉴 변수
+			int game_menu = -1; // 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
+			int select_menu = 0; // 선택 메뉴 변수
 			Clip bgm = mu.BattleBrothers();
 			fc.face_main();
 			while (true) {
