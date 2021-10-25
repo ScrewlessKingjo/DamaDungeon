@@ -127,25 +127,25 @@ public class DAMADAO {
 		getConn();
 		try {
 			if (job == 1) {
-				String sql = "insert into DAMA_INFO values(?,?,0,1,100,100,5,1,1,1,1)";
+				String sql = "insert into DAMA_INFO values(?,?,0,1,100,100,5,1,1,0,1)";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, Id);
 				psmt.setString(2, Nick);
 				psmt.executeUpdate();// 업데이트 줄수
 			} else if (job == 2) {
-				String sql = "insert into DAMA_INFO values(?,?,0,1,100,100,5,1,1,1,2)";
+				String sql = "insert into DAMA_INFO values(?,?,0,1,100,100,5,1,1,0,2)";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, Id);
 				psmt.setString(2, Nick);
 				psmt.executeUpdate();// 업데이트 줄수
 			} else if (job == 3) {
-				String sql = "insert into DAMA_INFO values(?,?,0,1,200,200,5,1,1,1,3)";
+				String sql = "insert into DAMA_INFO values(?,?,0,1,200,200,5,1,1,0,3)";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, Id);
 				psmt.setString(2, Nick);
 				psmt.executeUpdate();// 업데이트 줄수
 			} else if (job == 4) {
-				String sql = "insert into DAMA_INFO values(?,?,0,1,100,100,5,1,1,1,4)";
+				String sql = "insert into DAMA_INFO values(?,?,0,1,100,100,5,1,1,0,4)";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, Id);
 				psmt.setString(2, Nick);

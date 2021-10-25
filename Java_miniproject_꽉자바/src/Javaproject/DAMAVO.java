@@ -92,7 +92,6 @@ public class DAMAVO {
 	
 	public void VO_Stators(int stat,String main_id) {
 		select_st=0;
-		System.out.println(id);
 		this.dummi += stat;
 		while(dummi>0) {
 			System.out.println("         스테이터스 추가포인트["+dummi+"]    ");

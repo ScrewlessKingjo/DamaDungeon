@@ -54,13 +54,14 @@ public class Eat {
 		} else if (eat_choice == 2) {
 
 			if (her > 0) {
-				if(MaxHp>hp) {
+				if(MaxHp>hp || st.getSickday()>0) {
 				System.out.println("약초를 먹는다.");
 				her--;
 				hp += 50;
 				st.setHurbs(her);
 				if (hp>MaxHp) {hp=MaxHp;}
 				st.setHp(hp);
+				st.setSickday(0);
 				st.Alldate(id);
 				fa.Face_Eat_Medi(id);
 				}else {

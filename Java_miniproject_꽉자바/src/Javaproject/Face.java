@@ -16,7 +16,7 @@ public class Face {
 		System.out.println("           .c(__ｕｕ_)");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 
 	public void Face_Sleep(String id) {
@@ -27,21 +27,22 @@ public class Face {
 		System.out.println("           ∽c(____⊃⊂ ) ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	} 
 	
 	public void Face_Eat_Fish(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("              ∧__∧    ");
-		System.out.println("         　   (☆o☆ )_ ! ");
-		System.out.println("    ><)))˚>  ( __ _  )   ");
-		System.out.println("              ˘  ˘ ˘˘   ");
+		System.out.println("           ∧__∧    ");
+		System.out.println("         　(☆o☆ )_ ! ");
+		System.out.println(" ><)))˚>  ( __ _  )   ");
+		System.out.println("           ˘  ˘ ˘˘   ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 		System.out.println(" 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
 	}
+
 	
 	public void Face_No_Eat(String id) {
 		st=dama.vo_loding(id);
@@ -52,19 +53,22 @@ public class Face {
 		System.out.println("                             ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	
 	public void Face_Eat_Medi(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("                ∧__∧        ");
-		System.out.println("   _____       (    )       ");
-		System.out.println("  (_약초_)      ( ·c  )      ");
-		System.out.println("                            ");
+		System.out.println("            ∧__∧    ");
+		System.out.println("   _____  　(＊＾＊ )_ & ");
+		System.out.println("  (_약초_)   ( __ _  )   ");
+		System.out.println("  |     |    ˘  ˘ ˘˘   ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println(" 약초를 먹지 우웩 쓰다 써 인생");
+
 	}
 	
 	public void Face_Health(String id) {
@@ -78,7 +82,7 @@ public class Face {
 		System.out.println("            (  ─┴─   )∽    ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	
 	public void Face_HealthHd(String id) {
@@ -130,7 +134,7 @@ public class Face {
 		System.out.println("         @@@@@@     ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	public void Face_runOne(String id) {
 		System.out.println("           ∧ _ ∧   ");
@@ -145,7 +149,7 @@ public class Face {
 		System.out.println("         @@@@@@     ");
 	}
 	public void Face_Fishing(String id) {
-
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("              ∧__∧    낚시를 하지 (잡았다링~!)");
 		System.out.println("            　(ºωº )   ");
@@ -153,19 +157,25 @@ public class Face {
 		System.out.println("          /           ");
 		System.out.println("    ><)))˚>           ");
 		System.out.println();
-		
+		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_FishingMiss(String id) {
-	
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday() );
 		System.out.println("               ∧__∧    낚시를 하지 (언제 잡히냐...)");
 		System.out.println("            　(ㅠωㅠ )   ");
 		System.out.println("          〃⌒∠(__u__)┐ ");
 		System.out.println("          /           ");
 		System.out.println("                ><)))˚>  ");
+		System.out.println();
+		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
 	public void Face_Get_Medi(String id) {
-		
+		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("               ∧__∧     ");
 		System.out.println("              (ºωº )    ");
@@ -173,18 +183,10 @@ public class Face {
 		System.out.println("    ㅛ    ㅛ    ㅛ         ");
 		System.out.println("  ㅛ    ㅛ    ㅛ             ");
 		System.out.println("                        ");
+		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
+		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
 	}
-	
-	public void Face_Miss_Medi(String id) {
-		
-		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("               ∧__∧    			     ");
-		System.out.println("              (ㅜωㅜ )    약초가 없어ㅜㅜ     ");
-		System.out.println("    ㅡ   ㅡ   ∠(__u__)┐  			    ");
-		System.out.println("    ㅡ    ㅡ             			     ");
-		System.out.println("  ㅡ    ㅡ    ㅡ           			     ");
-	}
-
 	public void Face_Fight(String id) {
 		System.out.println("        ∧__∧    X    ∩__∩     ");
 		System.out.println("       ( ≫⌒≪) /  ＼ (≫⌒≪ )    ");
@@ -210,19 +212,24 @@ public class Face {
 		System.out.println("                 ∽(⊂     )⊃      ");
 
 	}
+	public void Face_De(String id) {
+		System.out.println("                   ∧____∧      ");
+		System.out.println("                  (   !∇!)       ");
+		System.out.println("                 ∽(⊂     )⊃      ");
+	}
 	
 	public void Face_Fire(String id) {
-		System.out.println("                      *˚*。*˚*˚*      ");
-		System.out.println("        ∧___∧       ˚*。*˚*。*˚**˚    ");
-		System.out.println("       ( ● 3●)    ˚*。*˚*。˚*˚*。*˚   ");
-		System.out.println("     ∽(    ⊃ )⊃  。˚*。*˚*。˚**˚*。˚     ");
+		System.out.println("                      *      ");
+		System.out.println("        ∧___∧       * * *    ");
+		System.out.println("       ( ● 0●)    *******   ");
+		System.out.println("     ∽(    ⊃ )⊃ * *   * *     ");
 
 	}
 	public void Face_Gun(String id) {
-		System.out.println("                    		  !!!   ");
-		System.out.println("         ∧__∧     	 		 ∩__∩	");
-		System.out.println("        ( ○ω○)              (x∧x )   ");
-		System.out.println("      <( ⊃┌─  )⊃     	⇒  (⊂   ⊂)	");
+		System.out.println("                    ");
+		System.out.println("         ∧__∧   ");
+		System.out.println("        ( ⊙ω⊙)┌─       ");
+		System.out.println("      <(     )⊃     ");
 
 	}
 	
@@ -259,21 +266,21 @@ public class Face {
 		System.out.println("     └───────┘      "); 
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+((st.getSickday()+1)));
 	}
 	public void Face_Boss(String id) {
-		System.out.println("               			    		⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥			");
-		System.out.println("               		＼＼	    		┌──────────┐		 	");
-		System.out.println("               		  ＼＼     		│ ■	     ■ │	 			");
-		System.out.println("               			＼＼    		│PRINTLN();│	 			");
+		System.out.println("               			    		⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥		        	");
+		System.out.println("               		＼＼	    		┌──────────┐		        	");
+		System.out.println("               		  ＼＼     		│ ■	     ■ │	 	    		");
+		System.out.println("               			＼＼    		│PRINTLN();│	 		    	");
 		System.out.println("               			  ＼＼  		└──────────┘	 				");
-		System.out.println("             ∧ _ ∧   /  	＼＼	  @@@@@@@@@@@@@@@@@			");
+		System.out.println("             ∧ _ ∧   /  	＼＼	  @@@@@@@@@@@@@@@@@			        ");
 		System.out.println("           　( ◑△◑) /  	 	  ＼＼@@    @@JAVA@@	  @@				");
-		System.out.println("            ( ≥   )≥   	  	   @@		@@@@@	   @@			");	
-		System.out.println("              ˇ  ˇ        				 @@@					 ");
-		System.out.println("                        			   @@   @@					");
-		System.out.println("                        			 @@ 	  @@				");
-		System.out.println("                        		   @@ 		    @@		");
+		System.out.println("            ( ≥   )≥   	  	   @@		@@@@@	   @@		     	");	
+		System.out.println("              ˇ  ˇ        				 @@@				        ");
+		System.out.println("                        			   @@   @@					    ");
+		System.out.println("                        			 @@ 	  @@				    ");
+		System.out.println("                        		   @@ 		    @@		            ");
 	}
 	public void face_main() {
 		System.out.println("\r\n"
@@ -291,10 +298,10 @@ public class Face {
 				+ "       ....                                ;@     ....      ....    .!!...                                                      \r\n"
 				+ "    ~;!##@$..                              @$      ...      ...   -**#@@@~..                                                    \r\n"
 				+ "    !@@@@@@!                              :@;      ...  !    . .  .@@@@@@#,..                                               -;;,\r\n"
-				+ "    .@@@ @@#                        ,.     = ..   ,  . -@*   .;   .*@@  @@-,..                                              ..;,\r\n"
-				+ "   ..@@@  @@-     .:........ .. ..~.,,.  .;-  .   $-  -@#@=  ,$   .:@@  @@#,.............,*.     .*: ...-*:...............=...,.\r\n"
+				+ "    .@@@ @@#                               = ..   ,  . -@*   .;   .*@@  @@-,..                                              ..;,\r\n"
+				+ "   ..@@@  @@-      :    .... .. ..~.,,.  .;-  .   $-  -@#@=  ,$   .:@@  @@#,.............,*.     .*: ...-*:...............=...,.\r\n"
 				+ "   ..$@@  @@:  ..,=@-*=$!;$:~!!,:=@,-,...!@~  ..  $*  -@@@*  :=   .:@@  @@@;********!!!.~$@..    @@ .~=$@@*..:=*=*,:!!!.:$@,... \r\n"
-				+ "   ..$@@  @@#  ,;@@@,-#@@@@   @@@@#,,-,~@@@-  ..   @~  $@@;  @;   .~@@   @@ @@@  @@  @@@@@@     @@@ -@@#@@$  @@@@@;  @@@@@@,,.. \r\n"
+				+ "   ..$@@  @@#  ,;@@@,-#@@@@ . @@@@#,,-,~@@@-  ..   @~  $@@;  @;   .~@@   @@ @@@  @@  @@@@@@     @@@ -@@#@@$  @@@@@;  @@@@@@,,.. \r\n"
 				+ "   ..*@@  @@@  ;@@@@  @@$-@@ @@#=@@,,-:@@@@;,     =@@@#$$#@@@@$   .~@@   @@ @@@  @@  @@  @@   @@@@@ ;@@  @#  @@  @@  @@  @@,,.. \r\n"
 				+ "   ..*@@   @@ ;@  @@  @@   @@@   @@,,!@@ @@*,    :#@@@==!*=$@@@$. .~@@   @@ @@@  @@  @@  @@  @@  @@ #@@  @# @@   @@  @@  @@--,. \r\n"
 				+ "   .,=@@   @@ @@  @@  @@   @@@   @@,,@@  @@*,.   ~@@@@#$#@$@@@@$. .:@@   @@ @@@  @@  @@  @@  @@  @@ @@@  @@ @@   @@  @@  @@--,. \r\n"
