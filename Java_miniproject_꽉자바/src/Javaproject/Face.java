@@ -54,6 +54,7 @@ public class Face {
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
 		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
 	}
+	
 	public void Face_Eat_Medi(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
