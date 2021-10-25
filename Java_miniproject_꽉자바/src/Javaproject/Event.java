@@ -17,7 +17,7 @@ public class Event {
 		st = t.vo_loding(id);
 
 		if (st.getSickday() == 0) {
-			if (event_menu < 50) {
+			if (event_menu < 5) {
 				System.out.println("    ==랜덤 질병 발생== ");
 				System.out.println("    [1]확인   [2]해독 ");
 				while (true) {
@@ -44,7 +44,7 @@ public class Event {
 			System.out.println("    ==질병 패널티==");
 			si.SSick(id);
 		}
-		if (event_menu > 99) {
+		if (event_menu > 90) {
 			int select = 0;
 			System.out.println("  ==랜덤 전투 발생==");
 			System.out.println("   [1] 전투 돌입  ");
