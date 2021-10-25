@@ -6,32 +6,35 @@ public class Face {
 
 	DAMADAO dama = new DAMADAO();
 	DAMAVO st = new DAMAVO();
+	String si = null;
 	
 	public void Face_Normal(String id) {
 		st=dama.vo_loding(id);
-		
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("              ∧ _ ∧  ");
 		System.out.println("           　 (O ω O)");
 		System.out.println("           .c(__ｕｕ_)");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 
 	public void Face_Sleep(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("                ∧__∧  ");
 		System.out.println("      Zzz     _( ˘ω˘)  ");
 		System.out.println("           ∽c(____⊃⊂ ) ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	} 
 	
 	public void Face_Eat_Fish(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("              ∧__∧    ");
 		System.out.println("         　   (☆o☆ )_ ! ");
@@ -39,12 +42,13 @@ public class Face {
 		System.out.println("              ˘  ˘ ˘˘   ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe()+"\t 상태 : "+si);
 		System.out.println(" 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
 	}
 	
 	public void Face_No_Eat(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("                ∧__∧        ");
 		System.out.println("             　 (    )       ");
@@ -52,11 +56,12 @@ public class Face {
 		System.out.println("                             ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	
 	public void Face_Eat_Medi(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+ " 약초를 먹지 우웩 쓰다 써 인생");
 		System.out.println("                ∧___∧    ");
 		System.out.println("       _____  　(⊙＾⊙ )_ & ");
@@ -65,10 +70,11 @@ public class Face {
 		System.out.println();
 		System.out.println("    HP  : "+st.getHp()+"\t ENE : "+st.getEne());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	public void Face_No_Medi(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("                ∧__∧        ");
 		System.out.println("   _____       (    )       ");
@@ -76,11 +82,12 @@ public class Face {
 		System.out.println("                            ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	
 	public void Face_Health(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("                    ");
 		System.out.println("          O---∧ _ ∧ ---O      ");
@@ -90,7 +97,7 @@ public class Face {
 		System.out.println("            (  ─┴─   )∽    ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	
 	public void Face_HealthHd(String id) {
@@ -135,6 +142,7 @@ public class Face {
 	
 	public void Face_run(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("           ∧ _ ∧   ");
 		System.out.println("       　  (● ω●)  ");
@@ -142,7 +150,7 @@ public class Face {
 		System.out.println("         @@@@@@     ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	public void Face_runOne(String id) {
 		System.out.println("           ∧ _ ∧   ");
@@ -268,6 +276,7 @@ public class Face {
 	
 	public void Face_Sick(String id) {
 		st=dama.vo_loding(id);
+		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("       ∧ _ ∧        ");
 		System.out.println("      (＠ △＠)       ");
@@ -278,7 +287,7 @@ public class Face {
 		System.out.println("     └───────┘      "); 
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	public void Face_Boss(String id) {
 		System.out.println("               			    		⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥			");
