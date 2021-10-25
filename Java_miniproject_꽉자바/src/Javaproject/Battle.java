@@ -124,7 +124,7 @@ public class Battle {
 		WeightsPro(user_HitPro);
 		WeightsPro(user_CriPro);
 		WeightsPro(En_EsPro);
-		WeightsPro(En_HitPro);
+		WeightsPro(En_HitPro); 
 		WeightsPro(En_CriPro);
 
 		int[] En_dmgList = { En_dmg - 5, En_dmg - 4, En_dmg - 3, En_dmg - 2, En_dmg - 1, En_dmg, En_dmg + 1, En_dmg + 2,
