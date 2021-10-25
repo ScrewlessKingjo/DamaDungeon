@@ -28,6 +28,7 @@ public class DAMAVO {
 	private int select_st;
 	Scanner sc= new Scanner(System.in);
 	DAMADAO dama = new DAMADAO();
+	Event et = new Event();
 
 	public void VO_deadly(String main_id) {
 		Face fc = new Face();
@@ -48,6 +49,7 @@ public class DAMAVO {
 		ene +=reene;
 		if (ene>maxene) {ene=maxene;}
 		startday+=5;
+		et.Eventset(main_id);
 		Alldate(main_id);
 	}
 	public void VO_day(String main_id,int day) {
