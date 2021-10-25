@@ -17,6 +17,7 @@ public class testMain {
 		Music mu = new Music();
 		Adventure ad = new Adventure();
 		String main_id = null;
+		Event et = new Event();
 		coin = 1;
 		
 		while (coin == 1) {
@@ -155,6 +156,7 @@ public class testMain {
 					System.out.println("취침을 한다.");
 					st = dama.vo_loding(main_id);
 					st.VO_sleeptry(main_id, 999, 999);
+					et.Eventset(main_id);
 					st.dama.vo_loding(main_id);
 					fc.Face_Sleep(main_id);
 					game_menu = 0;
