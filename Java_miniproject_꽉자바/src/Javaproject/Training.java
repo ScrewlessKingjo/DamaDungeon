@@ -184,7 +184,8 @@ public class Training {
 			}
 			if(cnt == 5) {
 				fa.Face_Hard(id);
-				System.out.println("ÇäÇä.. Èûµé¾ú´Ù..");
+				System.out.println("ÇäÇä.. Èûµé¾ú´Ù.. spd + 1!");
+				st.VO_trRun(1, id);
 				st.VO_experience(50,id);
 				st.VO_day(id, 1);
 			break;
