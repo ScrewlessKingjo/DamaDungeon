@@ -290,7 +290,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = dmgF;
+							user_dmgR = dmgF*2;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
@@ -336,7 +336,7 @@ public class Battle {
 					} else {
 						fc.Face_De(id);
 						mu.Determination();
-						ene -= 30;
+						ene -= 10;
 						shd += 5;
 						str += 5;
 						System.out.println(st.getNick() + "은(는) 지난 경험을 되새기며 결의를 다졌다. 방어력과 근력이 5만큼 증가했다.");
@@ -345,18 +345,17 @@ public class Battle {
 						break;
 					}
 				} else if (choice_skill == 2) {
-					int a = 30;
+					int a = 20;
 
-					if (hp <= 30) {
+					if (hp <= 20) {
 						System.out.println(st.getNick() + " : '다른 방법이 없군. 흠. 어디 해보자고.'");
 					}
 
-					int charge_dmg = (atk * str * shd) / 10;
+					int charge_dmg = (atk * str * shd) / 20;
 					if ((charge_dmg) % 2 == 1) {
-						charge_dmg = (atk * str * shd + 1) / 10;
+						charge_dmg = (atk * str * shd + 1) / 20;
 					}
 					mu.warcry();
-					ene -= 30;
 					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
 					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
 					System.out.println("");
@@ -452,7 +451,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = dmgF;
+							user_dmgR = dmgF*2;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
@@ -491,7 +490,7 @@ public class Battle {
 				System.out.println("");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
-					if (ene <= 30) {
+					if (ene <= 20) {
 						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
@@ -500,6 +499,10 @@ public class Battle {
 					user_EsPro += 5;
 					user_HitPro += 5;
 					user_CriPro += 5;
+					En_EsPro -= 5;
+					En_HitPro -= 5;
+					
+					ene -= 20;
 					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 명중률, 치명율, 탈출확률이 5씩 상승했다.");
 					break;
 
@@ -616,7 +619,7 @@ public class Battle {
 				if (choice_attack == 1) {
 					if (WeightsPro(user_HitPro)) {
 						if (WeightsPro(user_CriPro)) {
-							user_dmgR = dmgF;
+							user_dmgR = dmgF*2;
 							fc.Face_Cri(id);
 							mu.Bloody();
 							mu.ASingularStrike();
