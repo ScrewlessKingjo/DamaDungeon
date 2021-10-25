@@ -54,7 +54,7 @@ public class Event {
 					System.out.println("  [1] 확인을 해 주세요  ");
 				}
 			} 
-			int a = rd.nextInt(3);
+			int a = rd.nextInt(2)+1;
 			bt.Phase(id, a);
 
 		}

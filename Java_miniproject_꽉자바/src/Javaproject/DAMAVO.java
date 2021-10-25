@@ -58,7 +58,7 @@ public class DAMAVO {
 	
 	public void VO_experience(int exe,String main_id) {
 		this.expe += exe;
-		if (lv<LVtable.length) {
+		if (lv+1<LVtable.length) {
 		if (LVtable[lv]<expe) {
 			expe-=LVtable[lv];
 			lv++;

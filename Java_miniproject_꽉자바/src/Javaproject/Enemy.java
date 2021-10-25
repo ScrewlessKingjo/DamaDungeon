@@ -114,7 +114,7 @@ public class Enemy {
 		
 		st = dama.vo_loding(id);
 		
-		int i = rd.nextInt(19);
+		
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
@@ -129,6 +129,7 @@ public class Enemy {
 		int t = st.getStartday();
 		int z = (st.getStartday()*10);
 		ArrayList<Enemy> eList = new ArrayList<>();
+		
 
 		//eList.add(new Enemy("Åä³¢", 1, 1, 1, 1, 1,1,1,1));
 		eList.add(new Enemy("Åä³¢", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
@@ -151,7 +152,8 @@ public class Enemy {
 		eList.add(new Enemy("Ç¥¹ü", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("¾ó·è¸»", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("ÇÏÀÌ¿¡³ª", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-
+		int i = rd.nextInt(eList.size()-1);
+		System.out.println(i);
 		return eList.get(i);
 		
 	}
@@ -159,8 +161,6 @@ public class Enemy {
 	public Enemy getEnemySea(String id) {
 		
 		st = dama.vo_loding(id);
-		
-		int i = rd.nextInt(19);
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
@@ -176,7 +176,6 @@ public class Enemy {
 		int z = 10+(st.getStartday()*10);
 		
 		ArrayList<Enemy> eList = new ArrayList<>();
-
 
 		eList.add(new Enemy("¼Û¾î", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("¼þ¾î", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
@@ -198,7 +197,8 @@ public class Enemy {
 		eList.add(new Enemy("°ÅºÏÀÌ", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("¹Ù´ÙÇ¥¹ü", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("Æë±Ï", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-
+		int i = rd.nextInt(eList.size()-1);
+		System.out.println(i);
 		return eList.get(i);
 		
 	}
@@ -209,7 +209,6 @@ public class Enemy {
 		
 		st = dama.vo_loding(id);
 		
-		int i = rd.nextInt(19);
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
@@ -224,7 +223,6 @@ public class Enemy {
 		int t = 20+st.getStartday();
 		int z = 20+(st.getStartday()*10);
 		ArrayList<Enemy> eList = new ArrayList<>();
-		
 		eList.add(new Enemy("¿Õµ¶¼ö¸®", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("´ë¸Ó¸®µ¶¼ö¸®", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("±î¸¶±Í", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
@@ -245,7 +243,8 @@ public class Enemy {
 		eList.add(new Enemy("Á÷¹Ú±¸¸®", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("È²Á¶·ÕÀÌ", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
 		eList.add(new Enemy("µû¿À±â", randomCalHp(z, a), randomCal(t, b), randomCal(t, c), randomCal(t, d), randomCal(t, e), randomCal(t, f), randomCal(t, g), randomCal(t, 1)));
-
+		int i = rd.nextInt(eList.size()-1);
+		System.out.println(i);
 		return eList.get(i);
 		
 	}

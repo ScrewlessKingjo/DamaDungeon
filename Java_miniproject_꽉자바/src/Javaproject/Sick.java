@@ -17,8 +17,7 @@ public class Sick {
 		st=dama.vo_loding(id);
 		sickday = st.getSickday()+1;
 		System.out.println(sickday);
-		
-
+	
 				st.setStr(st.getStr()-sickday);
 				if(st.getStr() < 1) {
 					st.setStr(0);
