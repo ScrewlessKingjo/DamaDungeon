@@ -170,10 +170,11 @@ public class Battle {
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
 		System.out.println("");
 		if (En_spd > spd + 10) {
+			if (WeightsPro(En_HitPro)) {
 			System.out.println(t.getEn_name() + "의 기습공격! " + st.getNick() + "은 " + En_dmg + "의 데미지를 받았다!");
 			System.out.println("");
-			if (shd >= En_dmg) {
-				En_dmg = 0;
+
+			hp-=En_dmg;
 			}
 		}
 		while (true) {
