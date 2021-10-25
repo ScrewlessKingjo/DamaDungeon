@@ -32,7 +32,6 @@ public class Training {
 			Run(id);
 			break;
 		}else if(menu == 5) {
-			
 			break;
 		}else {
 			System.out.println("정확한 값을 입력해주세요.");
