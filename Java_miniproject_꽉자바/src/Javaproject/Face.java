@@ -16,7 +16,7 @@ public class Face {
 		System.out.println("           .c(__ｕｕ_)");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 
 	public void Face_Sleep(String id) {
@@ -27,7 +27,7 @@ public class Face {
 		System.out.println("           ∽c(____⊃⊂ ) ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	} 
 	
 	public void Face_Eat_Fish(String id) {
@@ -39,7 +39,7 @@ public class Face {
 		System.out.println("              ˘  ˘ ˘˘   ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 		System.out.println(" 밥을 먹지 쫘압쫘압쩝쩝 후루룩 까꿍");
 	}
 	
@@ -52,7 +52,7 @@ public class Face {
 		System.out.println("                             ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t Exp : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	public void Face_Eat_Medi(String id) {
 		st=dama.vo_loding(id);
@@ -63,7 +63,7 @@ public class Face {
 		System.out.println("                            ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	
 	public void Face_Health(String id) {
@@ -77,7 +77,7 @@ public class Face {
 		System.out.println("            (  ─┴─   )∽    ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	
 	public void Face_HealthHd(String id) {
@@ -129,7 +129,7 @@ public class Face {
 		System.out.println("         @@@@@@     ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+(st.getSickday()+1));
 	}
 	public void Face_runOne(String id) {
 		System.out.println("           ∧ _ ∧   ");
@@ -258,7 +258,7 @@ public class Face {
 		System.out.println("     └───────┘      "); 
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
-		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe());
+		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 질병 : "+((st.getSickday()+1)));
 	}
 	public void Face_Boss(String id) {
 		System.out.println("               			    		⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥			");
