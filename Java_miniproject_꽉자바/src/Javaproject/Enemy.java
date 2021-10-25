@@ -267,7 +267,7 @@ public class Enemy {
 		
 		fc.Face_Boss(id);
 		
-		return new Enemy("자바", 1000, 100,100,100, 100, 100, 100,100);
+		return new Enemy("자바", 100, 100,100,10, 10, 100, 100,100);
 	}
 	
 	public Enemy(String en_name, int en_hp, int en_atk, int en_def, int en_spd, int en_str, int en_dex, int en_wis, int en_luk) {
