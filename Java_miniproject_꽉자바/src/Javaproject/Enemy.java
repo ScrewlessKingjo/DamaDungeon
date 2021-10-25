@@ -114,7 +114,7 @@ public class Enemy {
 		
 		st = dama.vo_loding(id);
 		
-		int i = rd.nextInt(20);
+		int i = rd.nextInt(19);
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
@@ -160,7 +160,7 @@ public class Enemy {
 		
 		st = dama.vo_loding(id);
 		
-		int i = rd.nextInt(20);
+		int i = rd.nextInt(19);
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
@@ -209,7 +209,7 @@ public class Enemy {
 		
 		st = dama.vo_loding(id);
 		
-		int i = rd.nextInt(20);
+		int i = rd.nextInt(19);
 		int a = (rd.nextInt(8)*10);
 		int b = rd.nextInt(8);
 		int c = rd.nextInt(8);
