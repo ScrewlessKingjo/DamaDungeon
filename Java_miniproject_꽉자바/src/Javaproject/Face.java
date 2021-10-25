@@ -200,28 +200,6 @@ public class Face {
 		System.out.println("    ──┴──     ──┴──   ");
 	}
 	
-	public void Face_Four(String id) {
-		System.out.println("        ∧_____∧       ");
-		System.out.println("       ( ● ω ● )     ");
-		System.out.println("      ⊂(       )⊃    ");
-		System.out.println("         u   u       ");
-
-	}
-	
-	public void Face_접기1(String id) {
-		System.out.println("        ∧_____∧       ");
-		System.out.println("       ( = ω = )     ");
-		System.out.println("       ( ⊃n n⊂ )    ");
-
-	}
-	
-	public void Face_접기2(String id) {
-		System.out.println("        ∧_____∧       ");
-		System.out.println("       ( = ω = )     ");
-		System.out.println("       ( ⊃   ⊂ )    ");
-		System.out.println("         ˘   ˘      ");
-	}
-	
 	public void Face_Talk(String id) {
 		System.out.println("             ");
 		System.out.println(" ┌───────┐             ");
