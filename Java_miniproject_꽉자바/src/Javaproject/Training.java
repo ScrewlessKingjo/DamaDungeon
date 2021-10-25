@@ -126,8 +126,23 @@ public class Training {
 	public void Run(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("D 키를 눌러 달려주세요!! =33");
-		int cnt = sc.nextInt();
+		int cnt = 0;
 		
+		while(true) {
+		String ans = sc.next();
+				
+		if(ans.equals("d") || ans.equals("D")) {
+			cnt++;
+			if(cnt%2 == 0) {
+				fa.Face_runOne(id);
+			}else {
+				fa.Face_runTwo(id);
+			}
+			}
+			if(cnt == 5) {
+			break;
+			}
+		}
 		st.Alldate(id);
 	}
 	
