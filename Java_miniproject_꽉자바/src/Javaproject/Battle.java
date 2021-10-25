@@ -170,10 +170,11 @@ public class Battle {
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
 		System.out.println("");
 		if (En_spd > spd + 10) {
+			if (WeightsPro(En_HitPro)) {
 			System.out.println(t.getEn_name() + "의 기습공격! " + st.getNick() + "은 " + En_dmg + "의 데미지를 받았다!");
 			System.out.println("");
-			if (shd >= En_dmg) {
-				En_dmg = 0;
+
+			hp-=En_dmg;
 			}
 		}
 		while (true) {
@@ -183,7 +184,7 @@ public class Battle {
 			}
 			System.out.println(t.getEn_name() + " 정보// 체력 :" + En_hp + " 공격력 : " + En_atk + " 방어력 : " + En_def
 					+ " 속도 : " + En_spd);
-			System.out.println(st.getNick() + " 정보// 체력 :" + hp + " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
+			System.out.println(st.getNick() + " 정보// 체력 :" + hp +"에너지 : "+ene+ " 공격력 : " + atk + " 방어력 : " + shd + " 속도 : " + spd);
 			System.out.println("");
 			//직업별로 전투 메소드 다름.
 			if (st.getJobid() == 1) {
@@ -215,9 +216,6 @@ public class Battle {
 		dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
 				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
 				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
-		if (hp > 0) {
-			fc.Face_Normal(id);
-		}
 	}
 
 	// 유저 턴 메소드
