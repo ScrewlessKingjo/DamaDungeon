@@ -817,7 +817,7 @@ public class Battle {
 			else if (choice == 2) {
 
 				System.out.println("[1] 결의 [2] 돌진  [3] 도적의 감 [4] 권총 사격 [5] 파이어볼 [6] 아이스 스피어 [7] 약초먹기 [8] 뒤로가기");
-				System.out.println("");
+				System.out.println(" ");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
 					if (ene <= 30) {
