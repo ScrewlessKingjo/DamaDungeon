@@ -882,7 +882,7 @@ public class Battle {
 					ene -= 10;
 					mu.gunshot2();
 					fc.Face_Gun(id);
-					System.out.println(st.getNick() + "의 권총 사격! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
+					System.out.println(st.getNick() + "의 권총 사격 !! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
 					System.out.println(st.getNick() + " : '날아오는걸 못봤구나. 그렇지?'");
 					System.out.println("");
 					En_hp -= shoot_dmg;
