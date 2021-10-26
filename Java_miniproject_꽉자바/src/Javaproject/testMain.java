@@ -27,11 +27,11 @@ public class testMain {
 			int select_menu = 0; // 선택 메뉴 변수
 			fc.face_main();
 			while (true) {
-				if (title_menu == 0) { 
+				if (title_menu == 0) {
 					System.out.println();
 					System.out.println("                             1. 로그인       2. 회원가입        3. 랭킹확인       4. 종료 ");
 					System.out.print("                             >> ");
-					title_menu = sc.nextInt(); 
+					title_menu = sc.nextInt();
 					System.out.println();
 				} else if (title_menu == 1) {
 					System.out.print("아이디를 입력하세요 >> ");
@@ -44,10 +44,9 @@ public class testMain {
 						main_id = ID;
 						st = dama.vo_loding(main_id);
 						if (st.getHp() == 0) {
-							coin = 0;
 							System.out.println("이미 죽은 캐릭터 입니다.");
-						}
-						break;
+						}else {
+						break;}
 					} else {
 						System.out.println("아이디와 비밀번호를 확인해주세요.");
 					}
@@ -130,7 +129,7 @@ public class testMain {
 						game_menu = 5;
 					} else if (select_menu == 6) {
 						game_menu = 6;
-					}else {
+					} else {
 						game_menu = 0;
 					}
 
@@ -165,8 +164,7 @@ public class testMain {
 					coin = 0;
 					System.out.println(" 게임 종료 ");
 					st.Alldate(main_id);
-				}
-				else if (game_menu == 6) {
+				} else if (game_menu == 6) {
 					st = dama.vo_loding(main_id);
 					fc.Face_Escape(main_id);
 					coin = 1;
