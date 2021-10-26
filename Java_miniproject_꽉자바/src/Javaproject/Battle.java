@@ -861,7 +861,7 @@ public class Battle {
 					dex += 5;
 					mu.Determination();
 					fc.Face_De(id);
-					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
+					System.out.println(st.getNick() + "은(는) 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
 					break;
 
 				} else if (choice_skill == 4) {
