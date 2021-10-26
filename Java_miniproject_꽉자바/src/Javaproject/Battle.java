@@ -206,11 +206,13 @@ public class Battle {
 			skill_var = 0;
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
-				break;
-			} else if (En_hp < 1) {
+				st.VO_day(id, 1);
 				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
 						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
 						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
+				
+				break;
+			} else if (En_hp < 1) {
 				
 				mu.enemyDeath();
 				int y = (t.getEn_hp()+t.getEn_atk()+t.getEn_def())-(t.getEn_hp()+t.getEn_atk()+t.getEn_def())%2;
@@ -218,6 +220,10 @@ public class Battle {
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
 				st.VO_day(id, 1);
+				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
+				
 				
 				if (a==4) {
 					System.out.println();
