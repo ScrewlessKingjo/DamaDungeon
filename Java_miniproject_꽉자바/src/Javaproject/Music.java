@@ -14,7 +14,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\miniStrike.wav");
+				"music/miniStrike.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
