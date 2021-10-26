@@ -24,8 +24,8 @@ public class Face {
 		st=dama.vo_loding(id);
 		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("                ∧__∧  ");
-		System.out.println("      Zzz     _( ˘ω˘)  ");
+		System.out.println("                 ∧__∧  ");
+		System.out.println("      Zzz     __( ˘ω˘)  ");
 		System.out.println("           ∽c(____⊃⊂ ) ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
@@ -36,8 +36,8 @@ public class Face {
 		st=dama.vo_loding(id);
 		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("              ∧__∧    ");
-		System.out.println("         　   (☆o☆ )_ ! ");
+		System.out.println("             ∧__∧    ");
+		System.out.println("         　  (☆o☆ )_ ! ");
 		System.out.println("    ><)))˚>  ( __ _  )   ");
 		System.out.println("              ˘  ˘ ˘˘   ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
@@ -52,7 +52,7 @@ public class Face {
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("                ∧__∧      그만 먹을랭...  ");
 		System.out.println("             　 (    )       ");
-		System.out.println("  ><)))˚>      ( ·c  )      ");
+		System.out.println("  ><)))˚>     ( ·c   )      ");
 		System.out.println("                             ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    Atk : "+st.getAtk()+"\t Def : "+st.getShd()+"\t Spd : "+st.getSpd());
@@ -63,8 +63,8 @@ public class Face {
 		st=dama.vo_loding(id);
 		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+ " 약초를 먹지 우웩 쓰다 써 인생");
-		System.out.println("                ∧___∧    ");
-		System.out.println("       _____  　(⊙＾⊙ )_ & ");
+		System.out.println("               ∧___∧    ");
+		System.out.println("       _____  (⊙＾⊙ )_ & ");
 		System.out.println("      (_약초_)   ( __ _  )   ");
 		System.out.println("                 ˘  ˘ ˘˘   ");
 		System.out.println();
@@ -78,7 +78,7 @@ public class Face {
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("                ∧__∧    나 안아푼뎅??  ");
 		System.out.println("   _____       (    )       ");
-		System.out.println("  (_약초_)      ( ·c  )      ");
+		System.out.println("  (_약초_)     ( ·c   )      ");
 		System.out.println("                            ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
 		System.out.println("    ATK : "+st.getAtk()+"\t DEF : "+st.getShd()+"\t SPD : "+st.getSpd());
@@ -102,8 +102,8 @@ public class Face {
 	
 	public void Face_HealthHd(String id) {
 		System.out.println("                    ");
-		System.out.println("              ∧ _ ∧        ");
-		System.out.println("           　 (ㅜωㅜ;)     ");
+		System.out.println("             ∧ _ ∧        ");
+		System.out.println("           　(ㅜωㅜ;)     ");
 		System.out.println("            (  ─┬─   )     ");
 		System.out.println("            (u ─┼─ u )     ");
 		System.out.println("            (  ─┴─   )∽    ");
@@ -113,7 +113,7 @@ public class Face {
 	public void Face_HealthTwo(String id) {
 		System.out.println("                    ");
 		System.out.println("          O---∧ _ ∧ ---O      ");
-		System.out.println("           　∩( >^< )∩     ");
+		System.out.println("           ∩( >^< )∩     ");
 		System.out.println("            (  ─┬─   )     ");
 		System.out.println("            (  ─┼─   )     ");
 		System.out.println("            (  ─┴─   )∽    ");
@@ -121,8 +121,8 @@ public class Face {
 	
 	public void Face_HealthEz(String id) {
 		System.out.println("                    ");
-		System.out.println("          O---∧ _ ∧ ---O      ");
-		System.out.println("           　 ( -ω- )∩     ");
+		System.out.println("         O---∧ _ ∧ ---O      ");
+		System.out.println("           　( -ω- )∩     ");
 		System.out.println("           ⊂(  ─┬─   )     ");
 		System.out.println("            (  ─┼─   )     ");
 		System.out.println("            (  ─┴─   )∽    ");
@@ -144,8 +144,8 @@ public class Face {
 		st=dama.vo_loding(id);
 		if (st.getSickday()<1) {si = "건강";}else {si="아픔";}
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("           ∧ _ ∧   ");
-		System.out.println("       　  (● ω●)  ");
+		System.out.println("         ∧ _ ∧   ");
+		System.out.println("       　(⊙ ω⊙)  ");
 		System.out.println("        ┌(     )┘   ");
 		System.out.println("         @@@@@@     ");
 		System.out.println("    HP  : "+st.getHp()+"/"+st.getMaxhp()+"\t ENE : "+st.getEne()+"/"+st.getMaxene());
@@ -153,22 +153,22 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	public void Face_runOne(String id) {
-		System.out.println("           ∧ _ ∧   ");
-		System.out.println("       　  (● ω●)  ");
+		System.out.println("         ∧ _ ∧   ");
+		System.out.println("        (⊙ ω⊙)  ");
 		System.out.println("        ┌(     )┘   ");
 		System.out.println("         @@@@@@     ");
 	}
 	public void Face_runTwo(String id) {
-		System.out.println("           ∧ _ ∧   ");
-		System.out.println("       　  (● ω●)  ");
+		System.out.println("         ∧ _ ∧   ");
+		System.out.println("        (⊙ ω⊙)  ");
 		System.out.println("         (┘    )┐   ");
 		System.out.println("         @@@@@@     ");
 	}
 	public void Face_Fishing(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("              ∧__∧    낚시를 하지 (잡았다링~!)");
-		System.out.println("            　(ºωº )   ");
+		System.out.println("               ∧__∧    낚시를 하지 (잡았다링~!)");
+		System.out.println("            　 (ºωº)   ");
 		System.out.println("          〃⌒∠(__u__)┐ ");
 		System.out.println("          /           ");
 		System.out.println("    ><)))˚>           ");
@@ -180,15 +180,15 @@ public class Face {
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday() );
 		System.out.println("               ∧__∧    낚시를 하지 (언제 잡히냐...)");
 		System.out.println("            　(ㅠωㅠ )   ");
-		System.out.println("          〃⌒∠(__u__)┐ ");
-		System.out.println("          /           ");
+		System.out.println("          〃⌒∠(___u__)┐ ");
+		System.out.println("         /            ");
 		System.out.println("                ><)))˚>  ");
 	}
 	public void Face_Get_Medi(String id) {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
-		System.out.println("               ∧__∧     ");
-		System.out.println("              (ºωº )    ");
+		System.out.println("                ∧__∧     ");
+		System.out.println("               (ºωº )    ");
 		System.out.println(" ㅛ    ㅛ    ㅛ∠(__u__)┐  ");
 		System.out.println("    ㅛ    ㅛ    ㅛ         ");
 		System.out.println("  ㅛ    ㅛ    ㅛ             ");
@@ -199,7 +199,7 @@ public class Face {
 		st=dama.vo_loding(id);
 		System.out.println("    내 이름은 " + st.getNick()+"       날짜 : "+st.getStartday());
 		System.out.println("               ∧__∧    			     ");
-		System.out.println("              (ㅜωㅜ )    약초가 없어ㅜㅜ     ");
+		System.out.println("               (ㅜωㅜ)    약초가 없어ㅜㅜ     ");
 		System.out.println("    ㅡ   ㅡ   ∠(__u__)┐  			    ");
 		System.out.println("    ㅡ    ㅡ             			     ");
 		System.out.println("  ㅡ    ㅡ    ㅡ           			     ");
@@ -207,13 +207,13 @@ public class Face {
 
 	public void Face_Fight(String id) {
 		System.out.println("        ∧__∧    X    ∩__∩     ");
-		System.out.println("       ( ≫⌒≪) /  ＼ (≫⌒≪ )    ");
+		System.out.println("       ( ≫⌒≪) /  ＼(≫⌒≪ )    ");
 		System.out.println("     ∽(  ___ )      (_____ )∽  ");
 
 	}
 	public void Face_Escape(String id) {
-		System.out.println("        ∩__∩         ∧___∧      ");
-		System.out.println("    ＼ (＠⌒＠ )       (◐∇ ◐;)    ");
+		System.out.println("        ∩__∩        ∧___∧      ");
+		System.out.println("   ＼ (＠⌒＠ )      (◐∇ ◐;)    ");
 		System.out.println("      (_____ )∽   ∽(⊂     )⊃    ");
 		System.out.println("                   @@@@@        ");
 
@@ -270,7 +270,7 @@ public class Face {
 		System.out.println(" │       │    				  ");
 		System.out.println(" └───────┘     			      ");
 		System.out.println("            ˚ · . ∧____∧       ");
-		System.out.println("                 ( -ω - )__    ");
+		System.out.println("                  ( -ω - )__    ");
 		System.out.println("                   (⊃⊂     )～  ");
 	}
 	

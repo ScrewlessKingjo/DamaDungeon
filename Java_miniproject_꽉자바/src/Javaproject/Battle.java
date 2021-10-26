@@ -151,8 +151,8 @@ public class Battle {
 	// 전투 기본 메소드
 	public void Phase(String id, int a) {
 
-		turnCount = 1;
 		EN_turnCount = 1;
+		turnCount = 1;
 		Enemy ge = new Enemy();
 		st = dama.vo_loding(id);
 		if (a == 1) {
@@ -164,9 +164,9 @@ public class Battle {
 		} else if (a ==4 ) {
 			t = ge.getEnemyBoss(id);
 		}
-		Anything();
 
 		
+		Anything();
 
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
@@ -204,10 +204,6 @@ public class Battle {
 			skill_var = 0;
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
-				st.VO_day(id, 1);
-				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
-						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
-						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 				break;
 			} else if (En_hp < 1) {
 				mu.enemyDeath();
@@ -216,9 +212,6 @@ public class Battle {
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
 				st.VO_day(id, 1);
-				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
-						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
-						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 				if (a==4) {
 					System.out.println();
 					System.out.println();
@@ -259,6 +252,9 @@ public class Battle {
 			}
 
 		}
+		dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 	}
 
 	// 유저 턴 메소드
@@ -850,7 +846,7 @@ public class Battle {
 						charge_dmg = (atk * str * shd + 1) / 10;
 					}
 					mu.warcry();
-					System.out.println(st.getNick() + "의 돌진!! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
+					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
 					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
 					System.out.println("");
 					En_hp -= charge_dmg;
@@ -859,13 +855,13 @@ public class Battle {
 
 				} else if (choice_skill == 3) {
 					if (ene <= 30) {
-						System.out.println("에너지가 없다!!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
+						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
 					dex += 5;
 					mu.Determination();
 					fc.Face_De(id);
-					System.out.println(st.getNick() + "은(는) 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
+					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
 					break;
 
 				} else if (choice_skill == 4) {
@@ -882,7 +878,7 @@ public class Battle {
 					ene -= 10;
 					mu.gunshot2();
 					fc.Face_Gun(id);
-					System.out.println(st.getNick() + "의 권총 사격 !! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
+					System.out.println(st.getNick() + "의 권총 사격! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
 					System.out.println(st.getNick() + " : '날아오는걸 못봤구나. 그렇지?'");
 					System.out.println("");
 					En_hp -= shoot_dmg;

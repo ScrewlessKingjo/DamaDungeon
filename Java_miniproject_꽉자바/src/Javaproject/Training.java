@@ -136,7 +136,7 @@ public class Training {
 			st.VO_experience(50,id);
 			st.VO_day(id, 1);
 		}else if(kg < st.getStr()-10) {
-			fa.Face_HealthTwo(id);
+			fa.Face_HealthEz(id);
 			System.out.println("이게 뭐야 ... 너무 가볍다 ...");
 			System.out.println("운동한 효과가 없네.. str + 0..");
 			System.out.println();
