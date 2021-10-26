@@ -19,7 +19,7 @@ public class testMain {
 		String main_id = null;
 		Event et = new Event();
 		coin = 1;
-		
+
 		while (coin == 1) {
 			int title_menu = 0; // 메인페이지 메뉴 변수
 			int game_menu = -1; // 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
