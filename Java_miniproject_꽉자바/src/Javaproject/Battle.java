@@ -502,14 +502,10 @@ public class Battle {
 					}
 					fc.Face_De(id);
 					mu.Determination();
-					user_EsPro += 5;
-					user_HitPro += 5;
-					user_CriPro += 5;
-					En_EsPro -= 5;
-					En_HitPro -= 5;
+					dex += 5;
 					
 					ene -= 20;
-					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 명중률, 치명율, 탈출확률이 5씩 상승했다.");
+					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
 					break;
 
 				} else if (choice_skill == 2) {
@@ -680,7 +676,7 @@ public class Battle {
 						System.out.println("");
 						En_hp -= fire_dmg;
 						skill_var = 1;
-						mu.fireball();
+						mu.Fireball();
 						break;
 					}
 				} else if (choice_skill == 2) {
@@ -821,7 +817,7 @@ public class Battle {
 			else if (choice == 2) {
 
 				System.out.println("[1] 결의 [2] 돌진  [3] 도적의 감 [4] 권총 사격 [5] 파이어볼 [6] 아이스 스피어 [7] 약초먹기 [8] 뒤로가기");
-				System.out.println("");
+				System.out.println(" ");
 				int choice_skill = sc.nextInt();
 				if (choice_skill == 1) {
 					if (ene <= 30) {
@@ -829,10 +825,11 @@ public class Battle {
 						System.out.println("");
 					} else {
 						ene -= 15;
-						shd += 3;
-						str += 3;
+						shd += 5;
+						str += 5;
+						fc.Face_De(id);
 						mu.Determination();
-						System.out.println(st.getNick() + "은(는) 지난 경험을 되새기며 결의를 다졌다. 방어력과 근력이 1만큼 증가했다.");
+						System.out.println(st.getNick() + "은(는) 지난 경험을 되새기며 결의를 다졌다. 방어력과 근력이 5만큼 증가했다.");
 						System.out.println(st.getNick() + " : '이 정도는 아무것도 아니야.'");
 						System.out.println("");
 						break;
@@ -861,10 +858,10 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
-					En_HitPro -= 5;
-					user_HitPro += 5;
+					dex += 5;
 					mu.Determination();
-					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 회피율과 명중률이 5씩 상승했다.");
+					fc.Face_De(id);
+					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
 					break;
 
 				} else if (choice_skill == 4) {
@@ -880,6 +877,7 @@ public class Battle {
 					}
 					ene -= 10;
 					mu.gunshot2();
+					fc.Face_Gun(id);
 					System.out.println(st.getNick() + "의 권총 사격! " + En_name + "은(는) " + shoot_dmg + "의 데미지를 받았다!");
 					System.out.println(st.getNick() + " : '날아오는걸 못봤구나. 그렇지?'");
 					System.out.println("");
@@ -897,8 +895,9 @@ public class Battle {
 						if ((atk * wis) % 2 == 1) {
 							fire_dmg = (atk * wis + 1) / 2;
 						}
-						ene -= 30;
-						mu.fireball();
+						ene -= 20;
+						mu.Fireball();
+						fc.Face_Fire(id);
 						System.out.println(
 								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + fire_dmg + "의 데미지를 받았다!");
 						System.out.println("");
@@ -917,6 +916,7 @@ public class Battle {
 						}
 						ene -= 10;
 						mu.ice();
+						fc.Face_Fire(id);
 						System.out.println(st.getNick() + "의 아이스 스피어! " + En_name + "은(는) " + ice_dmg + "의 데미지를 받았다!");
 						System.out.println("");
 						En_hp -= ice_dmg;

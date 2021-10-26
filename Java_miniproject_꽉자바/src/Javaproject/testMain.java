@@ -19,15 +19,15 @@ public class testMain {
 		String main_id = null;
 		Event et = new Event();
 		coin = 1;
-		
+		Clip bgm = mu.BattleBrothers();
+
 		while (coin == 1) {
 			int title_menu = 0; // 메인페이지 메뉴 변수
 			int game_menu = -1; // 기능페이지 메뉴 변수 (1.모험 2.훈련 3.음식 4.취침 5.종료)
 			int select_menu = 0; // 선택 메뉴 변수
-			Clip bgm = mu.BattleBrothers();
 			fc.face_main();
 			while (true) {
-				if (title_menu == 0) {
+				if (title_menu == 0) { 
 					System.out.println();
 					System.out.println("                             1. 로그인       2. 회원가입        3. 랭킹확인       4. 종료 ");
 					System.out.print("                             >> ");
@@ -175,6 +175,7 @@ public class testMain {
 				}
 			}
 		}
+		sc.close();
 	}
 
 	public void setcoin(int set) {
