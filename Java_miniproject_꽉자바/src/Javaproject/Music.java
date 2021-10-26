@@ -33,8 +33,7 @@ public class Music {
 		AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
-		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\BattleBrotherswav.wav");
+		bgm = new File("music/BattleBrotherswav.wav");
 		Clip clip = null;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -55,7 +54,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\AirCut.wav");
+				"music/AirCut.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -75,7 +74,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\Bloody.wav");
+				"music/Bloody.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -95,7 +94,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\fireBall.wav");
+				"music/fireBall.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -115,7 +114,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\shrineofenirhs.wav");
+				"music/shrineofenirhs.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -135,7 +134,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\gunshot.wav");
+				"music/gunshot.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -155,7 +154,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\524912__andrest2003__gunshot-pitch-a.wav");
+				"music/524912__andrest2003__gunshot-pitch-a.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -175,7 +174,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\fireBall.wav");
+				"music/fireBall.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -195,7 +194,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\ice.wav");
+				"music/ice.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -215,7 +214,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\shout1.wav");
+				"music/shout1.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -235,7 +234,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\death1.wav");
+				"music/death1.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
@@ -255,7 +254,7 @@ public class Music {
 		AudioFormat format;
 		DataLine.Info info;
 		bgm = new File(
-				"C:\\Users\\smhrd\\Downloads\\sqldeveloper-21.2.1.204.1703-x64\\sqldeveloper\\jdbc\\lib\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Javaminiproject1\\Java_miniproject_²ËÀÚ¹Ù\\music\\refill.wav");
+				"music/refill.wav");
 		Clip clip;
 		try {
 			stream = AudioSystem.getAudioInputStream(bgm);
