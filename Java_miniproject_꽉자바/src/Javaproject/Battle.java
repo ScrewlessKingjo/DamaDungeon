@@ -151,8 +151,8 @@ public class Battle {
 	// 전투 기본 메소드
 	public void Phase(String id, int a) {
 
-		EN_turnCount = 1;
 		turnCount = 1;
+		EN_turnCount = 1;
 		Enemy ge = new Enemy();
 		st = dama.vo_loding(id);
 		if (a == 1) {
@@ -164,9 +164,9 @@ public class Battle {
 		} else if (a ==4 ) {
 			t = ge.getEnemyBoss(id);
 		}
+		Anything();
 
 		
-		Anything();
 
 		System.out.println(t.getEn_name() + "이(가) 모습을 드러냈습니다.");
 		System.out.println(st.getNick() + "은(는) 전투를 준비합니다......");
@@ -204,6 +204,10 @@ public class Battle {
 			skill_var = 0;
 			if (hp < 1) {
 				System.out.println("당신은 죽었습니다.");
+				st.VO_day(id, 1);
+				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 				break;
 			} else if (En_hp < 1) {
 				mu.enemyDeath();
