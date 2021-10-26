@@ -290,18 +290,18 @@ public class Face {
 		System.out.println("    Lv  : "+st.getLv()+"\t EXP : "+st.getExpe()+"\t 상태 : "+si);
 	}
 	public void Face_Boss(String id) {
-		System.out.println("               			    		⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥			");
-		System.out.println("               		＼＼	    		┌──────────┐		 	");
-		System.out.println("               		  ＼＼     		│ ■	     ■ │	 			");
-		System.out.println("               			＼＼    		│PRINTLN();│	 			");
-		System.out.println("               			  ＼＼  		└──────────┘	 				");
-		System.out.println("             ∧ _ ∧   /  	＼＼	  @@@@@@@@@@@@@@@@@			");
-		System.out.println("           　( ◑△◑) /  	 	  ＼＼@@    @@JAVA@@	  @@				");
-		System.out.println("            ( ≥   )≥   	  	   @@		@@@@@	   @@			");	
-		System.out.println("              ˇ  ˇ        				 @@@					 ");
-		System.out.println("                        			   @@   @@					");
-		System.out.println("                        			 @@ 	  @@				");
-		System.out.println("                        		   @@ 		    @@		");
+		System.out.println("                                               ⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥⊥");
+		System.out.println("                          ＼＼                  ┌──────────┐");
+		System.out.println("                            ＼＼                │ ◎。 ◎    │");
+		System.out.println("                              ＼＼              │PRINTLN();│");
+		System.out.println("                                ＼＼            └──────────┘");
+		System.out.println("              ∧ _ ∧   /           ＼＼	     @@@@@@@@@@@@@@@@@");
+		System.out.println("             ( ◑△◑) /               ＼＼    @@    @@JAVA@@     @@	");
+		System.out.println("            ( ≥   )≥                     @@       @@@@@         @@");	
+		System.out.println("              ˇ  ˇ                                 @@@");
+		System.out.println("                                                 @@   @@");
+		System.out.println("                                               @@       @@");
+		System.out.println("                                             @@           @@");
 	}
 	public void face_main() {
 		System.out.println("\r\n"
