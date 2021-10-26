@@ -500,14 +500,10 @@ public class Battle {
 					}
 					fc.Face_De(id);
 					mu.Determination();
-					user_EsPro += 5;
-					user_HitPro += 5;
-					user_CriPro += 5;
-					En_EsPro -= 5;
-					En_HitPro -= 5;
+					dex += 5;
 					
 					ene -= 20;
-					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 명중률, 치명율, 탈출확률이 5씩 상승했다.");
+					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
 					break;
 
 				} else if (choice_skill == 2) {
@@ -860,11 +856,10 @@ public class Battle {
 						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
-					En_HitPro -= 5;
-					user_HitPro += 5;
+					dex += 5;
 					mu.Determination();
 					fc.Face_De(id);
-					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 회피율과 명중률이 5씩 상승했다.");
+					System.out.println(st.getNick() + "는 본능적으로 상대를 파악했다. 민첩이 5 상승했다.");
 					break;
 
 				} else if (choice_skill == 4) {
