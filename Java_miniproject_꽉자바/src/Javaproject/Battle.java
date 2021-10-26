@@ -212,6 +212,9 @@ public class Battle {
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
 				st.VO_day(id, 1);
+				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 				if (a==4) {
 					System.out.println();
 					System.out.println();
@@ -252,9 +255,6 @@ public class Battle {
 			}
 
 		}
-		dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
-				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
-				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 	}
 
 	// 유저 턴 메소드
