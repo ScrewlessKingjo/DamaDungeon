@@ -38,7 +38,7 @@ public class DAMAVO {
 			System.out.println(" 사망하셨습니다. 당신의 발자취는 기록될 것입니다.");
 			System.out.println();
 			System.out.println("       메인 화면으로 돌아가시겠습니까? ");
-			System.out.println("[1]확인 [2]종료");
+			System.out.println("             [1]확인 [2]종료");
 			System.out.print(">>");
 			while(true) {
 			int select_main =sc.nextInt();
