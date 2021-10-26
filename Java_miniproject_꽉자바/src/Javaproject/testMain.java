@@ -175,6 +175,7 @@ public class testMain {
 				}
 			}
 		}
+		sc.close();
 	}
 
 	public void setcoin(int set) {

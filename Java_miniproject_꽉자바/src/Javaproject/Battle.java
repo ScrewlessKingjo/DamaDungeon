@@ -676,7 +676,7 @@ public class Battle {
 						System.out.println("");
 						En_hp -= fire_dmg;
 						skill_var = 1;
-						mu.fireball();
+						mu.Fireball();
 						break;
 					}
 				} else if (choice_skill == 2) {
@@ -896,7 +896,7 @@ public class Battle {
 							fire_dmg = (atk * wis + 1) / 2;
 						}
 						ene -= 20;
-						mu.fireball();
+						mu.Fireball();
 						fc.Face_Fire(id);
 						System.out.println(
 								st.getNick() + "은 파이어볼을 시전했다! " + En_name + "은(는) 불길에 휩싸여" + fire_dmg + "의 데미지를 받았다!");
