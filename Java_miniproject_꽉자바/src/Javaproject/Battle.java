@@ -212,7 +212,7 @@ public class Battle {
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
 				st.VO_day(id, 1);
-				if (a==4 ) {
+				if (a==4) {
 					System.out.println();
 					System.out.println();
 					System.out.println("                  ★ 보스를   잡았다 ★");
@@ -242,9 +242,11 @@ public class Battle {
 					if (b==1) {
 						test.setcoin(1);
 					} else if (b==2) {
-						test.setcoin(0);
+						test.setcoin(5);
+						fc.Face_Normal(id);
 					}
-
+				}else {
+					fc.Face_Normal(id);
 				}
 				break;
 			}

@@ -211,7 +211,7 @@ public class DAMADAO {
 		getConn();
 		
 		int i = 0;
-		String sql = "select * from dama_info order by LV desc";
+		String sql = "select * from dama_info order by LV desc, ES desc";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

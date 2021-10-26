@@ -50,8 +50,11 @@ public class Event {
 			System.out.println("   [1] 전투 돌입  ");
 			while (select != 1) {
 				select = sc.nextInt();
-			}
-			int a = rd.nextInt(3);
+				if (select != 1) {
+					System.out.println("  [1] 확인을 해 주세요  ");
+				}
+			} 
+			int a = rd.nextInt(2)+1;
 			bt.Phase(id, a);
 
 		}

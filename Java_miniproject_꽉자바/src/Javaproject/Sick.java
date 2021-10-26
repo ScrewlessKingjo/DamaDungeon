@@ -17,8 +17,7 @@ public class Sick {
 		st=dama.vo_loding(id);
 		sickday = st.getSickday()+1;
 		System.out.println(sickday);
-		
-
+	
 				st.setStr(st.getStr()-sickday);
 				if(st.getStr() < 1) {
 					st.setStr(0);
@@ -58,7 +57,6 @@ public class Sick {
 				st.setSickday(sickday);
 				System.out.println("질병에 걸렸습니다. 모든 스텟이 " +sickday+"만큼 하락합니다.");
 				st.Alldate(id);
-				fa.Face_Sick(id);
 			
 		}
 }
