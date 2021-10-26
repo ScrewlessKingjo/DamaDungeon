@@ -855,7 +855,7 @@ public class Battle {
 
 				} else if (choice_skill == 3) {
 					if (ene <= 30) {
-						System.out.println("에너지가 없다!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
+						System.out.println("에너지가 없다!!" + st.getNick() + "은 도적의 감을 발동할 수 없었다.");
 						System.out.println("");
 					}
 					dex += 5;
