@@ -181,7 +181,9 @@ public class Battle {
 		}
 		while (true) {
 			if (turnCount == 2 || EN_turnCount == 2) {
-
+				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
 				break;
 			}
 			System.out.println(t.getEn_name() + " 정보// 체력 :" + En_hp + " 공격력 : " + En_atk + " 방어력 : " + En_def
@@ -206,12 +208,17 @@ public class Battle {
 				System.out.println("당신은 죽었습니다.");
 				break;
 			} else if (En_hp < 1) {
+				dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
+						st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
+						st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
+				
 				mu.enemyDeath();
 				int y = (t.getEn_hp()+t.getEn_atk()+t.getEn_def())-(t.getEn_hp()+t.getEn_atk()+t.getEn_def())%2;
 				System.out.println("이겼다!" + t.getEn_name() + "을 해치웠다!");
 				System.out.println(st.getNick() + "은(는) " + y + "만큼의 경험치를 얻었다!");
 				st.VO_experience(y, id);
 				st.VO_day(id, 1);
+				
 				if (a==4) {
 					System.out.println();
 					System.out.println();
@@ -252,9 +259,7 @@ public class Battle {
 			}
 
 		}
-		dama.vo_update(id, st.getNick(), st.getExpe(), st.getLv(), ene, st.getMaxene(), food, hurbs, st.getStartday(),
-				st.getSickday(), st.getJobid(), hp, st.getMaxhp(), st.getAtk(), st.getShd(), st.getSpd(), st.getStr(),
-				st.getDex(), st.getWis(), st.getLuk(), st.getDummi());
+
 	}
 
 	// 유저 턴 메소드

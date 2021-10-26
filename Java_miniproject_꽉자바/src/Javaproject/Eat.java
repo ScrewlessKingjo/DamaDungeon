@@ -77,7 +77,7 @@ public class Eat {
 			}
 
 		}
-
+		st.Alldate(id);
 	}
 
 	public void Bob_save(String id) {
