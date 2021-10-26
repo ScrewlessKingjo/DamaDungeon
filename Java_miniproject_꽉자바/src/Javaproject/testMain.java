@@ -27,7 +27,7 @@ public class testMain {
 			Clip bgm = mu.BattleBrothers();
 			fc.face_main();
 			while (true) {
-				if (title_menu == 0) {
+				if (title_menu == 0) { 
 					System.out.println();
 					System.out.println("                             1. 로그인       2. 회원가입        3. 랭킹확인       4. 종료 ");
 					System.out.print("                             >> ");
