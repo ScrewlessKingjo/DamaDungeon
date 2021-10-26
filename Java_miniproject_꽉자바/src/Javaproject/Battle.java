@@ -846,7 +846,7 @@ public class Battle {
 						charge_dmg = (atk * str * shd + 1) / 10;
 					}
 					mu.warcry();
-					System.out.println(st.getNick() + "의 돌진! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
+					System.out.println(st.getNick() + "의 돌진!! " + En_name + "은(는) " + charge_dmg + "의 데미지를 받았다!");
 					System.out.println("그러나" + st.getNick() + " 역시 " + a + "의 체력을 소모했다!");
 					System.out.println("");
 					En_hp -= charge_dmg;
